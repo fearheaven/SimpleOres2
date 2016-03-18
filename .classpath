@@ -2,7 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry excluding="alexndr/plugins/Netherrocks/|alexndr/plugins/Machines/|alexndr/plugins/Fusion/|alexndr/plugins/synergy/" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="ignore_optional_problems" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/net/minecraftforge/forge/1.8.9-11.15.1.1722/stable/20/forgeSrc-1.8.9-11.15.1.1722.jar" sourcepath="/home/cyhiggin/.gradle/caches/minecraft/net/minecraftforge/forge/1.8.9-11.15.1.1722/stable/20/forgeSrc-1.8.9-11.15.1.1722-sources.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/oshi-project/oshi-core/1.1/9ddf7b048a8d701be231c0f4f95fd986198fd2d8/oshi-core-1.1.jar" sourcepath="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/oshi-project/oshi-core/1.1/1ec1ab1e6ac5a1572edfd0dd9ac95e83684b8a65/oshi-core-1.1-sources.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/3.4.0/803ff252fedbd395baffd43b37341dc4a150a554/jna-3.4.0.jar" sourcepath="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/3.4.0/2f42653596d0044f0ab456620cba54c9cf53c5ca/jna-3.4.0-sources.jar"/>
@@ -64,7 +68,6 @@
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.4-nightly-20150209/b84d5102b9dbfabfeb5e43c7e2828d98a7fc80e0/lwjgl-platform-2.9.4-nightly-20150209-natives-windows.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.4-nightly-20150209/931074f46c795d2f7b30ed6395df5715cfd7675b/lwjgl-platform-2.9.4-nightly-20150209-natives-linux.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.4-nightly-20150209/bcab850f8f487c3f4c4dbabde778bb82bd1a40ed/lwjgl-platform-2.9.4-nightly-20150209-natives-osx.jar"/>
-	<classpathentry kind="lib" path="/home/cyhiggin/Projects/Minecraft_1.8/SimpleOres2/libs/jdom-2.0.6.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/deobfedDeps/compileDummy.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/deobfedDeps/providedDummy.jar"/>
 	<classpathentry kind="lib" path="/home/cyhiggin/.gradle/caches/minecraft/net/minecraftforge/forge/1.8.9-11.15.1.1722/start"/>

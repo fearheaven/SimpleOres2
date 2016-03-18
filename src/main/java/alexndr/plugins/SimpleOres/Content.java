@@ -134,25 +134,25 @@ public class Content {
 	}
 	
 	public static void doAchievements() {
-		copperAch = new Achievement("achievement.copperAch", "copperAch", 8, 1, copper_ore, AchievementList.buildBetterPickaxe).func_180788_c();
-		copperPickAch = new Achievement("achievement.copperPickAch", "copperPickAch", 9, 3, copper_pickaxe, copperAch).func_180788_c();
-		copperBucketAch = new Achievement("achievement.copperBucketAch", "copperBucketAch", 9, 5, copper_bucket_water, copperAch).func_180788_c();
+		copperAch = new Achievement("achievement.copperAch", "copperAch", 8, 1, copper_ore, AchievementList.buildBetterPickaxe).registerStat();
+		copperPickAch = new Achievement("achievement.copperPickAch", "copperPickAch", 9, 3, copper_pickaxe, copperAch).registerStat();
+		copperBucketAch = new Achievement("achievement.copperBucketAch", "copperBucketAch", 9, 5, copper_bucket_water, copperAch).registerStat();
 		
-		tinAch = new Achievement("acheivement.tinAch", "tinAch", 10, 1, tin_ore, AchievementList.buildBetterPickaxe).func_180788_c();
-		tinChestplateAch = new Achievement("achievement.tinChestplateAch", "tinChestplateAch", 11, 3, tin_chestplate, tinAch).func_180788_c();
-		tinShearsAch = new Achievement("achievement.tinShearsAch", "tinShearsAch", 11, 5, tin_shears, tinAch).func_180788_c();
+		tinAch = new Achievement("acheivement.tinAch", "tinAch", 10, 1, tin_ore, AchievementList.buildBetterPickaxe).registerStat();
+		tinChestplateAch = new Achievement("achievement.tinChestplateAch", "tinChestplateAch", 11, 3, tin_chestplate, tinAch).registerStat();
+		tinShearsAch = new Achievement("achievement.tinShearsAch", "tinShearsAch", 11, 5, tin_shears, tinAch).registerStat();
 		
-		mythrilAch = new Achievement("achievement.mythrilAch", "mythrilAch", 12, 1, mythril_ore, AchievementList.buildBetterPickaxe).func_180788_c();
-		mythrilAxeAch = new Achievement("achievement.mythrilAxeAch", "mythrilAxeAch", 13, 3, mythril_axe, mythrilAch).func_180788_c();
-		mythrilBowAch = new Achievement("achievement.mythrilBowAch", "mythrilBowAch", 13, 5, mythril_bow, mythrilAch).func_180788_c();
+		mythrilAch = new Achievement("achievement.mythrilAch", "mythrilAch", 12, 1, mythril_ore, AchievementList.buildBetterPickaxe).registerStat();
+		mythrilAxeAch = new Achievement("achievement.mythrilAxeAch", "mythrilAxeAch", 13, 3, mythril_axe, mythrilAch).registerStat();
+		mythrilBowAch = new Achievement("achievement.mythrilBowAch", "mythrilBowAch", 13, 5, mythril_bow, mythrilAch).registerStat();
 		
-		adamantiumAch = new Achievement("achievement.adamantiumAch", "adamantiumAch", 14, 1, adamantium_ore, AchievementList.buildBetterPickaxe).func_180788_c();
-		adamantiumLegsAch = new Achievement("achievement.adamantiumLegsAch", "adamantiumLegsAch", 15, 3, adamantium_leggings, adamantiumAch).func_180788_c();
-		adamantiumShearsAch = new Achievement("achievement.adamantiumShearsAch", "adamantiumShearsAch", 15, 5, adamantium_shears, adamantiumAch).func_180788_c();
+		adamantiumAch = new Achievement("achievement.adamantiumAch", "adamantiumAch", 14, 1, adamantium_ore, AchievementList.buildBetterPickaxe).registerStat();
+		adamantiumLegsAch = new Achievement("achievement.adamantiumLegsAch", "adamantiumLegsAch", 15, 3, adamantium_leggings, adamantiumAch).registerStat();
+		adamantiumShearsAch = new Achievement("achievement.adamantiumShearsAch", "adamantiumShearsAch", 15, 5, adamantium_shears, adamantiumAch).registerStat();
 		
-		onyxAch = new Achievement("achievement.onyxAch", "onyxAch", 16, 1, onyx_ore, AchievementList.buildBetterPickaxe).setSpecial().func_180788_c();
-		onyxSwordAch = new Achievement("achievement.onyxSwordAch", "onyxSwordAch", 17, 3, onyx_sword, onyxAch).func_180788_c();
-		onyxBowAch = new Achievement("achievement.onyxBowAch", "onyxBowAch", 17, 5, onyx_bow, onyxAch).func_180788_c();
+		onyxAch = new Achievement("achievement.onyxAch", "onyxAch", 16, 1, onyx_ore, AchievementList.buildBetterPickaxe).setSpecial().registerStat();
+		onyxSwordAch = new Achievement("achievement.onyxSwordAch", "onyxSwordAch", 17, 3, onyx_sword, onyxAch).registerStat();
+		onyxBowAch = new Achievement("achievement.onyxBowAch", "onyxBowAch", 17, 5, onyx_bow, onyxAch).registerStat();
 	}
 	
 	public static Block copper_ore, tin_ore, mythril_ore, adamantium_ore, onyx_ore, 

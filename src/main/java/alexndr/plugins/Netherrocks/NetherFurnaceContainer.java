@@ -37,11 +37,11 @@ public class NetherFurnaceContainer extends Container {
 			this.addSlotToContainer(new Slot(player, i, 8 + i * 18, 142));
     }
     
-    @Override
-	public void addCraftingToCrafters(ICrafting listener) {
-        super.addCraftingToCrafters(listener);
-        listener.func_175173_a(this, this.tileFurnace);
-    }
+//    @Override
+//	public void addCraftingToCrafters(ICrafting listener) {
+//        super.addCraftingToCrafters(listener);
+//        listener.sendAllWindowProperties(this, this.tileFurnace);
+//    }
     
     @Override
 	public void detectAndSendChanges() {

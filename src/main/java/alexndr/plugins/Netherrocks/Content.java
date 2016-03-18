@@ -121,21 +121,21 @@ public class Content {
 	}
 	
 	public static void doAchievements() {
-		fyriteOreAch = new Achievement("achievement.fyriteOreAch", "fyriteOreAch", -6, 7, fyrite_ore, AchievementList.portal).func_180788_c();
-		malachiteOreAch = new Achievement("achievement.malachiteOreAch", "malachiteOreAch", -6, 5, malachite_ore, fyriteOreAch).func_180788_c();
-		ashstoneOreAch = new Achievement("achievement.ashstoneOreAch", "ashstoneOreAch", -6, 3, ashstone_ore, malachiteOreAch).func_180788_c();
-		illumeniteOreAch = new Achievement("achievement.illumeniteOreAch", "illumeniteOreAch", -6, 1, illumenite_ore, ashstoneOreAch).func_180788_c();
-		argoniteOreAch = new Achievement("achievement.argoniteOreAch", "argoniteOreAch", -6, -1, argonite_ore, illumeniteOreAch).func_180788_c();
-		dragonstoneOreAch = new Achievement("achievement.dragonstoneOreAch", "dragonstoneOreAch", -6, -3, dragonstone_ore, argoniteOreAch).setSpecial().func_180788_c();
+		fyriteOreAch = new Achievement("achievement.fyriteOreAch", "fyriteOreAch", -6, 7, fyrite_ore, AchievementList.portal).registerStat();
+		malachiteOreAch = new Achievement("achievement.malachiteOreAch", "malachiteOreAch", -6, 5, malachite_ore, fyriteOreAch).registerStat();
+		ashstoneOreAch = new Achievement("achievement.ashstoneOreAch", "ashstoneOreAch", -6, 3, ashstone_ore, malachiteOreAch).registerStat();
+		illumeniteOreAch = new Achievement("achievement.illumeniteOreAch", "illumeniteOreAch", -6, 1, illumenite_ore, ashstoneOreAch).registerStat();
+		argoniteOreAch = new Achievement("achievement.argoniteOreAch", "argoniteOreAch", -6, -1, argonite_ore, illumeniteOreAch).registerStat();
+		dragonstoneOreAch = new Achievement("achievement.dragonstoneOreAch", "dragonstoneOreAch", -6, -3, dragonstone_ore, argoniteOreAch).setSpecial().registerStat();
 		
-		fyriteSetAch = new Achievement("achievement.fyriteSetAch", "fyriteSetAch", -8, 7, fyrite_chestplate, fyriteOreAch).setSpecial().func_180788_c();
-		malachiteSetAch = new Achievement("achievement.malachiteSetAch", "malachiteSetAch", -8, 5, malachite_chestplate, malachiteOreAch).setSpecial().func_180788_c();
-		ashstoneAxeAch = new Achievement("achievement.ashstoneAxeAch", "ashstoneAxeAch", -8, 3, ashstone_axe, ashstoneOreAch).func_180788_c();
-		illumeniteSetAch = new Achievement("achievement.illumeniteSetAch", "illumeniteSetAch", -8, 1, illumenite_chestplate, illumeniteOreAch).setSpecial().func_180788_c();
-		argoniteSwordAch = new Achievement("achievement.argoniteSwordAch", "argoniteSwordAch", -8, -1, argonite_sword, argoniteOreAch).func_180788_c();
-		dragonstonePickaxeAch = new Achievement("achievement.dragonstonePickaxeAch", "dragonstonePickaxeAch", -8, -3, dragonstone_pickaxe, dragonstoneOreAch).func_180788_c();
+		fyriteSetAch = new Achievement("achievement.fyriteSetAch", "fyriteSetAch", -8, 7, fyrite_chestplate, fyriteOreAch).setSpecial().registerStat();
+		malachiteSetAch = new Achievement("achievement.malachiteSetAch", "malachiteSetAch", -8, 5, malachite_chestplate, malachiteOreAch).setSpecial().registerStat();
+		ashstoneAxeAch = new Achievement("achievement.ashstoneAxeAch", "ashstoneAxeAch", -8, 3, ashstone_axe, ashstoneOreAch).registerStat();
+		illumeniteSetAch = new Achievement("achievement.illumeniteSetAch", "illumeniteSetAch", -8, 1, illumenite_chestplate, illumeniteOreAch).setSpecial().registerStat();
+		argoniteSwordAch = new Achievement("achievement.argoniteSwordAch", "argoniteSwordAch", -8, -1, argonite_sword, argoniteOreAch).registerStat();
+		dragonstonePickaxeAch = new Achievement("achievement.dragonstonePickaxeAch", "dragonstonePickaxeAch", -8, -3, dragonstone_pickaxe, dragonstoneOreAch).registerStat();
 		
-		//netherFurnaceAch = new Achievement("achievement.netherFurnaceAch", "netherFurnaceAch", 1, 7, nether_furnace_lit, AchievementList.portal).func_180788_c();
+		//netherFurnaceAch = new Achievement("achievement.netherFurnaceAch", "netherFurnaceAch", 1, 7, nether_furnace_lit, AchievementList.portal).registerStat();
 	}
 	
 	public static Block fyrite_ore, malachite_ore, ashstone_ore, illumenite_ore, dragonstone_ore, argonite_ore,

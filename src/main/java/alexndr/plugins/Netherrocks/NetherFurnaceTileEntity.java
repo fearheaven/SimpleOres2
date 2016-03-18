@@ -13,9 +13,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -23,7 +23,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 /**
  * @author AleXndrTheGr8st
  */
-public class NetherFurnaceTileEntity extends TileEntityLockable implements IUpdatePlayerListBox, ISidedInventory{
+public class NetherFurnaceTileEntity extends TileEntityLockable implements ITickable, ISidedInventory
+{
     private static final int[] slotsTop = new int[] {0};
     private static final int[] slotsBottom = new int[] {2, 1};
     private static final int[] slotsSides = new int[] {1};
@@ -94,7 +95,8 @@ public class NetherFurnaceTileEntity extends TileEntityLockable implements IUpda
 	
     public int getFurnaceCookTime(ItemStack stack)
     {
-        return (Settings.netherFurnace.getValueByName("SmeltingTime") != null && Settings.netherFurnace.getValueByName("SmeltingTime").isActive()) ? 
+        return (Settings.netherFurnace.getValueByName("SmeltingTime") != null 
+        		&& Settings.netherFurnace.getValueByName("SmeltingTime").isActive()) ? 
         		Settings.netherFurnace.getValueByName("SmeltingTime").asInt() : 100;
     }
     
@@ -185,15 +187,15 @@ public class NetherFurnaceTileEntity extends TileEntityLockable implements IUpda
 		else return null;
 	}
 
-	@Override
-	public ItemStack getStackInSlotOnClosing(int index) {
-		if (this.furnaceItemStacks[index] != null) {
-			ItemStack itemstack = this.furnaceItemStacks[index];
-			this.furnaceItemStacks[index] = null;
-			return itemstack;
-		} 
-		else return null;
-	}
+//	@Override
+//	public ItemStack getStackInSlotOnClosing(int index) {
+//		if (this.furnaceItemStacks[index] != null) {
+//			ItemStack itemstack = this.furnaceItemStacks[index];
+//			this.furnaceItemStacks[index] = null;
+//			return itemstack;
+//		} 
+//		else return null;
+//	}
 
 	@Override
 	public void setInventorySlotContents(int index, ItemStack stack) {
@@ -228,7 +230,7 @@ public class NetherFurnaceTileEntity extends TileEntityLockable implements IUpda
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return index == 2 ? false : (index != 1 ? true : isItemFuel(stack) || SlotFurnaceFuel.func_178173_c_(stack));
+        return index == 2 ? false : (index != 1 ? true : isItemFuel(stack) || SlotFurnaceFuel.isBucket(stack));
 	}
 
 	@Override
@@ -376,4 +378,18 @@ public class NetherFurnaceTileEntity extends TileEntityLockable implements IUpda
             this.furnaceItemStacks[i] = null;
         }
 	}
-}
+
+	@Override
+	public ItemStack removeStackFromSlot(int index) {
+        if (this.furnaceItemStacks[index] != null)
+        {
+            ItemStack itemstack = this.furnaceItemStacks[index];
+            this.furnaceItemStacks[index] = null;
+            return itemstack;
+        }
+        else
+        {
+            return null;
+        }
+	}
+} // end class
