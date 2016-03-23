@@ -1,4 +1,4 @@
-SimpleCore
+SimpleOres2
 ==========
 
-Repository for the SimpleCore API by AleXndrTheGr8st
+Repository for SimpleOres 2 by AleXndrTheGr8st

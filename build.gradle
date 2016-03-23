@@ -13,20 +13,34 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'java'
 
+sourceCompatibility = version_java
+targetCompatibility = version_java
 /*
 // for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
 plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.0"
-group= "alexndr.api" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "simplecore"
+def getVersionAppendage() {
+    if (System.env.BUILD_NUMBER)
+        return System.env.BUILD_NUMBER
+
+    def proc = "git rev-parse --short HEAD".execute()
+    proc.waitFor()
+    return "DEV-" + proc.text.trim()
+}
+
+version = "${version_minecraft}-${version_mod}." + getVersionAppendage()
+group= "alexndr.plugins" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "simpleores"
 
 minecraft {
-    version = "1.8.9-11.15.1.1722"
+    version = "${version_minecraft}-${version_forge}"
     runDir = "run"
+    replaceIn "ModInfo.java"
+    replace "@MODVERSION@", "${project.version}"
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
@@ -74,7 +88,7 @@ processResources
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+       
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
