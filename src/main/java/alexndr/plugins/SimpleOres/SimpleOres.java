@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
 import alexndr.api.content.items.SimpleBucketType;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.OreGenerator;
@@ -60,9 +61,12 @@ public class SimpleOres
 	}
 	
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		RenderItemHelper.renderItemsAndBlocks(plugin);
-		
+	public void init(FMLInitializationEvent event) 
+	{
+		if(event.getSide() == Side.CLIENT) 
+		{
+			RenderItemHelper.renderItemsAndBlocks(plugin);
+		}
 		//Content
 		Recipes.initialize();
 		setTabIcons();
