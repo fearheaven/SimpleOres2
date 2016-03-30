@@ -8,7 +8,7 @@
 "logoFile": "/assets/simplecore/logos/SimpleOres.png",
 "mcversion": "${mcversion}",
 "url": "http://minecraft.curseforge.com/projects/simpleores",
-"updateUrl": "",
+"updateUrl": "http://minecraft.curseforge.com/projects/simpleores/files",
 "authorList": [ "AleXndrTheGr8st", "Sinhika" ],
 "parent":"",
 "screenshots": [],

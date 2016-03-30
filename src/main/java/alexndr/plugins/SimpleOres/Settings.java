@@ -20,7 +20,7 @@ public class Settings {
 	
 	public static void createOrLoadSettings(FMLPreInitializationEvent event) {
 		settings.setModName("SimpleOres 2");
-		File configDir = new File(event.getModConfigurationDirectory() + "/AleXndr", "SimpleOres 2 Settings.xml");
+		File configDir = new File(event.getModConfigurationDirectory() + "/AleXndr", "SimpleOres2Settings.xml");
 		settings.setFile(configDir);
 		
 		LogHelper.verbose("SimpleOres 2", "Loading Settings...");
@@ -29,7 +29,7 @@ public class Settings {
 			
 			//Config Help
 			ConfigEntry link = new ConfigEntry("Documentation", "ConfigHelp");
-				link.createNewValue("DocumentationLink").setActive().setDataType("@S").setCurrentValue("LINK TO GITHUB GOES HERE").setDefaultValue("");
+				link.createNewValue("DocumentationLink").setActive().setDataType("@S").setCurrentValue("https://github.com/AleXndrTheGr8st/SimpleCore/wiki/Using-The-Config").setDefaultValue("");
 			link = settings.get(link);
 				
 			ConfigEntry dataTypes = new ConfigEntry("Data Types", "ConfigHelp");
@@ -43,9 +43,7 @@ public class Settings {
 			
 			//Toggles
 			ConfigEntry toggles = new ConfigEntry("SimpleOres Toggles", "Toggles");
-				toggles.createNewValue("UpdateChecker").setActive().setDataType("@B").setCurrentValue("true").setDefaultValue("true");
 				toggles = settings.get(toggles);
-				updateChecker = toggles.getValueByName("UpdateChecker");
 			
 			//Blocks
 			copperOre = settings.get(new ConfigBlock("Copper Ore", "Ores").setHardness(1.7F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(1).setHarvestTool("pickaxe")
@@ -134,6 +132,6 @@ public class Settings {
 	
 	public static ConfigEntry mythrilBow, onyxBow;
 	
-	public static ConfigValue updateChecker, 
-								mythrilBowDamageModifier, mythrilBowEfficiencyChance, mythrilBowZoomAmount, onyxBowDamageModifier, onyxBowFireToggle, onyxBowZoomAmount;
+	public static ConfigValue mythrilBowDamageModifier, mythrilBowEfficiencyChance, mythrilBowZoomAmount, 
+							  onyxBowDamageModifier, onyxBowFireToggle, onyxBowZoomAmount;
 }

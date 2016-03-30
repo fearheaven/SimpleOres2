@@ -29,7 +29,7 @@ import com.google.common.collect.Lists;
  * @author AleXndrTheGr8st
  */
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
-	 dependencies = "required-after:simplecore")
+	 dependencies = "required-after:simplecore", updateJSON=ModInfo.VERSIONURL)
 public class SimpleOres 
 {
 	public static Plugin plugin = new Plugin(ModInfo.ID, ModInfo.NAME);
@@ -51,7 +51,6 @@ public class SimpleOres
 		ContentRegistry.registerPlugin(plugin);
 		// ModInfo.setModInfoProperties(event);
 		Settings.createOrLoadSettings(event);
-		// if(Settings.updateChecker.asBoolean()) {UpdateChecker checker = new UpdateChecker(ModInfo.ID, ModInfo.VERSION, ModInfo.VERSIONURL);}
 		
 		//Content
 		SimpleCoreAPI.tabPreInit();
