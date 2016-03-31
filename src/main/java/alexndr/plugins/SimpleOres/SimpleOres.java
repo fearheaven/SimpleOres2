@@ -19,6 +19,7 @@ import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.OreGenerator;
 import alexndr.api.helpers.game.RenderItemHelper;
 import alexndr.api.helpers.game.StatTriggersHelper;
+import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import alexndr.api.registry.ContentRegistry;
 import alexndr.api.registry.Plugin;
@@ -53,7 +54,9 @@ public class SimpleOres
 		Settings.createOrLoadSettings(event);
 		
 		//Content
-		SimpleCoreAPI.tabPreInit();
+		if (! TabHelper.wereTabsInitialized()) {
+			SimpleCoreAPI.tabPreInit();
+		}
 		setToolAndArmorStats();
 		Content.preInitialize();
 		Recipes.preInitialize();
@@ -99,8 +102,9 @@ public class SimpleOres
 	
 	private static void setTabIcons() {
 		LogHelper.verbose("SimpleOres 2", "Setting tab icons");
-		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.copper_ore), Item.getItemFromBlock(Content.adamantium_block), 
-						Content.mythril_ingot, Content.onyx_pickaxe, Content.copper_sword);
+		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.copper_ore), 
+								Item.getItemFromBlock(Content.adamantium_block), 
+								Content.mythril_ingot, Content.onyx_pickaxe, Content.copper_sword);
 		SimpleCoreAPI.setTabIcons(list);
 	}
 	
