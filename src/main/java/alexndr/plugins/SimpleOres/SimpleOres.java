@@ -39,6 +39,7 @@ public class SimpleOres {
 	 * Called during the PreInit phase.
 	 * @param event FMLPreInitializationEvent
 	 */
+	@SuppressWarnings("unused")
 	@EventHandler
 	public void PreInit(FMLPreInitializationEvent event) {
 		LogHelper.info("Loading SimpleOres...");

@@ -53,6 +53,7 @@ public class Recipes
 		OreDictionary.registerOre("gemOnyx", new ItemStack(Content.onyx_gem));
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static void addRecipes()
 	{
 		//Block Recipes
