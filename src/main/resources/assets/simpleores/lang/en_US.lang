@@ -1,3 +1,10 @@
+//Tabs
+itemGroup.simpleOresBlocks=Simple Blocks
+itemGroup.simpleOresDecorations=Simple Decorations
+itemGroup.simpleOresMaterials=Simple Materials
+itemGroup.simpleOresTools=Simple Tools
+itemGroup.simpleOresCombat=Simple Combat
+
 //Blocks
 tile.copper_ore.name=Copper Ore
 tile.copper_block.name=Block of Copper
