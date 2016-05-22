@@ -155,9 +155,9 @@ public class Recipes {
 	
 		//Bow Recipes
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(Content.mythril_bow, true, new Object[]{
-				" XY", "Z Y", " XY", Character.valueOf('X'), Content.mythril_rod, Character.valueOf('Y'), Items.string, Character.valueOf('Z'), Items.iron_ingot}));
+				" XY", "Z Y", " XY", Character.valueOf('X'), Content.mythril_rod, Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.IRON_INGOT}));
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(Content.onyx_bow, true, new Object[]{
-				" XY", "ZWY", " XY", Character.valueOf('X'), Content.onyx_rod, Character.valueOf('Y'), Items.string, Character.valueOf('Z'), Items.diamond, Character.valueOf('W'), Items.flint_and_steel}));
+				" XY", "ZWY", " XY", Character.valueOf('X'), Content.onyx_rod, Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.DIAMOND, Character.valueOf('W'), Items.FLINT_AND_STEEL}));
 	
 		//Shears Recipes
 		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(Content.copper_shears, true, new Object[]{
