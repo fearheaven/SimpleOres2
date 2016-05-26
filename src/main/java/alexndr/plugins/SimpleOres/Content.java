@@ -3,6 +3,7 @@ package alexndr.plugins.SimpleOres;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -19,6 +20,7 @@ import alexndr.api.content.items.SimpleArmor;
 import alexndr.api.content.items.SimpleAxe;
 import alexndr.api.content.items.SimpleBow;
 import alexndr.api.content.items.SimpleBowEffects;
+import alexndr.api.content.items.SimpleBucket;
 import alexndr.api.content.items.SimpleBucketType;
 import alexndr.api.content.items.SimpleHoe;
 import alexndr.api.content.items.SimpleItem;
@@ -73,14 +75,14 @@ public class Content {
 				Settings.onyxRod).setUnlocalizedName("onyx_rod");
 
 		// TODO bucket re-write.
-//		copper_bucket = new SimpleBucket(SimpleOres.plugin, Blocks.air,
-//				SimpleOres.copperBucketType).setConfigEntry(
-//				Settings.copperBucket).setUnlocalizedName("copper_bucket");
-//		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
-//				Blocks.flowing_water, SimpleOres.copperBucketType)
-//				.setConfigEntry(Settings.copperBucket)
-//				.setContainerItem(copper_bucket)
-//				.setUnlocalizedName("copper_bucket_water");
+		copper_bucket = new SimpleBucket(SimpleOres.plugin, Blocks.AIR,
+				Content.copperBucketType).setConfigEntry(
+				Settings.copperBucket).setUnlocalizedName("copper_bucket");
+		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
+				Blocks.FLOWING_WATER, Content.copperBucketType)
+				.setConfigEntry(Settings.copperBucket)
+				.setContainerItem(copper_bucket)
+				.setUnlocalizedName("copper_bucket_water");
 	} // end doItems()
 
 	public static void doBlocks() {
@@ -139,7 +141,7 @@ public class Content {
 				Content.toolCopper).setConfigEntry(Settings.copperTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("copper_pickaxe");
-		copper_axe = new SimpleAxe(SimpleOres.plugin, Content.toolCopper)
+		copper_axe = new SimpleAxe(SimpleOres.plugin, Content.toolCopper, 7.0F, -3.1F)
 				.setConfigEntry(Settings.copperTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("copper_axe");
@@ -164,7 +166,7 @@ public class Content {
 				.setConfigEntry(Settings.tinTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("tin_pickaxe");
-		tin_axe = new SimpleAxe(SimpleOres.plugin, Content.toolTin)
+		tin_axe = new SimpleAxe(SimpleOres.plugin, Content.toolTin, 6.0F, -3.0F)
 				.setConfigEntry(Settings.tinTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("tin_axe");
@@ -189,7 +191,7 @@ public class Content {
 				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("mythril_pickaxe");
-		mythril_axe = new SimpleAxe(SimpleOres.plugin, Content.toolMythril)
+		mythril_axe = new SimpleAxe(SimpleOres.plugin, Content.toolMythril, 8.0F, -3.2F)
 				.setConfigEntry(Settings.mythrilTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("mythril_axe");
@@ -227,7 +229,7 @@ public class Content {
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("adamantium_pickaxe");
 		adamantium_axe = new SimpleAxe(SimpleOres.plugin,
-				Content.toolAdamantium)
+				Content.toolAdamantium, 8.0F, -3.0F)
 				.setConfigEntry(Settings.adamantiumTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("adamantium_axe");
@@ -256,7 +258,7 @@ public class Content {
 				.setConfigEntry(Settings.onyxTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("onyx_pickaxe");
-		onyx_axe = new SimpleAxe(SimpleOres.plugin, Content.toolOnyx)
+		onyx_axe = new SimpleAxe(SimpleOres.plugin, Content.toolOnyx, 9.0F, -3.0F)
 				.setConfigEntry(Settings.onyxTools)
 				.setCreativeTab(TabHelper.toolsTab())
 				.setUnlocalizedName("onyx_axe");
@@ -474,44 +476,47 @@ public class Content {
 		ResourceLocation soundName = new ResourceLocation("item.armor.equip_generic");
 		SoundEvent armorNoise = SoundEvent.REGISTRY.getObject(soundName);
 		
-		armorCopper = EnumHelper.addArmorMaterial("COPPER", "copper",
-				Settings.copperArmor.getDurability(), 
-				new int[] {
-						Settings.copperArmor.getHelmReduction(),
-						Settings.copperArmor.getChestReduction(),
-						Settings.copperArmor.getLegsReduction(),
-						Settings.copperArmor.getBootsReduction() },
-				Settings.copperArmor.getEnchantability(), armorNoise);
-		armorTin = EnumHelper.addArmorMaterial(
-				"TIN",
-				"tin",
+		armorCopper = 
+				EnumHelper.addArmorMaterial("COPPER", 
+						"copper", Settings.copperArmor.getDurability(), 
+						new int[] {
+								Settings.copperArmor.getHelmReduction(),
+								Settings.copperArmor.getChestReduction(),
+								Settings.copperArmor.getLegsReduction(),
+								Settings.copperArmor.getBootsReduction() },
+						Settings.copperArmor.getEnchantability(), armorNoise, 0.0F );
+		
+		armorTin = EnumHelper.addArmorMaterial("TIN", "tin",
 				Settings.tinArmor.getDurability(),
 				new int[] { Settings.tinArmor.getHelmReduction(),
 						Settings.tinArmor.getChestReduction(),
 						Settings.tinArmor.getLegsReduction(),
 						Settings.tinArmor.getBootsReduction() },
-				Settings.tinArmor.getEnchantability(), armorNoise);
-		armorMythril = EnumHelper.addArmorMaterial("MYTHRIL", "mythril",
+				Settings.tinArmor.getEnchantability(), armorNoise, 0.0F);
+		
+		armorMythril = EnumHelper.addArmorMaterial("MYTHRIL","mythril",
 				Settings.mythrilArmor.getDurability(), new int[] {
 						Settings.mythrilArmor.getHelmReduction(),
 						Settings.mythrilArmor.getChestReduction(),
 						Settings.mythrilArmor.getLegsReduction(),
 						Settings.mythrilArmor.getBootsReduction() },
-				Settings.mythrilArmor.getEnchantability(), armorNoise);
-		armorAdamantium = EnumHelper.addArmorMaterial("ADAMANTIUM",
-				"adamantium", Settings.adamantiumArmor.getDurability(),
+				Settings.mythrilArmor.getEnchantability(), armorNoise, 0.0F );
+		
+		armorAdamantium = EnumHelper.addArmorMaterial("ADAMANTIUM", "adamantium", 
+				Settings.adamantiumArmor.getDurability(),
 				new int[] { Settings.adamantiumArmor.getHelmReduction(),
 						Settings.adamantiumArmor.getChestReduction(),
 						Settings.adamantiumArmor.getLegsReduction(),
 						Settings.adamantiumArmor.getBootsReduction() },
-				Settings.adamantiumArmor.getEnchantability(), armorNoise);
+				Settings.adamantiumArmor.getEnchantability(), armorNoise, 1.0F);
+		
 		armorOnyx = EnumHelper.addArmorMaterial("ONYX", "onyx",
 				Settings.onyxArmor.getDurability(), new int[] {
 						Settings.onyxArmor.getHelmReduction(),
 						Settings.onyxArmor.getChestReduction(),
 						Settings.onyxArmor.getLegsReduction(),
 						Settings.onyxArmor.getBootsReduction() },
-				Settings.onyxArmor.getEnchantability(), armorNoise);
+				Settings.onyxArmor.getEnchantability(), armorNoise, 2.0F);
 	} // end setToolAndArmorStats()
 
 	public static void setRepairMaterials() {
@@ -536,9 +541,9 @@ public class Content {
 	public static void setBucketVariants() 
 	{
 		LogHelper.verbose("SimpleOres 2", "Setting bucket variants");
-//		copperBucketType.addVariant("empty", Content.copper_bucket, Blocks.air)
-//				.addVariant("water", Content.copper_bucket_water, Blocks.water)
-//				.setDestroyOnLava(true);
+		copperBucketType.addVariant("empty", Content.copper_bucket, Blocks.AIR)
+				.addVariant("water", Content.copper_bucket_water, Blocks.WATER)
+				.setDestroyOnLava(true);
 	}
 
 	public static void setAchievementTriggers() {
