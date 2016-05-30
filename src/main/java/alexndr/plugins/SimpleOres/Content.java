@@ -38,10 +38,10 @@ import alexndr.api.registry.ContentCategories;
  */
 public class Content {
 	// SimpleBucketType
-	public static SimpleBucketType copperBucketType = new SimpleBucketType(
-			"copper");
+	public static SimpleBucketType copperBucketType;
 
-	public static void preInitialize() {
+	public static void preInitialize() 
+	{
 		doItems();
 		doBlocks();
 		doTools();
@@ -75,14 +75,14 @@ public class Content {
 				Settings.onyxRod).setUnlocalizedName("onyx_rod");
 
 		// TODO bucket re-write.
-		copper_bucket = new SimpleBucket(SimpleOres.plugin, Blocks.AIR,
-				Content.copperBucketType).setConfigEntry(
-				Settings.copperBucket).setUnlocalizedName("copper_bucket");
-		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
-				Blocks.FLOWING_WATER, Content.copperBucketType)
-				.setConfigEntry(Settings.copperBucket)
-				.setContainerItem(copper_bucket)
-				.setUnlocalizedName("copper_bucket_water");
+//		copper_bucket = new SimpleBucket(SimpleOres.plugin, Blocks.AIR,
+//				Content.copperBucketType).setConfigEntry(
+//				Settings.copperBucket).setUnlocalizedName("copper_bucket");
+//		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
+//				Blocks.FLOWING_WATER, Content.copperBucketType)
+//				.setConfigEntry(Settings.copperBucket)
+//				.setUnlocalizedName("copper_bucket_water")
+//				.setContainerItem(copper_bucket);
 	} // end doItems()
 
 	public static void doBlocks() {
@@ -440,6 +440,11 @@ public class Content {
 	public static void setToolAndArmorStats() 
 	{
 		LogHelper.verbose("SimpleOres 2", "Setting Tool and Armor stats");
+		
+		// bucket materials
+		copperBucketType = new SimpleBucketType("copper");
+		copperBucketType.setDestroyOnLava(true);
+
 		// Tools
 		toolCopper = EnumHelper.addToolMaterial("COPPER",
 				Settings.copperTools.getHarvestLevel(),
