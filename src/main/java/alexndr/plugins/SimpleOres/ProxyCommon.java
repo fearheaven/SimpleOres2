@@ -25,6 +25,7 @@ public class ProxyCommon
 		//Content
 		SimpleCoreAPI.tabPreInit();
 		Content.setToolAndArmorStats();
+		Content.setBucketVariants();
 		Content.preInitialize();
 		Recipes.preInitialize();
 	} // end preInit
@@ -35,7 +36,6 @@ public class ProxyCommon
 		Recipes.initialize();
 		setTabIcons();
 		Content.setRepairMaterials();
-		Content.setBucketVariants();
 		Content.setAchievementTriggers();
 		setOreGenSettings();
     } // end load

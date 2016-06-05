@@ -82,10 +82,7 @@ public class Recipes {
 			Content.onyx_block });
 
 		//Bucket
-		// TODO temporary until SimpleBucket rewritten.
-//		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(Content.copper_bucket, true, new Object[]{
-//				"X X", " X ", Character.valueOf('X'), "ingotCopper"}));
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(Items.BUCKET, true, new Object[]{
+		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(Content.copper_bucket, true, new Object[]{
 				"X X", " X ", Character.valueOf('X'), "ingotCopper"}));
 
 		//Rods

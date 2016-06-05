@@ -3,7 +3,6 @@ package alexndr.plugins.SimpleOres;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -15,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fluids.FluidRegistry;
 import alexndr.api.content.blocks.SimpleBlock;
 import alexndr.api.content.items.SimpleArmor;
 import alexndr.api.content.items.SimpleAxe;
@@ -75,14 +75,15 @@ public class Content {
 				Settings.onyxRod).setUnlocalizedName("onyx_rod");
 
 		// TODO bucket re-write.
-//		copper_bucket = new SimpleBucket(SimpleOres.plugin, Blocks.AIR,
-//				Content.copperBucketType).setConfigEntry(
-//				Settings.copperBucket).setUnlocalizedName("copper_bucket");
-//		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
-//				Blocks.FLOWING_WATER, Content.copperBucketType)
-//				.setConfigEntry(Settings.copperBucket)
-//				.setUnlocalizedName("copper_bucket_water")
-//				.setContainerItem(copper_bucket);
+		copper_bucket = new SimpleBucket(SimpleOres.plugin, null,
+				Content.copperBucketType).setConfigEntry(
+				Settings.copperBucket).setUnlocalizedName("copper_bucket");
+		
+		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
+				 new ItemStack(copper_bucket), Content.copperBucketType)
+				.setConfigEntry(Settings.copperBucket)
+				.setUnlocalizedName("copper_bucket_water")
+				.setContainerItem(copper_bucket);
 	} // end doItems()
 
 	public static void doBlocks() {
@@ -441,10 +442,6 @@ public class Content {
 	{
 		LogHelper.verbose("SimpleOres 2", "Setting Tool and Armor stats");
 		
-		// bucket materials
-		copperBucketType = new SimpleBucketType("copper");
-		copperBucketType.setDestroyOnLava(true);
-
 		// Tools
 		toolCopper = EnumHelper.addToolMaterial("COPPER",
 				Settings.copperTools.getHarvestLevel(),
@@ -542,13 +539,14 @@ public class Content {
 		armorOnyx.customCraftingMaterial = Content.onyx_gem;
 	}
 
-	// TODO major rewrite of bucket code
 	public static void setBucketVariants() 
 	{
 		LogHelper.verbose("SimpleOres 2", "Setting bucket variants");
-		copperBucketType.addVariant("empty", Content.copper_bucket, Blocks.AIR)
-				.addVariant("water", Content.copper_bucket_water, Blocks.WATER)
-				.setDestroyOnLava(true);
+		copperBucketType = new SimpleBucketType("copper");
+		
+		// should no longer need empty bucket variant...
+		copperBucketType.addVariant("water", Content.copper_bucket_water, 
+									FluidRegistry.WATER).setDestroyOnLava(true);
 	}
 
 	public static void setAchievementTriggers() {
