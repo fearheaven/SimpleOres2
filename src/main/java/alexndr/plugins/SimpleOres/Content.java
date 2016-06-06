@@ -74,7 +74,7 @@ public class Content {
 				ContentCategories.Item.MATERIAL).setConfigEntry(
 				Settings.onyxRod).setUnlocalizedName("onyx_rod");
 
-		// TODO bucket re-write.
+		// bucket re-write.
 		copper_bucket = new SimpleBucket(SimpleOres.plugin, null,
 				Content.copperBucketType).setConfigEntry(
 				Settings.copperBucket).setUnlocalizedName("copper_bucket");
