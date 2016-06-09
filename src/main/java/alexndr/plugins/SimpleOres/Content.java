@@ -82,8 +82,7 @@ public class Content {
 		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
 				 new ItemStack(copper_bucket), Content.copperBucketType)
 				.setConfigEntry(Settings.copperBucket)
-				.setUnlocalizedName("copper_bucket_water")
-				.setContainerItem(copper_bucket);
+				.setUnlocalizedName("copper_bucket_water");
 	} // end doItems()
 
 	public static void doBlocks() {
