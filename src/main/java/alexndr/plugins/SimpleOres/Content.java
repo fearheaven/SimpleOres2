@@ -42,6 +42,9 @@ public class Content {
 
 	public static void preInitialize() 
 	{
+		setToolAndArmorStats();
+		setBucketVariants();
+
 		doItems();
 		doBlocks();
 		doTools();
@@ -83,6 +86,10 @@ public class Content {
 				 new ItemStack(copper_bucket), Content.copperBucketType)
 				.setConfigEntry(Settings.copperBucket)
 				.setUnlocalizedName("copper_bucket_water");
+		
+		copperBucketType.addVariant("water", copper_bucket_water, 
+									FluidRegistry.WATER);
+
 	} // end doItems()
 
 	public static void doBlocks() {
@@ -544,9 +551,9 @@ public class Content {
 		copperBucketType = new SimpleBucketType("copper");
 		copperBucketType.setDestroyOnLava(true);
 		
-		// should no longer need empty bucket variant...
-		copperBucketType.addVariant("water", Content.copper_bucket_water, 
-									FluidRegistry.WATER);
+//		// should no longer need empty bucket variant...
+//		copperBucketType.addVariant("water", Content.copper_bucket_water, 
+//									FluidRegistry.WATER);
 	}
 
 	public static void setAchievementTriggers() {

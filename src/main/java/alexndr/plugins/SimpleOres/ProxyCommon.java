@@ -24,8 +24,6 @@ public class ProxyCommon
 		
 		//Content
 		SimpleCoreAPI.tabPreInit();
-		Content.setToolAndArmorStats();
-		Content.setBucketVariants();
 		Content.preInitialize();
 		Recipes.preInitialize();
 	} // end preInit
