@@ -542,10 +542,11 @@ public class Content {
 	{
 		LogHelper.verbose("SimpleOres 2", "Setting bucket variants");
 		copperBucketType = new SimpleBucketType("copper");
+		copperBucketType.setDestroyOnLava(true);
 		
 		// should no longer need empty bucket variant...
 		copperBucketType.addVariant("water", Content.copper_bucket_water, 
-									FluidRegistry.WATER).setDestroyOnLava(true);
+									FluidRegistry.WATER);
 	}
 
 	public static void setAchievementTriggers() {
