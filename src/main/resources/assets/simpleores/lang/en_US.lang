@@ -116,7 +116,3 @@ tips.flameTooltip=+Flame
 tips.knockbackTooltip=+Knockback
 tips.zoomTooltip=+Zoom
 tips.efficiencyTooltip=+Efficiency
-
-//Updater
-simpleores.updateMessage1=§3SimpleOres §ris out of date. The latest version is §c
-simpleores.updateMessage2=§r. Please update from §9http://bit.ly/SimpleOres

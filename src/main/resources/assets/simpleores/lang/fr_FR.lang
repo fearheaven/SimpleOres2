@@ -1,0 +1,116 @@
+//blocks
+tile.copper_ore.name=Minerai de Cuivre
+tile.copper_block.name=Bloc de Cuivre
+tile.tin_ore.name=Minerai d'Étain
+tile.tin_block.name=Bloc d'Étain
+tile.mythril_ore.name=Minerai de Mythril
+tile.mythril_block.name=Bloc de Mythril
+tile.adamantium_ore.name=Minerai d'Adamantium
+tile.adamantium_block.name=Bloc d'Adamantium
+tile.onyx_ore.name=Minerai d'Onyx
+tile.onyx_block.name=Bloc d'Onyx
+
+//Items
+item.copper_ingot.name=Lingot de Cuivre
+item.tin_ingot.name=Lingot d'Étain
+item.mythril_ingot.name=Lingot de Mythril
+item.adamantium_ingot.name=Lingot d'Adamantium
+item.onyx_gem.name=Onyx
+item.copper_bucket.name=Sceau en Cuivre
+item.copper_bucket_water.name=Sceau d'eau en Cuivre
+item.mythril_rod.name=Batton de Mythril
+item.onyx_rod.name=Batton d'Onyx
+
+//Tools
+item.copper_pickaxe.name=Pioche en Cuivre
+item.copper_axe.name=Hache en Cuivre
+item.copper_shovel.name=Pelle en Cuivre
+item.copper_sword.name=Épée en Cuivre
+item.copper_hoe.name=Hache en Cuivre
+item.tin_pickaxe.name=Pioche en Étain
+item.tin_axe.name=Hache en Étain
+item.tin_shovel.name=Pelle en Étain
+item.tin_sword.name=Épée en Étain
+item.tin_hoe.name=Houe en Étain
+item.mythril_pickaxe.name=Pioche en Mythril
+item.mythril_axe.name=Hache en Mythril
+item.mythril_shovel.name=Pelle en Mythril
+item.mythril_sword.name=Épée en Mythril
+item.mythril_hoe.name=Houe en Mythril
+item.adamantium_pickaxe.name=Pioche en Adamantium
+item.adamantium_axe.name=Hache en Adamantium
+item.adamantium_shovel.name=Pelle en Adamantium
+item.adamantium_sword.name=Épée en Adamantium
+item.adamantium_hoe.name=Houe en Adamantium
+item.onyx_pickaxe.name=Pioche en Onyx
+item.onyx_axe.name=Hache en Onyx
+item.onyx_shovel.name=Pelle en Onyx
+item.onyx_sword.name=Épée en Onyx
+item.onyx_hoe.name=Houe en Onyx
+item.mythril_bow.name=Arc en Mythril
+item.onyx_bow.name=Arc en Onyx
+item.tin_shears.name=Cisailles en Étain
+item.adamantium_shears.name=Cisailles en Adamantium
+item.onyx_shears.name=Cisailles en Onyx
+
+//Armor
+item.copper_helmet.name=Casque en Cuivre
+item.copper_chestplate.name=Plastron en Cuivre
+item.copper_leggings.name=Jambières en Cuivre
+item.copper_boots.name=Bottes en Cuivre
+item.tin_helmet.name=Casque en Étain
+item.tin_chestplate.name=Plastron en Étain
+item.tin_leggings.name=Jambières en Étain
+item.tin_boots.name=Bottes en Étain
+item.mythril_helmet.name=Casque en Mythril
+item.mythril_chestplate.name=Plastron en Mythril
+item.mythril_leggings.name=Jambières en Mythril
+item.mythril_boots.name=Bottes en Mythril
+item.adamantium_helmet.name=Casque en Adamantium
+item.adamantium_chestplate.name=Plastron en Adamantium
+item.adamantium_leggings.name=Jambières Adamantium
+item.adamantium_boots.name=Bottes en Adamantium
+item.onyx_helmet.name=Casque en Onyx
+item.onyx_chestplate.name=Plastron en Onyx
+item.onyx_leggings.name=Jambière en Onyx
+item.onyx_boots.name=Bottes en Onyx
+
+//Achievements
+achievement.copperAch=Bienvenu dans SimpleOres!
+achievement.copperAch.desc=Commence ton aventure SimpleOres en ramassant du Cuivre
+achievement.tinAch=Pas de l'Argent
+achievement.tinAch.desc=Ça ne devrai pas être trop dur d'en trouver
+achievement.mythrilAch=Ooh, c'est joli!
+achievement.mythrilAch.desc=Creuse profondément pour trouver du Mythril
+achievement.adamantiumAch=Le vert c'est bien
+achievement.adamantiumAch.desc=C'est rapide comme l'éclair!
+achievement.onyxAch=Minerai ninja
+achievement.onyxAch.desc=Bonne chance pour en trouver
+
+achievement.copperPickAch=Amélioration II?
+achievement.copperPickAch.desc=Je suppose que c'est mieux que de la Pierre...
+achievement.copperBucketAch=Attention: Ne pas utiliser avec de la Lave
+achievement.copperBucketAch.desc=Économise ton Fer, fais un seau en Cuivre!
+achievement.tinChestplateAch.desc=Ça n'a pas l'air pratique, mais essaie quand même
+achievement.tinShearsAch=Qui peut bien utiliser ça?
+achievement.tinShearsAch.desc=Parcque des cisailles normal tient trop longtemps
+achievement.mythrilAxeAch=Ça en jette!
+achievement.mythrilAxeAch.desc=Fabrique une Hache en Mythril pour une amélioration significative au Fer
+achievement.mythrilBowAch=Un Arc mythic
+achievement.mythrilBowAch.desc=Forge un nouvel Arc avec des propriétées magique
+achievement.adamantiumLegsAch=Enfile
+achievement.adamantiumLegsAch.desc=Démarque-toi de la foule avec une paire de jambières stylées en Adamantium!
+achievement.adamantiumShearsAch=Tonte de Moutons sans fin
+achievement.adamantiumShearsAch.desc=Enfin, des cisailles qui ne se cassent pas instantannément!
+achievement.onyxSwordAch=Poutrage absolu
+achievement.onyxSwordAch.desc=Fabrique une Épée en Onyx. Tes ennemis trembleront de peur
+achievement.onyxBowAch=Pyromane
+achievement.onyxBowAch.desc=Brûle tes ennemis avec cet Arc tout droit sorti des enfers
+
+
+//Bow Tooltips
+tips.damageTooltip=+Damage
+tips.flameTooltip=+Flame
+tips.knockbackTooltip=+Knockback
+tips.zoomTooltip=+Zoom
+tips.efficiencyTooltip=+Efficiency
