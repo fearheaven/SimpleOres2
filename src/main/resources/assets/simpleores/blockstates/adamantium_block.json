@@ -1,5 +1,11 @@
 {
+	"forge_marker" : 1,
+	"defaults": {
+		"textures": { "all": "simpleores:blocks/adamantium_block" }
+	},
 	"variants": {
-		"normal": { "model": "simpleores:adamantium_block" }
+		"normal": { "model" : "cube_all" },
+		"inventory": { "model" : "cube_all" }
 	}
 }
+

@@ -1,5 +1,10 @@
 {
+	"forge_marker" : 1,
+	"defaults": {
+		"textures": { "all": "simpleores:blocks/tin_block" }
+	},
 	"variants": {
-		"normal": { "model": "simpleores:tin_block" }
+		"normal": { "model" : "cube_all" },
+		"inventory": { "model" : "cube_all" }
 	}
 }
