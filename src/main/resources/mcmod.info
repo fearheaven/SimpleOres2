@@ -5,7 +5,7 @@
 "description": "A simple ore plugin for SimpleCore API, featuring 5 unique, balanced ores.",
 "version": "${version}",
 "credits": "Created by AleXndrTheGr8st, updated by Sinhika",
-"logoFile": "/assets/simplecore/logos/SimpleOres.png",
+"logoFile": "assets/simplecore/logos/SimpleOres.png",
 "mcversion": "${mcversion}",
 "url": "http://minecraft.curseforge.com/projects/simpleores",
 "updateUrl": "",

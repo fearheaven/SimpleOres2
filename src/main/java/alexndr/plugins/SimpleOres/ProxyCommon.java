@@ -45,8 +45,10 @@ public class ProxyCommon
 	private static void setTabIcons() 
 	{
 		LogHelper.verbose("SimpleOres 2", "Setting tab icons");
-		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.copper_ore), Item.getItemFromBlock(Content.adamantium_block), 
-						Content.mythril_ingot, Content.onyx_pickaxe, Content.copper_sword);
+		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.copper_ore), 
+					Item.getItemFromBlock(Content.adamantium_block), 
+					Content.mythril_ingot, Content.onyx_pickaxe, Content.copper_sword,
+					Item.getItemFromBlock(Blocks.FURNACE));
 		SimpleCoreAPI.setTabIcons(list);
 	}
 	
