@@ -49,15 +49,15 @@ public class Settings {
 			
 			//Blocks
 			copperOre = settings.get(new ConfigBlock("Copper Ore", "Ores").setHardness(1.7F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(1).setHarvestTool("pickaxe")
-				.setSpawnRate(35).setVeinSize(10).setMinHeight(0).setMaxHeight(90).setCreativeTab("SimpleBlocks")).asConfigBlock();
+				.setSpawnRate(35).setVeinSize(10).setMinHeight(1).setMaxHeight(90).setCreativeTab("SimpleBlocks")).asConfigBlock();
 			tinOre = settings.get(new ConfigBlock("Tin Ore", "Ores").setHardness(3.0F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(1).setHarvestTool("pickaxe")
-				.setSpawnRate(30).setVeinSize(10).setMinHeight(0).setMaxHeight(90).setCreativeTab("SimpleBlocks")).asConfigBlock();
+				.setSpawnRate(30).setVeinSize(10).setMinHeight(1).setMaxHeight(90).setCreativeTab("SimpleBlocks")).asConfigBlock();
 			mythrilOre = settings.get(new ConfigBlock("Mythril Ore", "Ores").setHardness(4.0F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-				.setSpawnRate(10).setVeinSize(8).setMinHeight(0).setMaxHeight(40).setCreativeTab("SimpleBlocks")).asConfigBlock();
+				.setSpawnRate(10).setVeinSize(8).setMinHeight(1).setMaxHeight(40).setCreativeTab("SimpleBlocks")).asConfigBlock();
 			adamantiumOre = settings.get(new ConfigBlock("Adamantium Ore", "Ores").setHardness(5.0F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
-				.setSpawnRate(6).setVeinSize(6).setMinHeight(0).setMaxHeight(30).setCreativeTab("SimpleBlocks")).asConfigBlock();
+				.setSpawnRate(6).setVeinSize(6).setMinHeight(1).setMaxHeight(30).setCreativeTab("SimpleBlocks")).asConfigBlock();
 			onyxOre = settings.get(new ConfigBlock("Onyx Ore", "Ores").setHardness(7.0F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(3).setHarvestTool("pickaxe")
-				.setSpawnRate(6).setVeinSize(6).setMinHeight(0).setMaxHeight(255).setCreativeTab("SimpleBlocks")
+				.setSpawnRate(6).setVeinSize(6).setMinHeight(1).setMaxHeight(127).setCreativeTab("SimpleBlocks")
 				.setDropItem(true).setItemToDrop("simpleores:onyx_gem").setQuantityToDrop(1)).asConfigBlock();
 			
 			copperBlock = settings.get(new ConfigBlock("Block of Copper", "Blocks").setHardness(7.0F).setResistance(12.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
