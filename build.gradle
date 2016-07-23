@@ -48,7 +48,7 @@ minecraft {
     // Use non-default mappings at your own risk. they may not allways work.
     // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = "stable_20"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
 dependencies {
@@ -77,4 +77,13 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier "deobf"
+}
+
+artifacts {
+    archives deobfJar
 }

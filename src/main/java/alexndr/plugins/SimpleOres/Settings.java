@@ -55,7 +55,7 @@ public class Settings {
 			adamantiumOre = settings.get(new ConfigBlock("Adamantium Ore", "Ores").setHardness(5.0F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(2).setHarvestTool("pickaxe")
 				.setSpawnRate(6).setVeinSize(6).setMinHeight(0).setMaxHeight(30).setCreativeTab("SimpleBlocks")).asConfigBlock();
 			onyxOre = settings.get(new ConfigBlock("Onyx Ore", "Ores").setHardness(7.0F).setResistance(5.0F).setLightValue(0.0F).setHarvestLevel(3).setHarvestTool("pickaxe")
-				.setSpawnRate(6).setVeinSize(6).setMinHeight(0).setMaxHeight(255).setCreativeTab("SimpleBlocks")
+				.setSpawnRate(6).setVeinSize(6).setMinHeight(1).setMaxHeight(127).setCreativeTab("SimpleBlocks")
 				.setDropItem(true).setItemToDrop("simpleores:onyx_gem").setQuantityToDrop(1)).asConfigBlock();
 			
 			copperBlock = settings.get(new ConfigBlock("Block of Copper", "Blocks").setHardness(7.0F).setResistance(12.0F).setLightValue(0.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
