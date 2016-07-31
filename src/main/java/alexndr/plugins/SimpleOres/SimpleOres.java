@@ -1,19 +1,19 @@
 package alexndr.plugins.SimpleOres;
 
+import alexndr.api.logger.LogHelper;
+import alexndr.api.registry.Plugin;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import alexndr.api.logger.LogHelper;
-import alexndr.api.registry.Plugin;
 
 /**
  * @author AleXndrTheGr8st
  */
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
-	 dependencies = ModInfo.DEPENDENCIES,
+	 dependencies = ModInfo.DEPENDENCIES, acceptedMinecraftVersions=ModInfo.ACCEPTED_VERSIONS,
 	 updateJSON="https://raw.githubusercontent.com/Sinhika/SimpleOres2/dev1.9/update.json")
 public class SimpleOres 
 {
