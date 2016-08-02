@@ -22,7 +22,7 @@ public class Settings {
 	{
 		settings.setModName(ModInfo.NAME);
 		File configDir = new File(event.getModConfigurationDirectory(), "AleXndr");
-		File settingsFile = new File(configDir, "SimpleOres 2 Settings.xml");
+		File settingsFile = new File(configDir, "SimpleOres2_Settings.xml");
 		settings.setFile(settingsFile);
 
 		LogHelper.verbose(ModInfo.NAME, "Loading Settings...");
