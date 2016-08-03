@@ -15,7 +15,8 @@ import alexndr.api.logger.LogHelper;
 /**
  * @author AleXndrTheGr8st
  */
-public class Settings {
+public class Settings 
+{
 	private static Configuration settings = new Configuration();
 
 	public static void createOrLoadSettings(FMLPreInitializationEvent event) 
@@ -223,10 +224,12 @@ public class Settings {
 							.setEnchantability(15).setHelmReduction(5)
 							.setChestReduction(8).setLegsReduction(6)
 							.setBootsReduction(5)).asConfigArmor();
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			LogHelper.severe(ModInfo.NAME, "Failed to load settings");
 			e.printStackTrace();
-		} finally {
+		} 
+		finally {
 			settings.save();
 			LogHelper.verbose(ModInfo.NAME, "Settings loaded successfully");
 		}
