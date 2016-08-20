@@ -136,10 +136,10 @@ public class Content {
 				.setConfigEntry(Settings.adamantiumBlock)
 				.setStepSound(SoundType.METAL)
 				.setUnlocalizedName("adamantium_block");
-		onyx_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
+		onyx_block = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.onyxBlock)
-				.setStepSound(SoundType.METAL)
+				.setStepSound(SoundType.STONE)
 				.setUnlocalizedName("onyx_block");
 	} // end doBlocks()
 
