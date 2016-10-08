@@ -99,7 +99,7 @@ public class Settings
 							.setBeaconBase(true)).asConfigBlock();
 			onyxBlock = settings.get(
 					new ConfigBlock("Block of Onyx", "Blocks")
-							.setHardness(7.0F).setResistance(12.0F)
+							.setHardness(20.0F).setResistance(30.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
 							.setCreativeTab("SimpleDecorations")
