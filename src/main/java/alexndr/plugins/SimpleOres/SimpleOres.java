@@ -29,7 +29,7 @@ public class SimpleOres
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) 
 	{
-		LogHelper.info("SimpleOres 2", "Loading...");
+		LogHelper.info("SimpleOres2 Loading...");
 		proxy.preInit(event);
 	} // end preInit
 	
