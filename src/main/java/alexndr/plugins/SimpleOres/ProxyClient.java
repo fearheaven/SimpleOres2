@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 
-public class ProxyClient extends ProxyCommon 
+public class ProxyClient extends alexndr.plugins.SimpleOres.ProxyCommon 
 {
 	RenderItemHelper renderHelper = new RenderItemHelper(SimpleOres.plugin);
 	
