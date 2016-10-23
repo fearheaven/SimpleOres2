@@ -20,10 +20,10 @@ public class ProxyCommon
 	{
 		//Configuration
 		ContentRegistry.registerPlugin(SimpleOres.plugin);
+		SimpleCoreAPI.tabPreInit();
 		Settings.createOrLoadSettings(event);
 		
 		//Content
-		SimpleCoreAPI.tabPreInit();
 		Content.preInitialize();
 		Recipes.preInitialize();
 	} // end preInit

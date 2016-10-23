@@ -10,6 +10,7 @@ import alexndr.api.config.types.ConfigEntry;
 import alexndr.api.config.types.ConfigItem;
 import alexndr.api.config.types.ConfigTool;
 import alexndr.api.config.types.ConfigValue;
+import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 
 /**
@@ -37,35 +38,35 @@ public class Settings
 							.setResistance(5.0F).setLightValue(0.0F)
 							.setHarvestLevel(1).setHarvestTool("pickaxe")
 							.setSpawnRate(35).setVeinSize(10).setMinHeight(1)
-							.setMaxHeight(90).setCreativeTab("SimpleBlocks"))
+							.setMaxHeight(90).setCreativeTab(TabHelper.blocksTab().getTabLabel()))
 					.asConfigBlock();
 			tinOre = settings.get(
 					new ConfigBlock("Tin Ore", "Ores").setHardness(3.0F)
 							.setResistance(5.0F).setLightValue(0.0F)
 							.setHarvestLevel(1).setHarvestTool("pickaxe")
 							.setSpawnRate(30).setVeinSize(10).setMinHeight(1)
-							.setMaxHeight(90).setCreativeTab("SimpleBlocks"))
+							.setMaxHeight(90).setCreativeTab(TabHelper.blocksTab().getTabLabel()))
 					.asConfigBlock();
 			mythrilOre = settings.get(
 					new ConfigBlock("Mythril Ore", "Ores").setHardness(4.0F)
 							.setResistance(5.0F).setLightValue(0.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
 							.setSpawnRate(10).setVeinSize(8).setMinHeight(1)
-							.setMaxHeight(40).setCreativeTab("SimpleBlocks"))
+							.setMaxHeight(40).setCreativeTab(TabHelper.blocksTab().getTabLabel()))
 					.asConfigBlock();
 			adamantiumOre = settings.get(
 					new ConfigBlock("Adamantium Ore", "Ores").setHardness(5.0F)
 							.setResistance(5.0F).setLightValue(0.0F)
 							.setHarvestLevel(2).setHarvestTool("pickaxe")
 							.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
-							.setMaxHeight(30).setCreativeTab("SimpleBlocks"))
+							.setMaxHeight(30).setCreativeTab(TabHelper.blocksTab().getTabLabel()))
 					.asConfigBlock();
 			onyxOre = settings.get(
 					new ConfigBlock("Onyx Ore", "Ores").setHardness(7.0F)
 							.setResistance(5.0F).setLightValue(0.0F)
 							.setHarvestLevel(3).setHarvestTool("pickaxe")
 							.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
-							.setMaxHeight(127).setCreativeTab("SimpleBlocks")
+							.setMaxHeight(127).setCreativeTab(TabHelper.blocksTab().getTabLabel())
 							.setDropItem(true)
 							.setItemToDrop("simpleores:onyx_gem")
 							.setQuantityToDrop(1)).asConfigBlock();
@@ -75,66 +76,66 @@ public class Settings
 							.setHardness(7.0F).setResistance(12.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
-							.setCreativeTab("SimpleDecorations")
+							.setCreativeTab(TabHelper.decorationsTab().getTabLabel())
 							.setBeaconBase(true)).asConfigBlock();
 			tinBlock = settings.get(
 					new ConfigBlock("Block of Tin", "Blocks").setHardness(7.0F)
 							.setResistance(12.0F).setLightValue(0.0F)
 							.setHarvestLevel(0).setHarvestTool("pickaxe")
-							.setCreativeTab("SimpleDecorations")
+							.setCreativeTab(TabHelper.decorationsTab().getTabLabel())
 							.setBeaconBase(true)).asConfigBlock();
 			mythrilBlock = settings.get(
 					new ConfigBlock("Block of Mythril", "Blocks")
 							.setHardness(7.0F).setResistance(12.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
-							.setCreativeTab("SimpleDecorations")
+							.setCreativeTab(TabHelper.decorationsTab().getTabLabel())
 							.setBeaconBase(true)).asConfigBlock();
 			adamantiumBlock = settings.get(
 					new ConfigBlock("Block of Adamantium", "Blocks")
 							.setHardness(7.0F).setResistance(12.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
-							.setCreativeTab("SimpleDecorations")
+							.setCreativeTab(TabHelper.decorationsTab().getTabLabel())
 							.setBeaconBase(true)).asConfigBlock();
 			onyxBlock = settings.get(
 					new ConfigBlock("Block of Onyx", "Blocks")
 							.setHardness(20.0F).setResistance(30.0F)
 							.setLightValue(0.0F).setHarvestLevel(0)
 							.setHarvestTool("pickaxe")
-							.setCreativeTab("SimpleDecorations")
+							.setCreativeTab(TabHelper.decorationsTab().getTabLabel())
 							.setBeaconBase(true)).asConfigBlock();
 
 			// Items
 			copperIngot = settings.get(
 					new ConfigItem("Copper Ingot", "Items").setStackSize(64)
-							.setCreativeTab("SimpleMaterials")
+							.setCreativeTab(TabHelper.materialsTab().getTabLabel())
 							.setSmeltingXP(0.4F)).asConfigItem();
 			tinIngot = settings.get(
 					new ConfigItem("Tin Ingot", "Items").setStackSize(64)
-							.setCreativeTab("SimpleMaterials")
+							.setCreativeTab(TabHelper.materialsTab().getTabLabel())
 							.setSmeltingXP(0.4F)).asConfigItem();
 			mythrilIngot = settings.get(
 					new ConfigItem("Mythril Ingot", "Items").setStackSize(64)
-							.setCreativeTab("SimpleMaterials")
+							.setCreativeTab(TabHelper.materialsTab().getTabLabel())
 							.setSmeltingXP(0.7F)).asConfigItem();
 			adamantiumIngot = settings.get(
 					new ConfigItem("Adamantium Ingot", "Items")
-							.setStackSize(64).setCreativeTab("SimpleMaterials")
+							.setStackSize(64).setCreativeTab(TabHelper.materialsTab().getTabLabel())
 							.setSmeltingXP(0.7F)).asConfigItem();
 			onyxGem = settings.get(
 					new ConfigItem("Onyx Gem", "Items").setStackSize(64)
-							.setCreativeTab("SimpleMaterials")
+							.setCreativeTab(TabHelper.materialsTab().getTabLabel())
 							.setSmeltingXP(1.0F)).asConfigItem();
 			mythrilRod = settings.get(
 					new ConfigItem("Mythril Rod", "Items").setStackSize(64)
-							.setCreativeTab("SimpleMaterials")).asConfigItem();
+							.setCreativeTab(TabHelper.materialsTab().getTabLabel())).asConfigItem();
 			onyxRod = settings.get(
 					new ConfigItem("Onyx Rod", "Items").setStackSize(64)
-							.setCreativeTab("SimpleMaterials")).asConfigItem();
+							.setCreativeTab(TabHelper.materialsTab().getTabLabel())).asConfigItem();
 			copperBucket = settings.get(
 					new ConfigItem("Copper Bucket", "Items").setStackSize(16)
-							.setCreativeTab("SimpleTools")).asConfigItem();
+							.setCreativeTab(TabHelper.toolsTab().getTabLabel())).asConfigItem();
 
 			// Tools
 			copperTools = settings.get(
@@ -172,8 +173,8 @@ public class Settings
 			mythrilBow.createNewValue("ZoomAmount").setDataType("@F")
 					.setCurrentValue("0.165").setDefaultValue("0.165");
 			mythrilBow.createNewValue("CreativeTab").setDataType("@S")
-					.setCurrentValue("SimpleCombat")
-					.setDefaultValue("SimpleCombat");
+					.setCurrentValue(TabHelper.combatTab().getTabLabel())
+					.setDefaultValue(TabHelper.combatTab().getTabLabel());
 			mythrilBow = settings.get(mythrilBow);
 			mythrilBowDamageModifier = mythrilBow
 					.getValueByName("DamageModifier");
@@ -189,8 +190,8 @@ public class Settings
 			onyxBow.createNewValue("ZoomAmount").setActive().setDataType("@F")
 					.setCurrentValue("0.165").setDefaultValue("0.165");
 			onyxBow.createNewValue("CreativeTab").setActive().setDataType("@S")
-					.setCurrentValue("SimpleCombat")
-					.setDefaultValue("SimpleCombat");
+					.setCurrentValue(TabHelper.combatTab().getTabLabel())
+					.setDefaultValue(TabHelper.combatTab().getTabLabel());
 			onyxBow = settings.get(onyxBow);
 			onyxBowDamageModifier = onyxBow.getValueByName("DamageModifier");
 			onyxBowFireToggle = onyxBow.getValueByName("FireArrows");
