@@ -55,37 +55,37 @@ public class Content {
 	public static void doItems() {
 		copper_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(
-				Settings.copperIngot).setUnlocalizedName("copper_ingot");
+				Settings.copperIngot).setUnlocalizedName("copper_ingot").setCreativeTab(TabHelper.materialsTab());
 		tin_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(Settings.tinIngot)
-				.setUnlocalizedName("tin_ingot");
+				.setUnlocalizedName("tin_ingot").setCreativeTab(TabHelper.materialsTab());
 		mythril_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(
-				Settings.mythrilIngot).setUnlocalizedName("mythril_ingot");
+				Settings.mythrilIngot).setUnlocalizedName("mythril_ingot").setCreativeTab(TabHelper.materialsTab());
 		adamantium_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(
 				Settings.adamantiumIngot)
-				.setUnlocalizedName("adamantium_ingot");
+				.setUnlocalizedName("adamantium_ingot").setCreativeTab(TabHelper.materialsTab());
 		onyx_gem = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(Settings.onyxGem)
-				.setUnlocalizedName("onyx_gem");
+				.setUnlocalizedName("onyx_gem").setCreativeTab(TabHelper.materialsTab());
 
 		mythril_rod = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.MATERIAL).setConfigEntry(
-				Settings.mythrilRod).setUnlocalizedName("mythril_rod");
+				Settings.mythrilRod).setUnlocalizedName("mythril_rod").setCreativeTab(TabHelper.materialsTab());
 		onyx_rod = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.MATERIAL).setConfigEntry(
-				Settings.onyxRod).setUnlocalizedName("onyx_rod");
+				Settings.onyxRod).setUnlocalizedName("onyx_rod").setCreativeTab(TabHelper.materialsTab());
 
 		// bucket re-write.
 		copper_bucket = new SimpleBucket(SimpleOres.plugin, null,
 				Content.copperBucketType).setConfigEntry(
-				Settings.copperBucket).setUnlocalizedName("copper_bucket");
+				Settings.copperBucket).setUnlocalizedName("copper_bucket").setCreativeTab(TabHelper.toolsTab());
 		
 		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
 				 new ItemStack(copper_bucket), Content.copperBucketType)
 				.setConfigEntry(Settings.copperBucket)
-				.setUnlocalizedName("copper_bucket_water");
+				.setUnlocalizedName("copper_bucket_water").setCreativeTab(TabHelper.toolsTab());
 		
 		copperBucketType.addVariant("water", copper_bucket_water, 
 									FluidRegistry.WATER);
@@ -96,50 +96,50 @@ public class Content {
 		copper_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.copperOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("copper_ore");
+				.setUnlocalizedName("copper_ore").setCreativeTab(TabHelper.blocksTab());
 		tin_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.tinOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("tin_ore");
+				.setUnlocalizedName("tin_ore").setCreativeTab(TabHelper.blocksTab());
 		mythril_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.mythrilOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("mythril_ore");
+				.setUnlocalizedName("mythril_ore").setCreativeTab(TabHelper.blocksTab());
 		adamantium_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.adamantiumOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("adamantium_ore");
+				.setUnlocalizedName("adamantium_ore").setCreativeTab(TabHelper.blocksTab());
 		onyx_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.onyxOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("onyx_ore");
+				.setUnlocalizedName("onyx_ore").setCreativeTab(TabHelper.blocksTab());
 
 		copper_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.copperBlock)
-				.setStepSound(SoundType.METAL)
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
 				.setUnlocalizedName("copper_block");
 		tin_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.tinBlock)
-				.setStepSound(SoundType.METAL)
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
 				.setUnlocalizedName("tin_block");
 		mythril_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.mythrilBlock)
-				.setStepSound(SoundType.METAL)
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
 				.setUnlocalizedName("mythril_block");
 		adamantium_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.adamantiumBlock)
-				.setStepSound(SoundType.METAL)
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
 				.setUnlocalizedName("adamantium_block");
 		onyx_block = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.onyxBlock)
-				.setStepSound(SoundType.STONE)
+				.setStepSound(SoundType.STONE).setCreativeTab(TabHelper.decorationsTab())
 				.setUnlocalizedName("onyx_block");
 	} // end doBlocks()
 
@@ -228,7 +228,7 @@ public class Content {
 				.setRepairMaterial(new ItemStack(mythril_rod))
 				.setZoomAmount(Settings.mythrilBowZoomAmount.asFloat())
 				.setConfigEntry(Settings.mythrilBow)
-				.setUnlocalizedName("mythril_bow");
+				.setUnlocalizedName("mythril_bow").setCreativeTab(TabHelper.combatTab());
 
 		adamantium_pickaxe = new SimplePickaxe(SimpleOres.plugin,
 				Content.toolAdamantium)
@@ -294,7 +294,7 @@ public class Content {
 				.setRepairMaterial(new ItemStack(onyx_rod))
 				.setZoomAmount(Settings.onyxBowZoomAmount.asFloat())
 				.setConfigEntry(Settings.onyxBow)
-				.setUnlocalizedName("onyx_bow");
+				.setUnlocalizedName("onyx_bow").setCreativeTab(TabHelper.combatTab());
 	} // end doTools()
 
 	public static void doArmor() {
