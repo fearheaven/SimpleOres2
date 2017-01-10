@@ -78,18 +78,10 @@ public class Content {
 				Settings.onyxRod).setUnlocalizedName("onyx_rod").setCreativeTab(TabHelper.materialsTab());
 
 		// bucket re-write.
-		copper_bucket = new SimpleBucket(SimpleOres.plugin, null,
-				Content.copperBucketType).setConfigEntry(
-				Settings.copperBucket).setUnlocalizedName("copper_bucket").setCreativeTab(TabHelper.toolsTab());
+		copper_bucket = new SimpleBucket(SimpleOres.plugin, Content.copperBucketType)
+		                .setConfigEntry(Settings.copperBucket).setUnlocalizedName("copper_bucket")
+		                .setCreativeTab(TabHelper.toolsTab());
 		
-		copper_bucket_water = new SimpleBucket(SimpleOres.plugin,
-				 new ItemStack(copper_bucket), Content.copperBucketType)
-				.setConfigEntry(Settings.copperBucket)
-				.setUnlocalizedName("copper_bucket_water").setCreativeTab(TabHelper.toolsTab());
-		
-		copperBucketType.addVariant("water", copper_bucket_water, 
-									FluidRegistry.WATER);
-
 	} // end doItems()
 
 	public static void doBlocks() {
@@ -550,10 +542,7 @@ public class Content {
 		LogHelper.verbose("SimpleOres 2", "Setting bucket variants");
 		copperBucketType = new SimpleBucketType("copper");
 		copperBucketType.setDestroyOnLava(true);
-		
-//		// should no longer need empty bucket variant...
-//		copperBucketType.addVariant("water", Content.copper_bucket_water, 
-//									FluidRegistry.WATER);
+	    copperBucketType.addVariant("water", FluidRegistry.WATER);
 	}
 
 	public static void setAchievementTriggers() {
