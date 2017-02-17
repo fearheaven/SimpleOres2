@@ -485,42 +485,44 @@ public class Content {
 				EnumHelper.addArmorMaterial("COPPER", 
 						"copper", Settings.copperArmor.getDurability(), 
 						new int[] {
-								Settings.copperArmor.getHelmReduction(),
-								Settings.copperArmor.getChestReduction(),
+								Settings.copperArmor.getBootsReduction(),
 								Settings.copperArmor.getLegsReduction(),
-								Settings.copperArmor.getBootsReduction() },
+								Settings.copperArmor.getChestReduction(),
+								Settings.copperArmor.getHelmReduction() },
 						Settings.copperArmor.getEnchantability(), armorNoise, 0.0F );
 		
 		armorTin = EnumHelper.addArmorMaterial("TIN", "tin",
 				Settings.tinArmor.getDurability(),
-				new int[] { Settings.tinArmor.getHelmReduction(),
-						Settings.tinArmor.getChestReduction(),
-						Settings.tinArmor.getLegsReduction(),
-						Settings.tinArmor.getBootsReduction() },
+				new int[] { 
+                                Settings.tinArmor.getBootsReduction(),
+                                Settings.tinArmor.getLegsReduction(),
+                                Settings.tinArmor.getChestReduction(),
+                                Settings.tinArmor.getHelmReduction() },
 				Settings.tinArmor.getEnchantability(), armorNoise, 0.0F);
 		
 		armorMythril = EnumHelper.addArmorMaterial("MYTHRIL","mythril",
 				Settings.mythrilArmor.getDurability(), new int[] {
-						Settings.mythrilArmor.getHelmReduction(),
-						Settings.mythrilArmor.getChestReduction(),
-						Settings.mythrilArmor.getLegsReduction(),
-						Settings.mythrilArmor.getBootsReduction() },
+                                Settings.mythrilArmor.getBootsReduction(),
+                                Settings.mythrilArmor.getLegsReduction(),
+                                Settings.mythrilArmor.getChestReduction(),
+                                Settings.mythrilArmor.getHelmReduction() },
 				Settings.mythrilArmor.getEnchantability(), armorNoise, 0.0F );
 		
 		armorAdamantium = EnumHelper.addArmorMaterial("ADAMANTIUM", "adamantium", 
 				Settings.adamantiumArmor.getDurability(),
-				new int[] { Settings.adamantiumArmor.getHelmReduction(),
-						Settings.adamantiumArmor.getChestReduction(),
-						Settings.adamantiumArmor.getLegsReduction(),
-						Settings.adamantiumArmor.getBootsReduction() },
+				new int[] { 
+                                Settings.adamantiumArmor.getBootsReduction(),
+                                Settings.adamantiumArmor.getLegsReduction(),
+                                Settings.adamantiumArmor.getChestReduction(),
+                                Settings.adamantiumArmor.getHelmReduction() },
 				Settings.adamantiumArmor.getEnchantability(), armorNoise, 1.0F);
 		
 		armorOnyx = EnumHelper.addArmorMaterial("ONYX", "onyx",
 				Settings.onyxArmor.getDurability(), new int[] {
-						Settings.onyxArmor.getHelmReduction(),
-						Settings.onyxArmor.getChestReduction(),
-						Settings.onyxArmor.getLegsReduction(),
-						Settings.onyxArmor.getBootsReduction() },
+                                Settings.onyxArmor.getBootsReduction(),
+                                Settings.onyxArmor.getLegsReduction(),
+                                Settings.onyxArmor.getChestReduction(),
+                                Settings.onyxArmor.getHelmReduction() },
 				Settings.onyxArmor.getEnchantability(), armorNoise, 2.0F);
 	} // end setToolAndArmorStats()
 
