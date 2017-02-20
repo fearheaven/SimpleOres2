@@ -28,6 +28,7 @@ import alexndr.api.content.items.SimplePickaxe;
 import alexndr.api.content.items.SimpleShears;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
+import alexndr.api.helpers.game.ArmorMaterialHelper;
 import alexndr.api.helpers.game.StatTriggersHelper;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
@@ -537,11 +538,11 @@ public class Content {
 		toolOnyx.setRepairItem(new ItemStack(Content.onyx_gem));
 
 		// Armor
-		armorCopper.customCraftingMaterial = Content.copper_ingot;
-		armorTin.customCraftingMaterial = Content.tin_ingot;
-		armorMythril.customCraftingMaterial = Content.mythril_ingot;
-		armorAdamantium.customCraftingMaterial = Content.adamantium_ingot;
-		armorOnyx.customCraftingMaterial = Content.onyx_gem;
+		ArmorMaterialHelper.setRepairItem(armorCopper, new ItemStack(Content.copper_ingot));
+		ArmorMaterialHelper.setRepairItem(armorTin, new ItemStack(Content.tin_ingot));
+		ArmorMaterialHelper.setRepairItem(armorMythril, new ItemStack(Content.mythril_ingot));
+		ArmorMaterialHelper.setRepairItem(armorAdamantium, new ItemStack(Content.adamantium_ingot));
+		ArmorMaterialHelper.setRepairItem(armorOnyx, new ItemStack(Content.onyx_gem));
 	}
 
 	public static void setBucketVariants() 
