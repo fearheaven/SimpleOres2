@@ -28,6 +28,7 @@ import alexndr.api.content.items.SimplePickaxe;
 import alexndr.api.content.items.SimpleShears;
 import alexndr.api.content.items.SimpleShovel;
 import alexndr.api.content.items.SimpleSword;
+import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.ArmorMaterialHelper;
 import alexndr.api.helpers.game.StatTriggersHelper;
 import alexndr.api.helpers.game.TabHelper;
@@ -53,40 +54,48 @@ public class Content {
 		doAchievements();
 	} // end preInitialize()
 
-	public static void doItems() {
+	public static void doItems() 
+	{
 		copper_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(
-				Settings.copperIngot).setUnlocalizedName("copper_ingot").setCreativeTab(TabHelper.materialsTab());
+				Settings.copperIngot).setUnlocalizedName("copper_ingot")
+		        .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 		tin_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(Settings.tinIngot)
-				.setUnlocalizedName("tin_ingot").setCreativeTab(TabHelper.materialsTab());
+				.setUnlocalizedName("tin_ingot").setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 		mythril_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(
-				Settings.mythrilIngot).setUnlocalizedName("mythril_ingot").setCreativeTab(TabHelper.materialsTab());
+				Settings.mythrilIngot).setUnlocalizedName("mythril_ingot")
+		                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 		adamantium_ingot = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(
 				Settings.adamantiumIngot)
-				.setUnlocalizedName("adamantium_ingot").setCreativeTab(TabHelper.materialsTab());
+				.setUnlocalizedName("adamantium_ingot")
+				.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 		onyx_gem = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.INGOT).setConfigEntry(Settings.onyxGem)
-				.setUnlocalizedName("onyx_gem").setCreativeTab(TabHelper.materialsTab());
+				.setUnlocalizedName("onyx_gem")
+				.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 
 		mythril_rod = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.MATERIAL).setConfigEntry(
-				Settings.mythrilRod).setUnlocalizedName("mythril_rod").setCreativeTab(TabHelper.materialsTab());
+				Settings.mythrilRod).setUnlocalizedName("mythril_rod")
+		                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 		onyx_rod = new SimpleItem(SimpleOres.plugin,
 				ContentCategories.Item.MATERIAL).setConfigEntry(
-				Settings.onyxRod).setUnlocalizedName("onyx_rod").setCreativeTab(TabHelper.materialsTab());
+				Settings.onyxRod).setUnlocalizedName("onyx_rod")
+		                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 
 		// bucket re-write.
 		// empty copper bucket
 		copper_bucket = new SimpleBucket(SimpleOres.plugin, null, Content.copperBucketType)
 		                .setConfigEntry(Settings.copperBucket).setUnlocalizedName("copper_bucket")
-		                .setCreativeTab(TabHelper.toolsTab());
+		                .setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 		// copper bucket filled with water
 		copper_bucket_water = new SimpleBucket(SimpleOres.plugin, new ItemStack(copper_bucket), 
 		                Content.copperBucketType).setConfigEntry(Settings.copperBucket)
-		                .setUnlocalizedName("copper_bucket_water").setCreativeTab(TabHelper.toolsTab());
+		                .setUnlocalizedName("copper_bucket_water")
+		                .setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 		copperBucketType.addVariant("water", copper_bucket_water, FluidRegistry.WATER);		                
 	} // end doItems()
 
@@ -94,127 +103,127 @@ public class Content {
 		copper_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.copperOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("copper_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("copper_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		tin_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.tinOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("tin_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("tin_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		mythril_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.mythrilOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("mythril_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("mythril_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		adamantium_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE)
 				.setConfigEntry(Settings.adamantiumOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("adamantium_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("adamantium_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 		onyx_ore = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.ORE).setConfigEntry(Settings.onyxOre)
 				.setStepSound(SoundType.STONE)
-				.setUnlocalizedName("onyx_ore").setCreativeTab(TabHelper.blocksTab());
+				.setUnlocalizedName("onyx_ore").setCreativeTab(TabHelper.blocksTab(SimpleCoreAPI.plugin));
 
 		copper_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.copperBlock)
-				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_block");
 		tin_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.tinBlock)
-				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_block");
 		mythril_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.mythrilBlock)
-				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_block");
 		adamantium_block = new SimpleBlock(SimpleOres.plugin, Material.IRON,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.adamantiumBlock)
-				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab())
+				.setStepSound(SoundType.METAL).setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_block");
 		onyx_block = new SimpleBlock(SimpleOres.plugin, Material.ROCK,
 				ContentCategories.Block.GENERAL)
 				.setConfigEntry(Settings.onyxBlock)
-				.setStepSound(SoundType.STONE).setCreativeTab(TabHelper.decorationsTab())
+				.setStepSound(SoundType.STONE).setCreativeTab(TabHelper.decorationsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_block");
 	} // end doBlocks()
 
 	public static void doTools() {
 		copper_pickaxe = new SimplePickaxe(SimpleOres.plugin,
 				Content.toolCopper).setConfigEntry(Settings.copperTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_pickaxe");
 		copper_axe = new SimpleAxe(SimpleOres.plugin, Content.toolCopper, 7.0F, -3.1F)
 				.setConfigEntry(Settings.copperTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_axe");
 		copper_shovel = new SimpleShovel(SimpleOres.plugin,
 				Content.toolCopper).setConfigEntry(Settings.copperTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_shovel");
 		copper_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolCopper)
 				.setConfigEntry(Settings.copperTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_hoe");
 		copper_sword = new SimpleSword(SimpleOres.plugin, Content.toolCopper)
 				.setConfigEntry(Settings.copperTools)
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_sword");
 		copper_shears = new SimpleShears(SimpleOres.plugin,
 				Content.toolCopper).setConfigEntry(Settings.copperTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_shears");
 
 		tin_pickaxe = new SimplePickaxe(SimpleOres.plugin, Content.toolTin)
 				.setConfigEntry(Settings.tinTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_pickaxe");
 		tin_axe = new SimpleAxe(SimpleOres.plugin, Content.toolTin, 6.0F, -3.0F)
 				.setConfigEntry(Settings.tinTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_axe");
 		tin_shovel = new SimpleShovel(SimpleOres.plugin, Content.toolTin)
 				.setConfigEntry(Settings.tinTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_shovel");
 		tin_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolTin)
 				.setConfigEntry(Settings.tinTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_hoe");
 		tin_sword = new SimpleSword(SimpleOres.plugin, Content.toolTin)
 				.setConfigEntry(Settings.tinTools)
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_sword");
 		tin_shears = new SimpleShears(SimpleOres.plugin, Content.toolTin)
 				.setConfigEntry(Settings.tinTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_shears");
 
 		mythril_pickaxe = new SimplePickaxe(SimpleOres.plugin,
 				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_pickaxe");
 		mythril_axe = new SimpleAxe(SimpleOres.plugin, Content.toolMythril, 8.0F, -3.2F)
 				.setConfigEntry(Settings.mythrilTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_axe");
 		mythril_shovel = new SimpleShovel(SimpleOres.plugin,
 				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_shovel");
 		mythril_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolMythril)
 				.setConfigEntry(Settings.mythrilTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_hoe");
 		mythril_sword = new SimpleSword(SimpleOres.plugin,
 				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_sword");
 		mythril_shears = new SimpleShears(SimpleOres.plugin,
 				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_shears");
 		mythril_bow = new SimpleBow(SimpleOres.plugin, 750)
 				.setEffect(SimpleBowEffects.damageEffect,
@@ -226,62 +235,62 @@ public class Content {
 				.setRepairMaterial(new ItemStack(mythril_rod))
 				.setZoomAmount(Settings.mythrilBowZoomAmount.asFloat())
 				.setConfigEntry(Settings.mythrilBow)
-				.setUnlocalizedName("mythril_bow").setCreativeTab(TabHelper.combatTab());
+				.setUnlocalizedName("mythril_bow").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
 
 		adamantium_pickaxe = new SimplePickaxe(SimpleOres.plugin,
 				Content.toolAdamantium)
 				.setConfigEntry(Settings.adamantiumTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_pickaxe");
 		adamantium_axe = new SimpleAxe(SimpleOres.plugin,
 				Content.toolAdamantium, 8.0F, -3.0F)
 				.setConfigEntry(Settings.adamantiumTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_axe");
 		adamantium_shovel = new SimpleShovel(SimpleOres.plugin,
 				Content.toolAdamantium)
 				.setConfigEntry(Settings.adamantiumTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_shovel");
 		adamantium_hoe = new SimpleHoe(SimpleOres.plugin,
 				Content.toolAdamantium)
 				.setConfigEntry(Settings.adamantiumTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_hoe");
 		adamantium_sword = new SimpleSword(SimpleOres.plugin,
 				Content.toolAdamantium)
 				.setConfigEntry(Settings.adamantiumTools)
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_sword");
 		adamantium_shears = new SimpleShears(SimpleOres.plugin,
 				Content.toolAdamantium)
 				.setConfigEntry(Settings.adamantiumTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_shears");
 
 		onyx_pickaxe = new SimplePickaxe(SimpleOres.plugin, Content.toolOnyx)
 				.setConfigEntry(Settings.onyxTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_pickaxe");
 		onyx_axe = new SimpleAxe(SimpleOres.plugin, Content.toolOnyx, 9.0F, -3.0F)
 				.setConfigEntry(Settings.onyxTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_axe");
 		onyx_shovel = new SimpleShovel(SimpleOres.plugin, Content.toolOnyx)
 				.setConfigEntry(Settings.onyxTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_shovel");
 		onyx_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolOnyx)
 				.setConfigEntry(Settings.onyxTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_hoe");
 		onyx_sword = new SimpleSword(SimpleOres.plugin, Content.toolOnyx)
 				.setConfigEntry(Settings.onyxTools)
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_sword");
 		onyx_shears = new SimpleShears(SimpleOres.plugin, Content.toolOnyx)
 				.setConfigEntry(Settings.onyxTools)
-				.setCreativeTab(TabHelper.toolsTab())
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_shears");
 		onyx_bow = new SimpleBow(SimpleOres.plugin, 1000)
 				.setEffect(SimpleBowEffects.damageEffect,
@@ -292,108 +301,109 @@ public class Content {
 				.setRepairMaterial(new ItemStack(onyx_rod))
 				.setZoomAmount(Settings.onyxBowZoomAmount.asFloat())
 				.setConfigEntry(Settings.onyxBow)
-				.setUnlocalizedName("onyx_bow").setCreativeTab(TabHelper.combatTab());
+				.setUnlocalizedName("onyx_bow").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
 	} // end doTools()
 
-	public static void doArmor() {
+	public static void doArmor() 
+	{
 		copper_helmet = new SimpleArmor(SimpleOres.plugin,
 				Content.armorCopper, EntityEquipmentSlot.HEAD)
 				.setConfigEntry(Settings.copperArmor).setType("copper")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_helmet");
 		copper_chestplate = new SimpleArmor(SimpleOres.plugin,
 				Content.armorCopper, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.copperArmor).setType("copper")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_chestplate");
 		copper_leggings = new SimpleArmor(SimpleOres.plugin,
 				Content.armorCopper, EntityEquipmentSlot.LEGS)
 				.setConfigEntry(Settings.copperArmor).setType("copper")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_leggings");
 		copper_boots = new SimpleArmor(SimpleOres.plugin,
 				Content.armorCopper, EntityEquipmentSlot.FEET)
 				.setConfigEntry(Settings.copperArmor).setType("copper")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("copper_boots");
 
 		tin_helmet = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
 				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.tinArmor)
-				.setType("tin").setCreativeTab(TabHelper.combatTab())
+				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_helmet");
 		tin_chestplate = new SimpleArmor(SimpleOres.plugin,
 				Content.armorTin, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.tinArmor).setType("tin")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_chestplate");
 		tin_leggings = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
 				EntityEquipmentSlot.LEGS).setConfigEntry(Settings.tinArmor)
-				.setType("tin").setCreativeTab(TabHelper.combatTab())
+				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_leggings");
 		tin_boots = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
 				EntityEquipmentSlot.FEET).setConfigEntry(Settings.tinArmor)
-				.setType("tin").setCreativeTab(TabHelper.combatTab())
+				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("tin_boots");
 
 		mythril_helmet = new SimpleArmor(SimpleOres.plugin,
 				Content.armorMythril, EntityEquipmentSlot.HEAD)
 				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_helmet");
 		mythril_chestplate = new SimpleArmor(SimpleOres.plugin,
 				Content.armorMythril, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_chestplate");
 		mythril_leggings = new SimpleArmor(SimpleOres.plugin,
 				Content.armorMythril, EntityEquipmentSlot.LEGS)
 				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_leggings");
 		mythril_boots = new SimpleArmor(SimpleOres.plugin,
 				Content.armorMythril, EntityEquipmentSlot.FEET)
 				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("mythril_boots");
 
 		adamantium_helmet = new SimpleArmor(SimpleOres.plugin,
 				Content.armorAdamantium, EntityEquipmentSlot.HEAD)
 				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_helmet");
 		adamantium_chestplate = new SimpleArmor(SimpleOres.plugin,
 				Content.armorAdamantium, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_chestplate");
 		adamantium_leggings = new SimpleArmor(SimpleOres.plugin,
 				Content.armorAdamantium, EntityEquipmentSlot.LEGS)
 				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_leggings");
 		adamantium_boots = new SimpleArmor(SimpleOres.plugin,
 				Content.armorAdamantium, EntityEquipmentSlot.FEET)
 				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("adamantium_boots");
 
 		onyx_helmet = new SimpleArmor(SimpleOres.plugin, Content.armorOnyx,
 				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.onyxArmor)
-				.setType("onyx").setCreativeTab(TabHelper.combatTab())
+				.setType("onyx").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_helmet");
 		onyx_chestplate = new SimpleArmor(SimpleOres.plugin,
 				Content.armorOnyx, EntityEquipmentSlot.CHEST)
 				.setConfigEntry(Settings.onyxArmor).setType("onyx")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_chestplate");
 		onyx_leggings = new SimpleArmor(SimpleOres.plugin,
 				Content.armorOnyx, EntityEquipmentSlot.LEGS)
 				.setConfigEntry(Settings.onyxArmor).setType("onyx")
-				.setCreativeTab(TabHelper.combatTab())
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_leggings");
 		onyx_boots = new SimpleArmor(SimpleOres.plugin, Content.armorOnyx,
 				EntityEquipmentSlot.FEET).setConfigEntry(Settings.onyxArmor)
-				.setType("onyx").setCreativeTab(TabHelper.combatTab())
+				.setType("onyx").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
 				.setUnlocalizedName("onyx_boots");
 	} // end doArmor()
 
