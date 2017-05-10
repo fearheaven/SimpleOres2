@@ -36,14 +36,22 @@ public class Recipes {
 		OreDictionary.registerOre("blockAdamantite", new ItemStack(Content.adamantium_block));
 		OreDictionary.registerOre("blockAdamantine", new ItemStack(Content.adamantium_block));
 		OreDictionary.registerOre("blockOnyx", new ItemStack(Content.onyx_block));
-		OreDictionary.registerOre("ingotCopper", new ItemStack(Content.copper_ingot));
-		OreDictionary.registerOre("ingotTin", new ItemStack(Content.tin_ingot));
-		OreDictionary.registerOre("ingotMythril", new ItemStack(Content.mythril_ingot));
-		OreDictionary.registerOre("ingotMithril", new ItemStack(Content.mythril_ingot));
-		OreDictionary.registerOre("ingotAdamantium", new ItemStack(Content.adamantium_ingot));
-		OreDictionary.registerOre("ingotAdamantite", new ItemStack(Content.adamantium_ingot));
-		OreDictionary.registerOre("ingotAdamantine", new ItemStack(Content.adamantium_ingot));
-		OreDictionary.registerOre("gemOnyx", new ItemStack(Content.onyx_gem));
+		
+		if (Settings.copperIngot.isEnabled())
+			OreDictionary.registerOre("ingotCopper", new ItemStack(Content.copper_ingot));
+		if (Settings.tinIngot.isEnabled())
+			OreDictionary.registerOre("ingotTin", new ItemStack(Content.tin_ingot));
+		if (Settings.mythrilIngot.isEnabled()) {
+			OreDictionary.registerOre("ingotMythril", new ItemStack(Content.mythril_ingot));
+			OreDictionary.registerOre("ingotMithril", new ItemStack(Content.mythril_ingot));
+		}
+		if (Settings.adamantiumIngot.isEnabled()) {
+			OreDictionary.registerOre("ingotAdamantium", new ItemStack(Content.adamantium_ingot));
+			OreDictionary.registerOre("ingotAdamantite", new ItemStack(Content.adamantium_ingot));
+			OreDictionary.registerOre("ingotAdamantine", new ItemStack(Content.adamantium_ingot));
+		}
+		if (Settings.onyxGem.isEnabled())
+			OreDictionary.registerOre("gemOnyx", new ItemStack(Content.onyx_gem));
 	} // end addOreDictEntries()
 	
 	public static void addRecipes() 
@@ -70,31 +78,52 @@ public class Recipes {
 				"XXX", "XXX", "XXX", Character.valueOf('X'), "gemOnyx"}));
 	}
 	
-	public static void addItemRecipes() {
+	/**
+	 * complete with config revisions.
+	 */
+	public static void addItemRecipes() 
+	{
 		//Ingot Recipes
-		GameRegistry.addShapelessRecipe(new ItemStack(Content.copper_ingot, 9), new Object[] { 
-			Content.copper_block });
-		GameRegistry.addShapelessRecipe(new ItemStack(Content.tin_ingot, 9), new Object[] { 
-			Content.tin_block });
-		GameRegistry.addShapelessRecipe(new ItemStack(Content.mythril_ingot, 9), new Object[] { 
-			Content.mythril_block });
-		GameRegistry.addShapelessRecipe(new ItemStack(Content.adamantium_ingot, 9), new Object[] { 
-			Content.adamantium_block });
-		GameRegistry.addShapelessRecipe(new ItemStack(Content.onyx_gem, 9), new Object[] { 
-			Content.onyx_block });
-
+		if (Settings.copperIngot.isEnabled() && Settings.copperBlock.isEnabled()) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Content.copper_ingot, 9), new Object[] { 
+					Content.copper_block });
+		}
+		if (Settings.tinIngot.isEnabled() && Settings.tinBlock.isEnabled()) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Content.tin_ingot, 9), new Object[] { 
+					Content.tin_block });
+		}
+		if (Settings.mythrilIngot.isEnabled() && Settings.mythrilBlock.isEnabled()) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Content.mythril_ingot, 9), new Object[] { 
+					Content.mythril_block });
+		}
+		if (Settings.adamantiumIngot.isEnabled() && Settings.adamantiumBlock.isEnabled()) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Content.adamantium_ingot, 9), new Object[] { 
+					Content.adamantium_block });
+		}
+		if (Settings.onyxGem.isEnabled() && Settings.onyxBlock.isEnabled()) {
+			GameRegistry.addShapelessRecipe(new ItemStack(Content.onyx_gem, 9), new Object[] { 
+					Content.onyx_block });
+		}
+		
 		//Bucket
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_bucket, true, new Object[]{
-				"X X", " X ", Character.valueOf('X'), "ingotCopper"}));
+		if (Settings.copperBucket.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_bucket, true, new Object[]{
+					"X X", " X ", Character.valueOf('X'), "ingotCopper"}));
+		}
 
 		//Rods
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_rod, true, new Object[]{
-				"X", "X", Character.valueOf('X'), "ingotMythril"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_rod, true, new Object[]{
-				"X", "X", Character.valueOf('X'), "gemOnyx"}));
-	}
+		if (Settings.mythrilRod.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_rod, true, new Object[]{
+					"X", "X", Character.valueOf('X'), "ingotMythril"}));
+		}
+		if (Settings.onyxRod.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_rod, true, new Object[]{
+					"X", "X", Character.valueOf('X'), "gemOnyx"}));
+		}
+	} // end addItemRecipes()
 	
-	public static void addToolRecipes() {
+	public static void addToolRecipes() 
+	{
 		//Copper Tool Recipes
 		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_pickaxe, true, new Object[]{
 				"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood"}));
@@ -156,10 +185,19 @@ public class Recipes {
 				"XX ", " Y ", " Y ", Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood"}));
 	
 		//Bow Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_bow, true, new Object[]{
-				" XY", "Z Y", " XY", Character.valueOf('X'), Content.mythril_rod, Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.IRON_INGOT}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_bow, true, new Object[]{
-				" XY", "ZWY", " XY", Character.valueOf('X'), Content.onyx_rod, Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.DIAMOND, Character.valueOf('W'), Items.FLINT_AND_STEEL}));
+		if (Settings.mythrilBow.isEnabled() && Settings.mythrilRod.isEnabled()) 
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_bow, true,
+					new Object[] { " XY", "Z Y", " XY", Character.valueOf('X'), Content.mythril_rod,
+							Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.IRON_INGOT }));
+		}
+		if (Settings.onyxBow.isEnabled() && Settings.onyxRod.isEnabled()) 
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_bow, true,
+					new Object[] { " XY", "ZWY", " XY", Character.valueOf('X'), Content.onyx_rod,
+							Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.DIAMOND,
+							Character.valueOf('W'), Items.FLINT_AND_STEEL }));
+		}
 	
 		//Shears Recipes
 		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shears, true, new Object[]{
@@ -174,7 +212,8 @@ public class Recipes {
 				"X ", " X", Character.valueOf('X'), "gemOnyx"}));
 	}
 	
-	public static void addArmorRecipes() {
+	public static void addArmorRecipes() 
+	{
 		//Copper Armor Recipes
 		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_helmet, true, new Object[]{
 				"XXX", "X X", Character.valueOf('X'), "ingotCopper"}));
@@ -224,14 +263,28 @@ public class Recipes {
 				"XXX", "X X", "X X", Character.valueOf('X'), "gemOnyx"}));
         GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_boots, true, new Object[]{
 				"X X", "X X", Character.valueOf('X'), "gemOnyx"}));
-	}
+	} // end addArmorRecipes()
 	
-	public static void addSmeltingRecipes() {
-		GameRegistry.addSmelting(Content.copper_bucket, new ItemStack(Content.copper_ingot, 3, 0), 0.0F);
-		GameRegistry.addSmelting(Content.copper_ore, new ItemStack(Content.copper_ingot, 1, 0), Settings.copperIngot.getSmeltingXP());
-		GameRegistry.addSmelting(Content.tin_ore, new ItemStack(Content.tin_ingot, 1, 0), Settings.tinIngot.getSmeltingXP());
-		GameRegistry.addSmelting(Content.mythril_ore, new ItemStack(Content.mythril_ingot, 1, 0), Settings.mythrilIngot.getSmeltingXP());
-		GameRegistry.addSmelting(Content.adamantium_ore, new ItemStack(Content.adamantium_ingot, 1, 0), Settings.adamantiumIngot.getSmeltingXP());
-		GameRegistry.addSmelting(Content.onyx_ore, new ItemStack(Content.onyx_gem, 1, 0), Settings.onyxGem.getSmeltingXP());
-	}
-}
+	/**
+	 * complete with config revision.
+	 */
+	public static void addSmeltingRecipes() 
+	{
+		if (Settings.copperBucket.isEnabled() && Settings.copperIngot.isEnabled()) {
+			GameRegistry.addSmelting(Content.copper_bucket, new ItemStack(Content.copper_ingot, 3, 0), 0.0F);
+		}
+		if (Settings.copperIngot.isEnabled() && Settings.copperOre.isEnabled()) {
+			GameRegistry.addSmelting(Content.copper_ore, new ItemStack(Content.copper_ingot, 1, 0),
+					Settings.copperIngot.getSmeltingXP());
+		}
+		if (Settings.tinIngot.isEnabled() && Settings.tinOre.isEnabled())
+			GameRegistry.addSmelting(Content.tin_ore, new ItemStack(Content.tin_ingot, 1, 0), Settings.tinIngot.getSmeltingXP());
+		if (Settings.mythrilIngot.isEnabled() && Settings.mythrilOre.isEnabled())
+			GameRegistry.addSmelting(Content.mythril_ore, new ItemStack(Content.mythril_ingot, 1, 0), Settings.mythrilIngot.getSmeltingXP());
+		if (Settings.adamantiumIngot.isEnabled())
+			GameRegistry.addSmelting(Content.adamantium_ore, new ItemStack(Content.adamantium_ingot, 1, 0), Settings.adamantiumIngot.getSmeltingXP());
+		if (Settings.onyxGem.isEnabled() && Settings.onyxOre.isEnabled())
+			GameRegistry.addSmelting(Content.onyx_ore, new ItemStack(Content.onyx_gem, 1, 0), Settings.onyxGem.getSmeltingXP());
+	} // end addSmeltingRecipes()
+	
+} // end class

@@ -2,14 +2,18 @@ package alexndr.plugins.SimpleOres;
 
 import java.io.File;
 
-import alexndr.api.config.Configuration;
+import alexndr.api.config.ConfigHelper;
 import alexndr.api.config.types.ConfigArmor;
 import alexndr.api.config.types.ConfigBlock;
+import alexndr.api.config.types.ConfigBow;
 import alexndr.api.config.types.ConfigEntry;
 import alexndr.api.config.types.ConfigItem;
+import alexndr.api.config.types.ConfigOre;
 import alexndr.api.config.types.ConfigTool;
 import alexndr.api.config.types.ConfigValue;
+import alexndr.api.core.APIInfo;
 import alexndr.api.logger.LogHelper;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
@@ -17,208 +21,225 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  */
 public class Settings 
 {
-	private static Configuration settings = new Configuration();
+	private static Configuration settings;
 
 	public static void createOrLoadSettings(FMLPreInitializationEvent event) 
 	{
-		settings.setModName(ModInfo.NAME);
-		File configDir = new File(event.getModConfigurationDirectory(), "AleXndr");
-		File settingsFile = new File(configDir, "SimpleOres2_Settings.xml");
-		settings.setFile(settingsFile);
+		settings = ConfigHelper.GetConfig(event, "AleXndr", ModInfo.ID + ".cfg");
 
-		LogHelper.verbose(ModInfo.NAME + "loading settings...");
+		LogHelper.verbose(ModInfo.ID, "loading settings...");
 		try {
 			settings.load();
-			settings.createHelpEntry(ModInfo.URL);
+			ConfigHelper.createHelpEntry(settings, ModInfo.URL);
 			
-			// Blocks
-			copperOre = settings.get(
-					new ConfigBlock("Copper Ore", "Ores").setHardness(1.7F)
-							.setResistance(5.0F).setLightValue(0.0F)
-							.setHarvestLevel(1).setHarvestTool("pickaxe")
-							.setSpawnRate(35).setVeinSize(10).setMinHeight(1)
-							.setMaxHeight(90))
-					.asConfigBlock();
-			tinOre = settings.get(
-					new ConfigBlock("Tin Ore", "Ores").setHardness(3.0F)
-							.setResistance(5.0F).setLightValue(0.0F)
-							.setHarvestLevel(1).setHarvestTool("pickaxe")
-							.setSpawnRate(30).setVeinSize(10).setMinHeight(1)
-							.setMaxHeight(90))
-					.asConfigBlock();
-			mythrilOre = settings.get(
-					new ConfigBlock("Mythril Ore", "Ores").setHardness(4.0F)
-							.setResistance(5.0F).setLightValue(0.0F)
-							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(10).setVeinSize(8).setMinHeight(1)
-							.setMaxHeight(40))
-					.asConfigBlock();
-			adamantiumOre = settings.get(
-					new ConfigBlock("Adamantium Ore", "Ores").setHardness(5.0F)
-							.setResistance(5.0F).setLightValue(0.0F)
-							.setHarvestLevel(2).setHarvestTool("pickaxe")
-							.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
-							.setMaxHeight(30))
-					.asConfigBlock();
-			onyxOre = settings.get(
-					new ConfigBlock("Onyx Ore", "Ores").setHardness(7.0F)
-							.setResistance(5.0F).setLightValue(0.0F)
-							.setHarvestLevel(3).setHarvestTool("pickaxe")
-							.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
-							.setMaxHeight(127)
-							.setDropItem(true)
-							.setItemToDrop("simpleores:onyx_gem")
-							.setQuantityToDrop(1)).asConfigBlock();
-
-			copperBlock = settings.get(
-					new ConfigBlock("Block of Copper", "Blocks")
-							.setHardness(7.0F).setResistance(12.0F)
-							.setLightValue(0.0F).setHarvestLevel(0)
-							.setHarvestTool("pickaxe")
-							.setBeaconBase(true)).asConfigBlock();
-			tinBlock = settings.get(
-					new ConfigBlock("Block of Tin", "Blocks").setHardness(7.0F)
-							.setResistance(12.0F).setLightValue(0.0F)
-							.setHarvestLevel(0).setHarvestTool("pickaxe")
-							.setBeaconBase(true)).asConfigBlock();
-			mythrilBlock = settings.get(
-					new ConfigBlock("Block of Mythril", "Blocks")
-							.setHardness(7.0F).setResistance(12.0F)
-							.setLightValue(0.0F).setHarvestLevel(0)
-							.setHarvestTool("pickaxe")
-							.setBeaconBase(true)).asConfigBlock();
-			adamantiumBlock = settings.get(
-					new ConfigBlock("Block of Adamantium", "Blocks")
-							.setHardness(7.0F).setResistance(12.0F)
-							.setLightValue(0.0F).setHarvestLevel(0)
-							.setHarvestTool("pickaxe")
-							.setBeaconBase(true)).asConfigBlock();
-			onyxBlock = settings.get(
-					new ConfigBlock("Block of Onyx", "Blocks")
-							.setHardness(20.0F).setResistance(30.0F)
-							.setLightValue(0.0F).setHarvestLevel(0)
-							.setHarvestTool("pickaxe")
-							.setBeaconBase(true)).asConfigBlock();
-
-			// Items
-			copperIngot = settings.get(
-					new ConfigItem("Copper Ingot", "Items").setStackSize(64)
-							.setSmeltingXP(0.4F)).asConfigItem();
-			tinIngot = settings.get(
-					new ConfigItem("Tin Ingot", "Items").setStackSize(64)
-							.setSmeltingXP(0.4F)).asConfigItem();
-			mythrilIngot = settings.get(
-					new ConfigItem("Mythril Ingot", "Items").setStackSize(64)
-							.setSmeltingXP(0.7F)).asConfigItem();
-			adamantiumIngot = settings.get(
-					new ConfigItem("Adamantium Ingot", "Items")
-							.setSmeltingXP(0.7F)).asConfigItem();
-			onyxGem = settings.get(
-					new ConfigItem("Onyx Gem", "Items").setStackSize(64)
-							.setSmeltingXP(1.0F)).asConfigItem();
-			mythrilRod = settings.get(
-					new ConfigItem("Mythril Rod", "Items").setStackSize(64)).asConfigItem();
-			onyxRod = settings.get(
-					new ConfigItem("Onyx Rod", "Items").setStackSize(64)).asConfigItem();
-			copperBucket = settings.get(
-					new ConfigItem("Copper Bucket", "Items").setStackSize(16)).asConfigItem();
-
-			// Tools
-			copperTools = settings.get(
-					new ConfigTool("Copper Tools", "Tools").setUses(185)
-							.setHarvestLevel(1).setHarvestSpeed(4.0F)
-							.setDamageVsEntity(1.0F).setEnchantability(8))
-					.asConfigTool();
-			tinTools = settings.get(
-					new ConfigTool("Tin Tools", "Tools").setUses(220)
-							.setHarvestLevel(1).setHarvestSpeed(3.5F)
-							.setDamageVsEntity(1.0F).setEnchantability(8))
-					.asConfigTool();
-			mythrilTools = settings.get(
-					new ConfigTool("Mythril Tools", "Tools").setUses(800)
-							.setHarvestLevel(2).setHarvestSpeed(8.0F)
-							.setDamageVsEntity(3.0F).setEnchantability(12))
-					.asConfigTool();
-			adamantiumTools = settings.get(
-					new ConfigTool("Adamantium Tools", "Tools").setUses(1150)
-							.setHarvestLevel(2).setHarvestSpeed(14.0F)
-							.setDamageVsEntity(3.0F).setEnchantability(3))
-					.asConfigTool();
-			onyxTools = settings.get(
-					new ConfigTool("Onyx Tools", "Tools").setUses(3280)
-							.setHarvestLevel(4).setHarvestSpeed(10.0F)
-							.setDamageVsEntity(5.0F).setEnchantability(15))
-					.asConfigTool();
-
-			// Bows
-			mythrilBow = new ConfigEntry("Mythril Bow", "Bows");
-			mythrilBow.createNewValue("DamageModifier").setDataType("@F")
-					.setCurrentValue("1.5").setDefaultValue("1.5");
-			mythrilBow.createNewValue("EfficiencyChance").setDataType("@I")
-					.setCurrentValue("50").setDefaultValue("50");
-			mythrilBow.createNewValue("ZoomAmount").setDataType("@F")
-					.setCurrentValue("0.165").setDefaultValue("0.165");
-			mythrilBow = settings.get(mythrilBow);
-			mythrilBowDamageModifier = mythrilBow
-					.getValueByName("DamageModifier");
-			mythrilBowEfficiencyChance = mythrilBow
-					.getValueByName("EfficiencyChance");
-			mythrilBowZoomAmount = mythrilBow.getValueByName("ZoomAmount");
-			onyxBow = new ConfigEntry("Onyx Bow", "Bows");
-			onyxBow.createNewValue("DamageModifier").setActive()
-					.setDataType("@F").setCurrentValue("1.5")
-					.setDefaultValue("1.5");
-			onyxBow.createNewValue("FireArrows").setActive().setDataType("@B")
-					.setCurrentValue("true").setDefaultValue("true");
-			onyxBow.createNewValue("ZoomAmount").setActive().setDataType("@F")
-					.setCurrentValue("0.165").setDefaultValue("0.165");
-			onyxBow = settings.get(onyxBow);
-			onyxBowDamageModifier = onyxBow.getValueByName("DamageModifier");
-			onyxBowFireToggle = onyxBow.getValueByName("FireArrows");
-			onyxBowZoomAmount = onyxBow.getValueByName("ZoomAmount");
-
-			// Armor
-			copperArmor = settings.get(
-					new ConfigArmor("Copper Armor", "Armors").setDurability(8)
-							.setEnchantability(8).setHelmReduction(2)
-							.setChestReduction(3).setLegsReduction(2)
-							.setBootsReduction(1)).asConfigArmor();
-			tinArmor = settings.get(
-					new ConfigArmor("Tin Armor", "Armors").setDurability(8)
-							.setEnchantability(8).setHelmReduction(2)
-							.setChestReduction(3).setLegsReduction(2)
-							.setBootsReduction(1)).asConfigArmor();
-			mythrilArmor = settings.get(
-					new ConfigArmor("Mythril Armor", "Armors")
-							.setDurability(22).setEnchantability(12)
-							.setHelmReduction(3).setChestReduction(5)
-							.setLegsReduction(4).setBootsReduction(3))
-					.asConfigArmor();
-			adamantiumArmor = settings.get(
-					new ConfigArmor("Adamantium Armor", "Armors")
-							.setDurability(28).setEnchantability(3)
-							.setHelmReduction(3).setChestReduction(8)
-							.setLegsReduction(6).setBootsReduction(2))
-					.asConfigArmor();
-			onyxArmor = settings.get(
-					new ConfigArmor("Onyx Armor", "Armors").setDurability(45)
-							.setEnchantability(15).setHelmReduction(5)
-							.setChestReduction(8).setLegsReduction(6)
-							.setBootsReduction(5)).asConfigArmor();
+			configureBlocks();
+			configureOres();
+			configureItems();
+			configureTools();
+			configureBows();
+			configureArmor();
 		} 
 		catch (Exception e) {
-			LogHelper.severe(ModInfo.NAME, "Failed to load settings");
+			LogHelper.severe(ModInfo.ID, "Failed to load settings");
 			e.printStackTrace();
 		} 
 		finally {
-			settings.save();
-			LogHelper.verbose(ModInfo.NAME, "Settings loaded successfully");
+            if(settings.hasChanged())
+            	settings.save();
+			LogHelper.verbose(ModInfo.ID, "Settings loaded successfully");
 		}
 	} // end class
 
-	public static ConfigBlock copperOre, tinOre, mythrilOre, adamantiumOre,
-			onyxOre, copperBlock, tinBlock, mythrilBlock, adamantiumBlock,
+	public static void configureItems()
+	{
+		// Items
+		copperIngot = new ConfigItem("Copper Ingot", ConfigHelper.CATEGORY_ITEM).setSmeltingXP(0.4F);
+		copperIngot.GetConfig(settings);
+		tinIngot = 	new ConfigItem("Tin Ingot", ConfigHelper.CATEGORY_ITEM).setSmeltingXP(0.4F);
+		tinIngot.GetConfig(settings);
+		mythrilIngot = new ConfigItem("Mythril Ingot", ConfigHelper.CATEGORY_ITEM)
+						.setSmeltingXP(0.7F);
+		mythrilIngot.GetConfig(settings);
+		adamantiumIngot = new ConfigItem("Adamantium Ingot", ConfigHelper.CATEGORY_ITEM)
+						.setSmeltingXP(0.7F);
+		adamantiumIngot.GetConfig(settings);
+		onyxGem = new ConfigItem("Onyx Gem", ConfigHelper.CATEGORY_ITEM).setSmeltingXP(1.0F);
+		onyxGem.GetConfig(settings);
+		
+		mythrilRod = new ConfigItem("Mythril Rod", ConfigHelper.CATEGORY_ITEM);
+		mythrilRod.GetConfig(settings);
+		onyxRod = new ConfigItem("Onyx Rod", ConfigHelper.CATEGORY_ITEM);
+		onyxRod.GetConfig(settings);
+		copperBucket = new ConfigItem("Copper Bucket", ConfigHelper.CATEGORY_ITEM);
+		copperBucket.GetConfig(settings);
+	} // end configureItems()
+	
+	public static void configureTools()
+	{
+		// Tools
+		copperTools = settings.get(
+				new ConfigTool("Copper Tools", "Tools").setUses(185)
+						.setHarvestLevel(1).setHarvestSpeed(4.0F)
+						.setDamageVsEntity(1.0F).setEnchantability(8))
+				.asConfigTool();
+		tinTools = settings.get(
+				new ConfigTool("Tin Tools", "Tools").setUses(220)
+						.setHarvestLevel(1).setHarvestSpeed(3.5F)
+						.setDamageVsEntity(1.0F).setEnchantability(8))
+				.asConfigTool();
+		mythrilTools = settings.get(
+				new ConfigTool("Mythril Tools", "Tools").setUses(800)
+						.setHarvestLevel(2).setHarvestSpeed(8.0F)
+						.setDamageVsEntity(3.0F).setEnchantability(12))
+				.asConfigTool();
+		adamantiumTools = settings.get(
+				new ConfigTool("Adamantium Tools", "Tools").setUses(1150)
+						.setHarvestLevel(2).setHarvestSpeed(14.0F)
+						.setDamageVsEntity(3.0F).setEnchantability(3))
+				.asConfigTool();
+		onyxTools = settings.get(
+				new ConfigTool("Onyx Tools", "Tools").setUses(3280)
+						.setHarvestLevel(4).setHarvestSpeed(10.0F)
+						.setDamageVsEntity(5.0F).setEnchantability(15))
+				.asConfigTool();
+	} // end configureTools()
+	
+	
+	/**
+	 * completed config revision.
+	 */
+	public static void configureBows()
+	{
+		// Bows
+		mythrilBow = new ConfigBow("Mythril Bow");
+		mythrilBow.setHasDamageModifier(true).setHasEfficiencyChance(true)
+			.setDamageModifier(1.5F).setEfficiencyChance(50).setZoomAmount(0.165F);
+		mythrilBow.GetConfig(settings);
+		
+		onyxBow = new ConfigBow("Onyx Bow");
+		onyxBow.setHasDamageModifier(true).setDamageModifier(1.5F).setZoomAmount(0.165F);
+		onyxBow.GetConfig(settings);
+	} // end configureBows()
+	
+	
+	/**
+	 * completed config revision.
+	 */
+	public static void configureArmor()
+	{
+		// Armor
+		copperArmor = new ConfigArmor("Copper Armor").setDurability(8)
+						.setEnchantability(8).setHelmReduction(2)
+						.setChestReduction(3).setLegsReduction(2)
+						.setBootsReduction(1);
+		copperArmor.GetConfig(settings);
+		tinArmor = new ConfigArmor("Tin Armor").setDurability(8)
+						.setEnchantability(8).setHelmReduction(2)
+						.setChestReduction(3).setLegsReduction(2)
+						.setBootsReduction(1);
+		tinArmor.GetConfig(settings);
+		mythrilArmor = new ConfigArmor("Mythril Armor")
+						.setDurability(22).setEnchantability(12)
+						.setHelmReduction(3).setChestReduction(5)
+						.setLegsReduction(4).setBootsReduction(3);
+		mythrilArmor.GetConfig(settings);
+		adamantiumArmor = new ConfigArmor("Adamantium Armor")
+						.setDurability(28).setEnchantability(3)
+						.setHelmReduction(3).setChestReduction(8)
+						.setLegsReduction(6).setBootsReduction(2);
+		adamantiumArmor.GetConfig(settings);
+		onyxArmor = new ConfigArmor("Onyx Armor").setDurability(45)
+						.setEnchantability(15).setHelmReduction(5)
+						.setChestReduction(8).setLegsReduction(6)
+						.setBootsReduction(5);
+		onyxArmor.GetConfig(settings);
+	} // end configureArmor()
+	
+	/**
+	 * completed config revision.
+	 */
+	public static void configureBlocks()
+	{
+		// Blocks
+		copperBlock = new ConfigBlock("Block of Copper", ConfigHelper.CATEGORY_BLOCK)
+						.setHardness(7.0F).setResistance(12.0F)
+						.setLightValue(0).setHarvestLevel(0)
+						.setHarvestTool("pickaxe")
+						.setBeaconBase(true);
+		copperBlock.GetConfig(settings);
+		
+		tinBlock = new ConfigBlock("Block of Tin", ConfigHelper.CATEGORY_BLOCK).setHardness(7.0F)
+						.setResistance(12.0F).setLightValue(0)
+						.setHarvestLevel(0).setHarvestTool("pickaxe")
+						.setBeaconBase(true);
+		tinBlock.GetConfig(settings);
+		
+		mythrilBlock = 	new ConfigBlock("Block of Mythril", ConfigHelper.CATEGORY_BLOCK)
+						.setHardness(7.0F).setResistance(12.0F)
+						.setLightValue(0).setHarvestLevel(0)
+						.setHarvestTool("pickaxe")
+						.setBeaconBase(true);
+		mythrilBlock.GetConfig(settings);
+		
+		adamantiumBlock = new ConfigBlock("Block of Adamantium", ConfigHelper.CATEGORY_BLOCK)
+						.setHardness(7.0F).setResistance(12.0F)
+						.setLightValue(0).setHarvestLevel(0)
+						.setHarvestTool("pickaxe")
+						.setBeaconBase(true);
+		adamantiumBlock.GetConfig(settings);
+		
+		onyxBlock = new ConfigBlock("Block of Onyx", ConfigHelper.CATEGORY_BLOCK)
+						.setHardness(20.0F).setResistance(30.0F)
+						.setLightValue(0).setHarvestLevel(0)
+						.setHarvestTool("pickaxe")
+						.setBeaconBase(true);
+		onyxBlock.GetConfig(settings);
+	} // end configureBlocks()
+
+	public static void configureOres ()
+	{
+		copperOre = settings.get(
+				new ConfigBlock("Copper Ore", "Ores").setHardness(1.7F)
+						.setResistance(5.0F).setLightValue(0.0F)
+						.setHarvestLevel(1).setHarvestTool("pickaxe")
+						.setSpawnRate(35).setVeinSize(10).setMinHeight(1)
+						.setMaxHeight(90))
+				.asConfigBlock();
+		tinOre = settings.get(
+				new ConfigBlock("Tin Ore", "Ores").setHardness(3.0F)
+						.setResistance(5.0F).setLightValue(0.0F)
+						.setHarvestLevel(1).setHarvestTool("pickaxe")
+						.setSpawnRate(30).setVeinSize(10).setMinHeight(1)
+						.setMaxHeight(90))
+				.asConfigBlock();
+		mythrilOre = settings.get(
+				new ConfigBlock("Mythril Ore", "Ores").setHardness(4.0F)
+						.setResistance(5.0F).setLightValue(0.0F)
+						.setHarvestLevel(2).setHarvestTool("pickaxe")
+						.setSpawnRate(10).setVeinSize(8).setMinHeight(1)
+						.setMaxHeight(40))
+				.asConfigBlock();
+		adamantiumOre = settings.get(
+				new ConfigBlock("Adamantium Ore", "Ores").setHardness(5.0F)
+						.setResistance(5.0F).setLightValue(0.0F)
+						.setHarvestLevel(2).setHarvestTool("pickaxe")
+						.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
+						.setMaxHeight(30))
+				.asConfigBlock();
+		onyxOre = settings.get(
+				new ConfigBlock("Onyx Ore", "Ores").setHardness(7.0F)
+						.setResistance(5.0F).setLightValue(0.0F)
+						.setHarvestLevel(3).setHarvestTool("pickaxe")
+						.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
+						.setMaxHeight(127)
+						.setDropItem(true)
+						.setItemToDrop("simpleores:onyx_gem")
+						.setQuantityToDrop(1)).asConfigBlock();
+	} // end configureOres()
+	
+	public static ConfigBlock copperBlock, tinBlock, mythrilBlock, adamantiumBlock,
 			onyxBlock;
+	public static ConfigOre copperOre, tinOre, mythrilOre, adamantiumOre, onyxOre;
 	public static ConfigItem copperIngot, tinIngot, mythrilIngot,
 			adamantiumIngot, onyxGem, mythrilRod, onyxRod, copperBucket;
 	public static ConfigTool copperTools, tinTools, mythrilTools,
@@ -226,9 +247,6 @@ public class Settings
 	public static ConfigArmor copperArmor, tinArmor, mythrilArmor,
 			adamantiumArmor, onyxArmor;
 
-	public static ConfigEntry mythrilBow, onyxBow;
+	public static ConfigBow mythrilBow, onyxBow;
 
-	public static ConfigValue updateChecker, mythrilBowDamageModifier,
-			mythrilBowEfficiencyChance, mythrilBowZoomAmount,
-			onyxBowDamageModifier, onyxBowFireToggle, onyxBowZoomAmount;
-}
+} // end class
