@@ -77,14 +77,23 @@ public class Settings
 		// Tools
 		copperTools = new ConfigTool("Copper Tools").setUses(185).setHarvestLevel(1)
 				.setHarvestSpeed(4.0F).setDamageVsEntity(1.0F).setEnchantability(8);
+		copperTools.GetConfig(settings);
+		
 		tinTools = new ConfigTool("Tin Tools").setUses(220).setHarvestLevel(1).setHarvestSpeed(3.5F)
 				.setDamageVsEntity(1.0F).setEnchantability(8);
+		tinTools.GetConfig(settings);
+		
 		mythrilTools = new ConfigTool("Mythril Tools").setUses(800).setHarvestLevel(2)
 				.setHarvestSpeed(8.0F).setDamageVsEntity(3.0F).setEnchantability(12);
+		mythrilTools.GetConfig(settings);
+		
 		adamantiumTools = new ConfigTool("Adamantium Tools").setUses(1150).setHarvestLevel(2)
 				.setHarvestSpeed(14.0F).setDamageVsEntity(3.0F).setEnchantability(3);
+		adamantiumTools.GetConfig(settings);
+		
 		onyxTools = new ConfigTool("Onyx Tools").setUses(3280).setHarvestLevel(4)
 				.setHarvestSpeed(10.0F).setDamageVsEntity(5.0F).setEnchantability(15);
+		onyxTools.GetConfig(settings);
 	} // end configureTools()
 	
 	
@@ -178,22 +187,31 @@ public class Settings
 		copperOre = new ConfigOre("Copper Ore").setSpawnRate(35).setVeinSize(10)
 				.setMinHeight(1).setMaxHeight(90).setHardness(1.7F).setResistance(5.0F)
 				.setHarvestLevel(1).setHarvestTool("pickaxe");
+		copperOre.GetConfig(settings);
+		
 		tinOre = new ConfigOre("Tin Ore").setHardness(3.0F).setResistance(5.0F)
 						.setHarvestLevel(1).setHarvestTool("pickaxe")
 						.setSpawnRate(30).setVeinSize(10).setMinHeight(1)
 						.setMaxHeight(90);
+		tinOre.GetConfig(settings);
+		
 		mythrilOre = new ConfigOre("Mythril Ore").setHardness(4.0F).setResistance(5.0F)
 						.setHarvestLevel(2).setHarvestTool("pickaxe")
 						.setSpawnRate(10).setVeinSize(8).setMinHeight(1)
 						.setMaxHeight(40);
+		mythrilOre.GetConfig(settings);
+		
 		adamantiumOre = new ConfigOre("Adamantium Ore").setHardness(5.0F).setResistance(5.0F)
 						.setHarvestLevel(2).setHarvestTool("pickaxe")
 						.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
 						.setMaxHeight(30);
+		adamantiumOre.GetConfig(settings);
+		
 		onyxOre = new ConfigOre("Onyx Ore").setHardness(7.0F).setResistance(5.0F)
 						.setHarvestLevel(3).setHarvestTool("pickaxe")
 						.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
 						.setMaxHeight(127);
+		onyxOre.GetConfig(settings);
 	} // end configureOres()
 	
 	public static ConfigBlock copperBlock, tinBlock, mythrilBlock, adamantiumBlock,
