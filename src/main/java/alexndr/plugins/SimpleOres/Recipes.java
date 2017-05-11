@@ -18,24 +18,43 @@ public class Recipes {
 		addRecipes();
 	}
 	
+	/**
+	 * compeleted config revision.
+	 */
 	public static void addOreDictEntries() 
 	{
-		OreDictionary.registerOre("oreCopper", new ItemStack(Content.copper_ore));
-		OreDictionary.registerOre("oreTin", new ItemStack(Content.tin_ore));
-		OreDictionary.registerOre("oreMythril", new ItemStack(Content.mythril_ore));
-		OreDictionary.registerOre("oreMithril", new ItemStack(Content.mythril_ore));
-		OreDictionary.registerOre("oreAdamantium", new ItemStack(Content.adamantium_ore));
-		OreDictionary.registerOre("oreAdamantite", new ItemStack(Content.adamantium_ore));
-		OreDictionary.registerOre("oreAdamantine", new ItemStack(Content.adamantium_ore));
-		OreDictionary.registerOre("oreOnyx", new ItemStack(Content.onyx_ore));
-		OreDictionary.registerOre("blockCopper", new ItemStack(Content.copper_block));
-		OreDictionary.registerOre("blockTin", new ItemStack(Content.tin_block));
-		OreDictionary.registerOre("blockMythril", new ItemStack(Content.mythril_block));
-		OreDictionary.registerOre("blockMithril", new ItemStack(Content.mythril_block));
-		OreDictionary.registerOre("blockAdamantium", new ItemStack(Content.adamantium_block));
-		OreDictionary.registerOre("blockAdamantite", new ItemStack(Content.adamantium_block));
-		OreDictionary.registerOre("blockAdamantine", new ItemStack(Content.adamantium_block));
-		OreDictionary.registerOre("blockOnyx", new ItemStack(Content.onyx_block));
+		if (Settings.copperOre.isEnabled())
+			OreDictionary.registerOre("oreCopper", new ItemStack(Content.copper_ore));
+		if (Settings.tinOre.isEnabled())
+			OreDictionary.registerOre("oreTin", new ItemStack(Content.tin_ore));
+		if (Settings.mythrilOre.isEnabled()) 
+		{
+			OreDictionary.registerOre("oreMythril", new ItemStack(Content.mythril_ore));
+			OreDictionary.registerOre("oreMithril", new ItemStack(Content.mythril_ore));
+		}
+		if (Settings.adamantiumOre.isEnabled())
+		{
+			OreDictionary.registerOre("oreAdamantium", new ItemStack(Content.adamantium_ore));
+			OreDictionary.registerOre("oreAdamantite", new ItemStack(Content.adamantium_ore));
+			OreDictionary.registerOre("oreAdamantine", new ItemStack(Content.adamantium_ore));
+		}
+		if (Settings.onyxOre.isEnabled())
+			OreDictionary.registerOre("oreOnyx", new ItemStack(Content.onyx_ore));
+		if (Settings.copperBlock.isEnabled())
+			OreDictionary.registerOre("blockCopper", new ItemStack(Content.copper_block));
+		if (Settings.tinBlock.isEnabled())
+			OreDictionary.registerOre("blockTin", new ItemStack(Content.tin_block));
+		if (Settings.mythrilBlock.isEnabled()) {
+			OreDictionary.registerOre("blockMythril", new ItemStack(Content.mythril_block));
+			OreDictionary.registerOre("blockMithril", new ItemStack(Content.mythril_block));
+		}
+		if (Settings.adamantiumBlock.isEnabled()) {
+			OreDictionary.registerOre("blockAdamantium", new ItemStack(Content.adamantium_block));
+			OreDictionary.registerOre("blockAdamantite", new ItemStack(Content.adamantium_block));
+			OreDictionary.registerOre("blockAdamantine", new ItemStack(Content.adamantium_block));
+		}
+		if (Settings.onyxBlock.isEnabled())
+			OreDictionary.registerOre("blockOnyx", new ItemStack(Content.onyx_block));
 		
 		if (Settings.copperIngot.isEnabled())
 			OreDictionary.registerOre("ingotCopper", new ItemStack(Content.copper_ingot));
@@ -63,20 +82,33 @@ public class Recipes {
 		addSmeltingRecipes();
 	}
 	
+	/**
+	 * completed config revision.
+	 */
 	public static void addBlockRecipes() 
 	{
 		//Storage Content
-	    GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_block, true, new Object[]{
-				"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotCopper"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_block, true, new Object[]{
-				"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_block, true, new Object[]{
-				"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_block, true, new Object[]{
-				"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_block, true, new Object[]{
-				"XXX", "XXX", "XXX", Character.valueOf('X'), "gemOnyx"}));
-	}
+		if (Settings.copperBlock.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_block, true, new Object[]{
+					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotCopper"}));
+		}
+		if (Settings.tinBlock.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_block, true, new Object[]{
+					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
+		}
+		if (Settings.mythrilBlock.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_block, true, new Object[]{
+					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
+		}
+		if (Settings.adamantiumBlock.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_block, true, new Object[]{
+					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
+		}
+		if (Settings.onyxBlock.isEnabled()) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_block, true, new Object[]{
+					"XXX", "XXX", "XXX", Character.valueOf('X'), "gemOnyx"}));
+		}
+	} // end addBlockRecipes()
 	
 	/**
 	 * complete with config revisions.
@@ -122,68 +154,99 @@ public class Recipes {
 		}
 	} // end addItemRecipes()
 	
+	/**
+	 * completed config revision.
+	 */
 	public static void addToolRecipes() 
 	{
 		//Copper Tool Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_pickaxe, true, new Object[]{
-				"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_axe, true, new Object[]{
-				"XX ", "XY ", " Y ", Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shovel, true, new Object[]{
-				"X", "Y", "Y", Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_sword, true, new Object[]{
-				"X", "X", "Y", Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_hoe, true, new Object[]{
-				"XX ", " Y ", " Y ", Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood"}));
-	
+		if (Settings.copperTools.isEnabled()) 
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_pickaxe, true, new Object[] { "XXX", " Y ", " Y ",
+					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_axe, true, new Object[] { "XX ", "XY ", " Y ",
+					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shovel, true, new Object[] { "X", "Y", "Y",
+					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_sword, true, new Object[] { "X", "X", "Y",
+					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_hoe, true, new Object[] { "XX ", " Y ", " Y ",
+					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
+
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shears, true, new Object[]{
+					"X ", " X", Character.valueOf('X'), "ingotCopper"}));
+		}
+		
 		//Tin Tool Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_pickaxe, true, new Object[]{
-				"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_axe, true, new Object[]{
-				"XX ", "XY ", " Y ", Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_shovel, true, new Object[]{
-				"X", "Y", "Y", Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_sword, true, new Object[]{
-				"X", "X", "Y", Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_hoe, true, new Object[]{
-				"XX ", " Y ", " Y ", Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood"}));
-	
+		if (Settings.tinTools.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_pickaxe, true, new Object[] { "XXX", " Y ", " Y ",
+					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_axe, true, new Object[] { "XX ", "XY ", " Y ",
+					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_shovel, true, new Object[] { "X", "Y", "Y",
+					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_sword, true, new Object[] { "X", "X", "Y",
+					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_hoe, true, new Object[] { "XX ", " Y ", " Y ",
+					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
+
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_shears, true, new Object[]{
+					"X ", " X", Character.valueOf('X'), "ingotTin"}));
+		}
 		//Mythril Tool Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_pickaxe, true, new Object[]{
-				"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_axe, true, new Object[]{
-				"XX ", "XY ", " Y ", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_shovel, true, new Object[]{
-				"X", "Y", "Y", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_sword, true, new Object[]{
-				"X", "X", "Y", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_hoe, true, new Object[]{
-				"XX ", " Y ", " Y ", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood"}));
-	
+		if (Settings.mythrilTools.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_pickaxe, true, new Object[] { "XXX", " Y ",
+					" Y ", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_axe, true, new Object[] { "XX ", "XY ", " Y ",
+					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_shovel, true, new Object[] { "X", "Y", "Y",
+					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_sword, true, new Object[] { "X", "X", "Y",
+					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_hoe, true, new Object[] { "XX ", " Y ", " Y ",
+					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
+
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_shears, true, new Object[]{
+					"X ", " X", Character.valueOf('X'), "ingotMythril"}));
+		}
 		//Adamantium Tool Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_pickaxe, true, new Object[]{
-				"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_axe, true, new Object[]{
-				"XX ", "XY ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_shovel, true, new Object[]{
-				"X", "Y", "Y", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_sword, true, new Object[]{
-				"X", "X", "Y", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_hoe, true, new Object[]{
-				"XX ", " Y ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-	
+		if (Settings.adamantiumTools.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_pickaxe, true, new Object[]{
+					"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_axe, true, new Object[]{
+					"XX ", "XY ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_shovel, true, new Object[]{
+					"X", "Y", "Y", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_sword, true, new Object[]{
+					"X", "X", "Y", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_hoe, true, new Object[]{
+					"XX ", " Y ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
+
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_shears, true, new Object[]{
+					"X ", " X", Character.valueOf('X'), "ingotAdamantium"}));
+		}
+		
 		//Onyx Tool Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_pickaxe, true, new Object[]{
-				"XXX", " Y ", " Y ", Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_axe, true, new Object[]{
-				"XX ", "XY ", " Y ", Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_shovel, true, new Object[]{
-				"X", "Y", "Y", Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_sword, true, new Object[]{
-				"X", "X", "Y", Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_hoe, true, new Object[]{
-				"XX ", " Y ", " Y ", Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood"}));
-	
+		if (Settings.onyxTools.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_pickaxe, true, new Object[] { "XXX", " Y ", " Y ",
+					Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_axe, true, new Object[] { "XX ", "XY ", " Y ",
+					Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_shovel, true, new Object[] { "X", "Y", "Y",
+					Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_sword, true, new Object[] { "X", "X", "Y",
+					Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood" }));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_hoe, true, new Object[] { "XX ", " Y ", " Y ",
+					Character.valueOf('X'), "gemOnyx", Character.valueOf('Y'), "stickWood" }));
+
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_shears, true, new Object[]{
+					"X ", " X", Character.valueOf('X'), "gemOnyx"}));
+		}
+		
 		//Bow Recipes
 		if (Settings.mythrilBow.isEnabled() && Settings.mythrilRod.isEnabled()) 
 		{
@@ -198,71 +261,76 @@ public class Recipes {
 							Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.DIAMOND,
 							Character.valueOf('W'), Items.FLINT_AND_STEEL }));
 		}
+	} // end addToolRecipes()
 	
-		//Shears Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shears, true, new Object[]{
-				"X ", " X", Character.valueOf('X'), "ingotCopper"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_shears, true, new Object[]{
-				"X ", " X", Character.valueOf('X'), "ingotTin"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_shears, true, new Object[]{
-				"X ", " X", Character.valueOf('X'), "ingotMythril"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_shears, true, new Object[]{
-				"X ", " X", Character.valueOf('X'), "ingotAdamantium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_shears, true, new Object[]{
-				"X ", " X", Character.valueOf('X'), "gemOnyx"}));
-	}
-	
+	/**
+	 * completed config revision.
+	 */
 	public static void addArmorRecipes() 
 	{
 		//Copper Armor Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_helmet, true, new Object[]{
-				"XXX", "X X", Character.valueOf('X'), "ingotCopper"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_chestplate, true, new Object[]{
-				"X X", "XXX", "XXX", Character.valueOf('X'), "ingotCopper"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_leggings, true, new Object[]{
-				"XXX", "X X", "X X", Character.valueOf('X'), "ingotCopper"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_boots, true, new Object[]{
-				"X X", "X X", Character.valueOf('X'), "ingotCopper"}));
-	
+		if (Settings.copperArmor.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_helmet, true, new Object[]{
+					"XXX", "X X", Character.valueOf('X'), "ingotCopper"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_chestplate, true, new Object[]{
+					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotCopper"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_leggings, true, new Object[]{
+					"XXX", "X X", "X X", Character.valueOf('X'), "ingotCopper"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_boots, true, new Object[]{
+					"X X", "X X", Character.valueOf('X'), "ingotCopper"}));
+		}
+		
 		//Tin Armor Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_helmet, true, new Object[]{
-				"XXX", "X X", Character.valueOf('X'), "ingotTin"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_chestplate, true, new Object[]{
-				"X X", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_leggings, true, new Object[]{
-				"XXX", "X X", "X X", Character.valueOf('X'), "ingotTin"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_boots, true, new Object[]{
-				"X X", "X X", Character.valueOf('X'), "ingotTin"}));
-	
+		if (Settings.tinArmor.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_helmet, true, new Object[]{
+					"XXX", "X X", Character.valueOf('X'), "ingotTin"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_chestplate, true, new Object[]{
+					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_leggings, true, new Object[]{
+					"XXX", "X X", "X X", Character.valueOf('X'), "ingotTin"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_boots, true, new Object[]{
+					"X X", "X X", Character.valueOf('X'), "ingotTin"}));
+		}
+		
 		//Mythril Armor Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_helmet, true, new Object[]{
-				"XXX", "X X", Character.valueOf('X'), "ingotMythril"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_chestplate, true, new Object[]{
-				"X X", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_leggings, true, new Object[]{
-				"XXX", "X X", "X X", Character.valueOf('X'), "ingotMythril"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_boots, true, new Object[]{
-				"X X", "X X", Character.valueOf('X'), "ingotMythril"}));
-	
+		if (Settings.mythrilArmor.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_helmet, true, new Object[]{
+					"XXX", "X X", Character.valueOf('X'), "ingotMythril"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_chestplate, true, new Object[]{
+					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_leggings, true, new Object[]{
+					"XXX", "X X", "X X", Character.valueOf('X'), "ingotMythril"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_boots, true, new Object[]{
+					"X X", "X X", Character.valueOf('X'), "ingotMythril"}));
+		}
+		
 		//Adamantium Armor Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_helmet, true, new Object[]{
-				"XXX", "X X", Character.valueOf('X'), "ingotAdamantium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_chestplate, true, new Object[]{
-				"X X", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_leggings, true, new Object[]{
-				"XXX", "X X", "X X", Character.valueOf('X'), "ingotAdamantium"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_boots, true, new Object[]{
-				"X X", "X X", Character.valueOf('X'), "ingotAdamantium"}));
-	
+		if (Settings.adamantiumArmor.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_helmet, true, new Object[]{
+					"XXX", "X X", Character.valueOf('X'), "ingotAdamantium"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_chestplate, true, new Object[]{
+					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_leggings, true, new Object[]{
+					"XXX", "X X", "X X", Character.valueOf('X'), "ingotAdamantium"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_boots, true, new Object[]{
+					"X X", "X X", Character.valueOf('X'), "ingotAdamantium"}));
+		}
 		//Onyx Armor Recipes
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_helmet, true, new Object[]{
-				"XXX", "X X", Character.valueOf('X'), "gemOnyx"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_chestplate, true, new Object[]{
-				"X X", "XXX", "XXX", Character.valueOf('X'), "gemOnyx"}));
-		GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_leggings, true, new Object[]{
-				"XXX", "X X", "X X", Character.valueOf('X'), "gemOnyx"}));
-        GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_boots, true, new Object[]{
-				"X X", "X X", Character.valueOf('X'), "gemOnyx"}));
+		if (Settings.onyxArmor.isEnabled())
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_helmet, true, new Object[]{
+					"XXX", "X X", Character.valueOf('X'), "gemOnyx"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_chestplate, true, new Object[]{
+					"X X", "XXX", "XXX", Character.valueOf('X'), "gemOnyx"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_leggings, true, new Object[]{
+					"XXX", "X X", "X X", Character.valueOf('X'), "gemOnyx"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_boots, true, new Object[]{
+					"X X", "X X", Character.valueOf('X'), "gemOnyx"}));
+		}
 	} // end addArmorRecipes()
 	
 	/**

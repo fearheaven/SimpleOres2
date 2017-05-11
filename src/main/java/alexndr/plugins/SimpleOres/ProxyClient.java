@@ -16,8 +16,12 @@ public class ProxyClient extends alexndr.plugins.SimpleOres.ProxyCommon
 		super.preInit(event);
 		if(event.getSide() == Side.CLIENT) 
 		{
-			renderHelper.addBowRenderDetails(SimpleOres.plugin, Content.mythril_bow);
-			renderHelper.addBowRenderDetails(SimpleOres.plugin, Content.onyx_bow);
+			if (Settings.mythrilBow.isEnabled()) {
+				renderHelper.addBowRenderDetails(SimpleOres.plugin, Content.mythril_bow);
+			}
+			if (Settings.onyxBow.isEnabled()) {
+				renderHelper.addBowRenderDetails(SimpleOres.plugin, Content.onyx_bow);
+			}
 			renderHelper.renderItemsAndBlocks();
 			renderHelper.renderItemStuff(event);
 		}

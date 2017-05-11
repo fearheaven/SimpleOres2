@@ -1,17 +1,12 @@
 package alexndr.plugins.SimpleOres;
 
-import java.io.File;
-
 import alexndr.api.config.ConfigHelper;
 import alexndr.api.config.types.ConfigArmor;
 import alexndr.api.config.types.ConfigBlock;
 import alexndr.api.config.types.ConfigBow;
-import alexndr.api.config.types.ConfigEntry;
 import alexndr.api.config.types.ConfigItem;
 import alexndr.api.config.types.ConfigOre;
 import alexndr.api.config.types.ConfigTool;
-import alexndr.api.config.types.ConfigValue;
-import alexndr.api.core.APIInfo;
 import alexndr.api.logger.LogHelper;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -50,6 +45,9 @@ public class Settings
 		}
 	} // end class
 
+	/**
+	 * completed revised config.
+	 */
 	public static void configureItems()
 	{
 		// Items
@@ -77,31 +75,16 @@ public class Settings
 	public static void configureTools()
 	{
 		// Tools
-		copperTools = settings.get(
-				new ConfigTool("Copper Tools", "Tools").setUses(185)
-						.setHarvestLevel(1).setHarvestSpeed(4.0F)
-						.setDamageVsEntity(1.0F).setEnchantability(8))
-				.asConfigTool();
-		tinTools = settings.get(
-				new ConfigTool("Tin Tools", "Tools").setUses(220)
-						.setHarvestLevel(1).setHarvestSpeed(3.5F)
-						.setDamageVsEntity(1.0F).setEnchantability(8))
-				.asConfigTool();
-		mythrilTools = settings.get(
-				new ConfigTool("Mythril Tools", "Tools").setUses(800)
-						.setHarvestLevel(2).setHarvestSpeed(8.0F)
-						.setDamageVsEntity(3.0F).setEnchantability(12))
-				.asConfigTool();
-		adamantiumTools = settings.get(
-				new ConfigTool("Adamantium Tools", "Tools").setUses(1150)
-						.setHarvestLevel(2).setHarvestSpeed(14.0F)
-						.setDamageVsEntity(3.0F).setEnchantability(3))
-				.asConfigTool();
-		onyxTools = settings.get(
-				new ConfigTool("Onyx Tools", "Tools").setUses(3280)
-						.setHarvestLevel(4).setHarvestSpeed(10.0F)
-						.setDamageVsEntity(5.0F).setEnchantability(15))
-				.asConfigTool();
+		copperTools = new ConfigTool("Copper Tools").setUses(185).setHarvestLevel(1)
+				.setHarvestSpeed(4.0F).setDamageVsEntity(1.0F).setEnchantability(8);
+		tinTools = new ConfigTool("Tin Tools").setUses(220).setHarvestLevel(1).setHarvestSpeed(3.5F)
+				.setDamageVsEntity(1.0F).setEnchantability(8);
+		mythrilTools = new ConfigTool("Mythril Tools").setUses(800).setHarvestLevel(2)
+				.setHarvestSpeed(8.0F).setDamageVsEntity(3.0F).setEnchantability(12);
+		adamantiumTools = new ConfigTool("Adamantium Tools").setUses(1150).setHarvestLevel(2)
+				.setHarvestSpeed(14.0F).setDamageVsEntity(3.0F).setEnchantability(3);
+		onyxTools = new ConfigTool("Onyx Tools").setUses(3280).setHarvestLevel(4)
+				.setHarvestSpeed(10.0F).setDamageVsEntity(5.0F).setEnchantability(15);
 	} // end configureTools()
 	
 	
@@ -162,79 +145,55 @@ public class Settings
 	{
 		// Blocks
 		copperBlock = new ConfigBlock("Block of Copper", ConfigHelper.CATEGORY_BLOCK)
-						.setHardness(7.0F).setResistance(12.0F)
-						.setLightValue(0).setHarvestLevel(0)
-						.setHarvestTool("pickaxe")
-						.setBeaconBase(true);
+						.setHardness(7.0F).setResistance(12.0F).setHarvestLevel(0)
+						.setHarvestTool("pickaxe").setBeaconBase(true);
 		copperBlock.GetConfig(settings);
 		
 		tinBlock = new ConfigBlock("Block of Tin", ConfigHelper.CATEGORY_BLOCK).setHardness(7.0F)
-						.setResistance(12.0F).setLightValue(0)
-						.setHarvestLevel(0).setHarvestTool("pickaxe")
+						.setResistance(12.0F).setHarvestLevel(0).setHarvestTool("pickaxe")
 						.setBeaconBase(true);
 		tinBlock.GetConfig(settings);
 		
 		mythrilBlock = 	new ConfigBlock("Block of Mythril", ConfigHelper.CATEGORY_BLOCK)
-						.setHardness(7.0F).setResistance(12.0F)
-						.setLightValue(0).setHarvestLevel(0)
-						.setHarvestTool("pickaxe")
-						.setBeaconBase(true);
+						.setHardness(7.0F).setResistance(12.0F).setHarvestLevel(0)
+						.setHarvestTool("pickaxe").setBeaconBase(true);
 		mythrilBlock.GetConfig(settings);
 		
 		adamantiumBlock = new ConfigBlock("Block of Adamantium", ConfigHelper.CATEGORY_BLOCK)
-						.setHardness(7.0F).setResistance(12.0F)
-						.setLightValue(0).setHarvestLevel(0)
-						.setHarvestTool("pickaxe")
-						.setBeaconBase(true);
+						.setHardness(7.0F).setResistance(12.0F).setHarvestLevel(0)
+						.setHarvestTool("pickaxe").setBeaconBase(true);
 		adamantiumBlock.GetConfig(settings);
 		
 		onyxBlock = new ConfigBlock("Block of Onyx", ConfigHelper.CATEGORY_BLOCK)
-						.setHardness(20.0F).setResistance(30.0F)
-						.setLightValue(0).setHarvestLevel(0)
-						.setHarvestTool("pickaxe")
-						.setBeaconBase(true);
+						.setHardness(20.0F).setResistance(30.0F).setHarvestLevel(0)
+						.setHarvestTool("pickaxe").setBeaconBase(true);
 		onyxBlock.GetConfig(settings);
 	} // end configureBlocks()
 
+	/*
+	 * mostly revised config
+	 */
 	public static void configureOres ()
 	{
-		copperOre = settings.get(
-				new ConfigBlock("Copper Ore", "Ores").setHardness(1.7F)
-						.setResistance(5.0F).setLightValue(0.0F)
-						.setHarvestLevel(1).setHarvestTool("pickaxe")
-						.setSpawnRate(35).setVeinSize(10).setMinHeight(1)
-						.setMaxHeight(90))
-				.asConfigBlock();
-		tinOre = settings.get(
-				new ConfigBlock("Tin Ore", "Ores").setHardness(3.0F)
-						.setResistance(5.0F).setLightValue(0.0F)
+		copperOre = new ConfigOre("Copper Ore").setSpawnRate(35).setVeinSize(10)
+				.setMinHeight(1).setMaxHeight(90).setHardness(1.7F).setResistance(5.0F)
+				.setHarvestLevel(1).setHarvestTool("pickaxe");
+		tinOre = new ConfigOre("Tin Ore").setHardness(3.0F).setResistance(5.0F)
 						.setHarvestLevel(1).setHarvestTool("pickaxe")
 						.setSpawnRate(30).setVeinSize(10).setMinHeight(1)
-						.setMaxHeight(90))
-				.asConfigBlock();
-		mythrilOre = settings.get(
-				new ConfigBlock("Mythril Ore", "Ores").setHardness(4.0F)
-						.setResistance(5.0F).setLightValue(0.0F)
+						.setMaxHeight(90);
+		mythrilOre = new ConfigOre("Mythril Ore").setHardness(4.0F).setResistance(5.0F)
 						.setHarvestLevel(2).setHarvestTool("pickaxe")
 						.setSpawnRate(10).setVeinSize(8).setMinHeight(1)
-						.setMaxHeight(40))
-				.asConfigBlock();
-		adamantiumOre = settings.get(
-				new ConfigBlock("Adamantium Ore", "Ores").setHardness(5.0F)
-						.setResistance(5.0F).setLightValue(0.0F)
+						.setMaxHeight(40);
+		adamantiumOre = new ConfigOre("Adamantium Ore").setHardness(5.0F).setResistance(5.0F)
 						.setHarvestLevel(2).setHarvestTool("pickaxe")
 						.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
-						.setMaxHeight(30))
-				.asConfigBlock();
-		onyxOre = settings.get(
-				new ConfigBlock("Onyx Ore", "Ores").setHardness(7.0F)
-						.setResistance(5.0F).setLightValue(0.0F)
+						.setMaxHeight(30);
+		onyxOre = new ConfigOre("Onyx Ore").setHardness(7.0F).setResistance(5.0F)
 						.setHarvestLevel(3).setHarvestTool("pickaxe")
 						.setSpawnRate(6).setVeinSize(6).setMinHeight(1)
-						.setMaxHeight(127)
-						.setDropItem(true)
-						.setItemToDrop("simpleores:onyx_gem")
-						.setQuantityToDrop(1)).asConfigBlock();
+						.setMaxHeight(127);
 	} // end configureOres()
 	
 	public static ConfigBlock copperBlock, tinBlock, mythrilBlock, adamantiumBlock,

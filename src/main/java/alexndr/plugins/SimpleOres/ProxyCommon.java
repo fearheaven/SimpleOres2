@@ -44,7 +44,7 @@ public class ProxyCommon
 
 	private static void setTabIcons() 
 	{
-		LogHelper.verbose("SimpleOres 2", "Setting tab icons");
+		LogHelper.verbose(ModInfo.ID, "Setting tab icons");
 		List<Item> list = Lists.newArrayList(Item.getItemFromBlock(Content.copper_ore), 
 					Item.getItemFromBlock(Content.adamantium_block), 
 					Content.mythril_ingot, Content.onyx_pickaxe, Content.copper_sword,
@@ -52,25 +52,38 @@ public class ProxyCommon
 		SimpleCoreAPI.setTabIcons(list);
 	}
 	
+	/**
+	 * completed config revision.
+	 */
 	private static void setOreGenSettings() 
 	{
-		LogHelper.verbose("SimpleOres 2", "Setting ore gen parameters");
-		OreGenerator.registerOreForGen(0, Content.copper_ore, Blocks.STONE, 
-				Settings.copperOre.getSpawnRate(), Settings.copperOre.getVeinSize(), 
-				Settings.copperOre.getMinHeight(), Settings.copperOre.getMaxHeight());
-		OreGenerator.registerOreForGen(0, Content.tin_ore, Blocks.STONE, 
-				Settings.tinOre.getSpawnRate(), Settings.tinOre.getVeinSize(), 
-				Settings.tinOre.getMinHeight(), Settings.tinOre.getMaxHeight());
-		OreGenerator.registerOreForGen(0, Content.mythril_ore, Blocks.STONE, 
-				Settings.mythrilOre.getSpawnRate(), Settings.mythrilOre.getVeinSize(), 
-				Settings.mythrilOre.getMinHeight(), Settings.mythrilOre.getMaxHeight());
+		LogHelper.verbose(ModInfo.ID, "Setting ore gen parameters");
+		if (Settings.copperOre.isEnableOreGen()) {
+			OreGenerator.registerOreForGen(0, Content.copper_ore, Blocks.STONE, 
+					Settings.copperOre.getSpawnRate(), Settings.copperOre.getVeinSize(), 
+					Settings.copperOre.getMinHeight(), Settings.copperOre.getMaxHeight());
+		}
+		if (Settings.tinOre.isEnableOreGen()) {
+			OreGenerator.registerOreForGen(0, Content.tin_ore, Blocks.STONE, 
+					Settings.tinOre.getSpawnRate(), Settings.tinOre.getVeinSize(), 
+					Settings.tinOre.getMinHeight(), Settings.tinOre.getMaxHeight());
+		}
+		if (Settings.mythrilOre.isEnableOreGen()) {
+			OreGenerator.registerOreForGen(0, Content.mythril_ore, Blocks.STONE, 
+					Settings.mythrilOre.getSpawnRate(), Settings.mythrilOre.getVeinSize(), 
+					Settings.mythrilOre.getMinHeight(), Settings.mythrilOre.getMaxHeight());
+		}
+		if (Settings.adamantiumOre.isEnableOreGen()) {
 		OreGenerator.registerOreForGen(0, Content.adamantium_ore, Blocks.STONE, 
 				Settings.adamantiumOre.getSpawnRate(), 
 				Settings.adamantiumOre.getVeinSize(), 
 				Settings.adamantiumOre.getMinHeight(), 
 				Settings.adamantiumOre.getMaxHeight());
-		OreGenerator.registerOreForGen(-1, Content.onyx_ore, Blocks.NETHERRACK, 
-				Settings.onyxOre.getSpawnRate(), Settings.onyxOre.getVeinSize(), 
-				Settings.onyxOre.getMinHeight(), Settings.onyxOre.getMaxHeight());
+		}
+		if (Settings.onyxOre.isEnableOreGen()) {
+			OreGenerator.registerOreForGen(-1, Content.onyx_ore, Blocks.NETHERRACK, 
+					Settings.onyxOre.getSpawnRate(), Settings.onyxOre.getVeinSize(), 
+					Settings.onyxOre.getMinHeight(), Settings.onyxOre.getMaxHeight());
+		}
 	} // end setOreGenSettings()
 } // end class
