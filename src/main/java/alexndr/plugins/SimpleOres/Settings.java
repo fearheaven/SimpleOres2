@@ -72,6 +72,9 @@ public class Settings
 		copperBucket.GetConfig(settings);
 	} // end configureItems()
 	
+	/**
+	 * completed revised config.
+	 */
 	public static void configureTools()
 	{
 		// Tools
