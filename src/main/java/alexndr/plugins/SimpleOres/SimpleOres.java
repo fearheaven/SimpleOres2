@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  */
 @Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION, 
 	 dependencies = ModInfo.DEPENDENCIES, acceptedMinecraftVersions=ModInfo.ACCEPTED_VERSIONS,
-	 updateJSON="https://raw.githubusercontent.com/Sinhika/SimpleOres2/dev1.9/update.json")
+	 updateJSON=ModInfo.VERSIONURL)
 public class SimpleOres 
 {
 	@Mod.Instance
