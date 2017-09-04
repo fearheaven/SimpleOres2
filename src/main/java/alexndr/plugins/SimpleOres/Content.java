@@ -64,8 +64,10 @@ public class Content
 		LogHelper.verbose(ModInfo.ID, "Creating ingots and misc items");
 		
 		copper_ingot = Settings.copperIngot.isEnabled()
-				? new SimpleItem(SimpleOres.plugin, ContentCategories.Item.INGOT).setConfigEntry(Settings.copperIngot)
-						.setUnlocalizedName("copper_ingot").setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
+				? new SimpleItem(SimpleOres.plugin, ContentCategories.Item.INGOT)
+						.setConfigEntry(Settings.copperIngot)
+						.setUnlocalizedName("copper_ingot")
+						.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
 				: null;
 		tin_ingot = Settings.tinIngot.isEnabled() 
 				? new SimpleItem(SimpleOres.plugin,
@@ -329,6 +331,7 @@ public class Content
 					.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 					.setUnlocalizedName("mythril_shears");
 		} // end-if mythril tools enabled.
+		
 		if (Settings.adamantiumTools.isEnabled())
 		{
 			adamantium_pickaxe = new SimplePickaxe(SimpleOres.plugin,
@@ -362,6 +365,7 @@ public class Content
 					.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
 					.setUnlocalizedName("adamantium_shears");
 		} // end-if adamantium tools enabled.
+		
 		if (Settings.onyxTools.isEnabled()) {
 			onyx_pickaxe = new SimplePickaxe(SimpleOres.plugin, Content.toolOnyx)
 					.setConfigEntry(Settings.onyxTools)
