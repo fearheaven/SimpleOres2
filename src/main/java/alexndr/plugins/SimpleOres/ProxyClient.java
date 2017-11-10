@@ -1,8 +1,10 @@
 package alexndr.plugins.SimpleOres;
 import alexndr.api.helpers.game.RenderItemHelper;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 
@@ -38,5 +40,13 @@ public class ProxyClient extends alexndr.plugins.SimpleOres.ProxyCommon
     { 
 		super.postInit(event);
     } // end postInit()    
+
+	@SubscribeEvent
+	public static void registerModels(ModelRegistryEvent event) 
+	{
+    	ModItems.registerModels();
+    	ModBlocks.registerModels();
+	}
+
 
 } // end class()

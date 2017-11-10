@@ -29,7 +29,7 @@ public class SimpleOres
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) 
 	{
-		LogHelper.info("SimpleOres2 Loading...");
+		LogHelper.info(ModInfo.ID,"Loading...");
 		proxy.preInit(event);
 	} // end preInit
 	
@@ -43,7 +43,7 @@ public class SimpleOres
 	public void postInit(FMLPostInitializationEvent event) 
 	{
 		proxy.postInit(event);
-		LogHelper.info("SimpleOres 2", "Loading Complete!");
+		LogHelper.info(ModInfo.ID, "Loading Complete!");
 	}
 
 } // end class
