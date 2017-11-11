@@ -1,33 +1,26 @@
 package alexndr.plugins.SimpleOres;
 
-import alexndr.api.content.items.SimpleArmor;
-import alexndr.api.content.items.SimpleAxe;
-import alexndr.api.content.items.SimpleBow;
-import alexndr.api.content.items.SimpleBowEffects;
-import alexndr.api.content.items.SimpleBucket;
-import alexndr.api.content.items.SimpleHoe;
 import alexndr.api.content.items.SimpleItem;
-import alexndr.api.content.items.SimplePickaxe;
-import alexndr.api.content.items.SimpleShears;
-import alexndr.api.content.items.SimpleShovel;
-import alexndr.api.content.items.SimpleSword;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
-import alexndr.api.registry.ContentCategories;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems 
 {
-	public static SimpleItem copper_ingot = 
-			new SimpleItem("copper_ingot", SimpleOres.plugin, ContentCategories.Item.INGOT);
+	// ingots
+	public static SimpleItem copper_ingot = new SimpleItem("copper_ingot", SimpleOres.plugin);
+	public static SimpleItem tin_ingot = new SimpleItem("tin_ingot", SimpleOres.plugin);
+	public static SimpleItem mythril_ingot = new SimpleItem("mythril_ingot", SimpleOres.plugin);
+	public static SimpleItem adamantium_ingot = new SimpleItem("adamantium_ingot", SimpleOres.plugin);
+	public static SimpleItem onyx_gem = new SimpleItem("onyx_gem", SimpleOres.plugin);
 
-	public static Item tin_ingot, mythril_ingot,
-	adamantium_ingot, onyx_gem, mythril_rod, onyx_rod, copper_bucket,
+	// parts
+	
+	public static Item mythril_rod, onyx_rod, copper_bucket,
 	copper_bucket_water;
 
 public static Item copper_pickaxe, tin_pickaxe, mythril_pickaxe,
@@ -46,46 +39,74 @@ public static Item copper_helmet, copper_chestplate, copper_leggings,
 	adamantium_leggings, adamantium_boots, onyx_helmet,
 	onyx_chestplate, onyx_leggings, onyx_boots;
 
+public static void register(IForgeRegistry<Item> registry) 
+{
+	if (Settings.copperIngot.isEnabled()) registry.register(copper_ingot);
+	if (Settings.tinIngot.isEnabled()) registry.register(tin_ingot);
+	if (Settings.mythrilIngot.isEnabled()) registry.register(mythril_ingot);
+	if (Settings.adamantiumIngot.isEnabled()) registry.register(adamantium_ingot);
+	if (Settings.onyxGem.isEnabled()) registry.register(onyx_gem);
+} // end register()
+
+
+public static void registerModels() 
+{
+	if (Settings.copperIngot.isEnabled()) copper_ingot.registerItemModel();
+	if (Settings.tinIngot.isEnabled())	tin_ingot.registerItemModel();
+	if (Settings.mythrilIngot.isEnabled())	mythril_ingot.registerItemModel();
+	if (Settings.adamantiumIngot.isEnabled()) adamantium_ingot.registerItemModel();
+	if (Settings.onyxGem.isEnabled())	onyx_gem.registerItemModel();
+	
+} // end registerModels()
+
+public static void registerOreDictionary()
+{
+	// ore dictionary registrations
+	if (Settings.copperIngot.isEnabled())
+		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.copper_ingot));
+	if (Settings.tinIngot.isEnabled())
+		OreDictionary.registerOre("ingotTin", new ItemStack(ModItems.tin_ingot));
+	if (Settings.mythrilIngot.isEnabled()) {
+		OreDictionary.registerOre("ingotMythril", new ItemStack(ModItems.mythril_ingot));
+		OreDictionary.registerOre("ingotMithril", new ItemStack(ModItems.mythril_ingot));
+	}
+	if (Settings.adamantiumIngot.isEnabled()) {
+		OreDictionary.registerOre("ingotAdamantium", new ItemStack(ModItems.adamantium_ingot));
+		OreDictionary.registerOre("ingotAdamantite", new ItemStack(ModItems.adamantium_ingot));
+		OreDictionary.registerOre("ingotAdamantine", new ItemStack(ModItems.adamantium_ingot));
+	}
+	if (Settings.onyxGem.isEnabled())
+		OreDictionary.registerOre("gemOnyx", new ItemStack(ModItems.onyx_gem));
+} // end registerOreDictionary()
 
 /**
- * completed config revision.
+ * Configure simple items.
  */
-//public static void doItems() 
-//{
-//	LogHelper.verbose(ModInfo.ID, "Creating ingots and misc items");
-//	
-//	copper_ingot = Settings.copperIngot.isEnabled()
-//			? new SimpleItem(SimpleOres.plugin, ContentCategories.Item.INGOT)
-//					.setConfigEntry(Settings.copperIngot)
-//					.setUnlocalizedName("copper_ingot")
-//					.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//			: null;
-//	tin_ingot = Settings.tinIngot.isEnabled() 
-//			? new SimpleItem(SimpleOres.plugin,
-//			ContentCategories.Item.INGOT).setConfigEntry(Settings.tinIngot)
-//			.setUnlocalizedName("tin_ingot")
-//			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//			: null;
-//	mythril_ingot = Settings.mythrilIngot.isEnabled() 
-//			? new SimpleItem(SimpleOres.plugin,
-//			ContentCategories.Item.INGOT).setConfigEntry(
-//			Settings.mythrilIngot).setUnlocalizedName("mythril_ingot")
-//	                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//	        : null;
-//	adamantium_ingot = Settings.adamantiumIngot.isEnabled() 
-//			? new SimpleItem(SimpleOres.plugin,
-//			ContentCategories.Item.INGOT).setConfigEntry(
-//			Settings.adamantiumIngot)
-//			.setUnlocalizedName("adamantium_ingot")
-//			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//			: null;
-//	onyx_gem = Settings.onyxGem.isEnabled() 
-//			? new SimpleItem(SimpleOres.plugin,
-//			ContentCategories.Item.INGOT).setConfigEntry(Settings.onyxGem)
-//			.setUnlocalizedName("onyx_gem")
-//			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//			: null;
-//
+public static void configureSimpleItems() 
+{
+	LogHelper.verbose(ModInfo.ID, "Configuring ingots and misc items");
+	
+	if (Settings.copperIngot.isEnabled()) {
+		copper_ingot.setConfigEntry(Settings.copperIngot)
+					.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+	if (Settings.tinIngot.isEnabled()) {
+		tin_ingot.setConfigEntry(Settings.tinIngot)
+			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+	if (Settings.mythrilIngot.isEnabled()) {
+		mythril_ingot.setConfigEntry(Settings.mythrilIngot)
+	                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+	if (Settings.adamantiumIngot.isEnabled()) {
+		adamantium_ingot.setConfigEntry(Settings.adamantiumIngot)
+			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+	if (Settings.onyxGem.isEnabled()) {
+		onyx_gem.setConfigEntry(Settings.onyxGem)
+			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+		
 //	mythril_rod = Settings.mythrilRod.isEnabled()
 //			? new SimpleItem(SimpleOres.plugin, ContentCategories.Item.MATERIAL).setConfigEntry(Settings.mythrilRod)
 //					.setUnlocalizedName("mythril_rod").setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
@@ -111,11 +132,10 @@ public static Item copper_helmet, copper_chestplate, copper_leggings,
 //				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 //		Content.copperBucketType.addVariant("water", copper_bucket_water, FluidRegistry.WATER);
 //	}
-//} // end doItems()
-//
-///**
-// * completed config revision.
-// */
+} // end configureSimpleItems()
+
+
+
 //public static void doBows()
 //{
 //	LogHelper.verbose(ModInfo.ID, "Creating bows");

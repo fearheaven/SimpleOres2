@@ -18,61 +18,6 @@ public class Recipes {
 		addRecipes();
 	}
 	
-	/**
-	 * compeleted config revision.
-	 */
-	public static void addOreDictEntries() 
-	{
-		if (Settings.copperOre.isEnabled())
-			OreDictionary.registerOre("oreCopper", new ItemStack(Content.copper_ore));
-		if (Settings.tinOre.isEnabled())
-			OreDictionary.registerOre("oreTin", new ItemStack(Content.tin_ore));
-		if (Settings.mythrilOre.isEnabled()) 
-		{
-			OreDictionary.registerOre("oreMythril", new ItemStack(Content.mythril_ore));
-			OreDictionary.registerOre("oreMithril", new ItemStack(Content.mythril_ore));
-		}
-		if (Settings.adamantiumOre.isEnabled())
-		{
-			OreDictionary.registerOre("oreAdamantium", new ItemStack(Content.adamantium_ore));
-			OreDictionary.registerOre("oreAdamantite", new ItemStack(Content.adamantium_ore));
-			OreDictionary.registerOre("oreAdamantine", new ItemStack(Content.adamantium_ore));
-		}
-		if (Settings.onyxOre.isEnabled())
-			OreDictionary.registerOre("oreOnyx", new ItemStack(Content.onyx_ore));
-		if (Settings.copperBlock.isEnabled())
-			OreDictionary.registerOre("blockCopper", new ItemStack(Content.copper_block));
-		if (Settings.tinBlock.isEnabled())
-			OreDictionary.registerOre("blockTin", new ItemStack(Content.tin_block));
-		if (Settings.mythrilBlock.isEnabled()) {
-			OreDictionary.registerOre("blockMythril", new ItemStack(Content.mythril_block));
-			OreDictionary.registerOre("blockMithril", new ItemStack(Content.mythril_block));
-		}
-		if (Settings.adamantiumBlock.isEnabled()) {
-			OreDictionary.registerOre("blockAdamantium", new ItemStack(Content.adamantium_block));
-			OreDictionary.registerOre("blockAdamantite", new ItemStack(Content.adamantium_block));
-			OreDictionary.registerOre("blockAdamantine", new ItemStack(Content.adamantium_block));
-		}
-		if (Settings.onyxBlock.isEnabled())
-			OreDictionary.registerOre("blockOnyx", new ItemStack(Content.onyx_block));
-		
-		if (Settings.copperIngot.isEnabled())
-			OreDictionary.registerOre("ingotCopper", new ItemStack(Content.copper_ingot));
-		if (Settings.tinIngot.isEnabled())
-			OreDictionary.registerOre("ingotTin", new ItemStack(Content.tin_ingot));
-		if (Settings.mythrilIngot.isEnabled()) {
-			OreDictionary.registerOre("ingotMythril", new ItemStack(Content.mythril_ingot));
-			OreDictionary.registerOre("ingotMithril", new ItemStack(Content.mythril_ingot));
-		}
-		if (Settings.adamantiumIngot.isEnabled()) {
-			OreDictionary.registerOre("ingotAdamantium", new ItemStack(Content.adamantium_ingot));
-			OreDictionary.registerOre("ingotAdamantite", new ItemStack(Content.adamantium_ingot));
-			OreDictionary.registerOre("ingotAdamantine", new ItemStack(Content.adamantium_ingot));
-		}
-		if (Settings.onyxGem.isEnabled())
-			OreDictionary.registerOre("gemOnyx", new ItemStack(Content.onyx_gem));
-	} // end addOreDictEntries()
-	
 	public static void addRecipes() 
 	{
 		addBlockRecipes();

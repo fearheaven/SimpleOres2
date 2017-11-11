@@ -9,6 +9,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModBlocks 
@@ -101,6 +103,45 @@ public class ModBlocks
 		if (Settings.onyxBlock.isEnabled())
 			onyx_block.registerItemModel(Item.getItemFromBlock(onyx_block));
 	} // end registerModels
+	
+	/**
+	 * ore dictionary registrations for blocks.
+	 */
+	public static void registerOreDictionary()
+	{
+		if (Settings.copperOre.isEnabled())
+			OreDictionary.registerOre("oreCopper", new ItemStack(ModBlocks.copper_ore));
+		if (Settings.tinOre.isEnabled())
+			OreDictionary.registerOre("oreTin", new ItemStack(ModBlocks.tin_ore));
+		if (Settings.mythrilOre.isEnabled()) 
+		{
+			OreDictionary.registerOre("oreMythril", new ItemStack(ModBlocks.mythril_ore));
+			OreDictionary.registerOre("oreMithril", new ItemStack(ModBlocks.mythril_ore));
+		}
+		if (Settings.adamantiumOre.isEnabled())
+		{
+			OreDictionary.registerOre("oreAdamantium", new ItemStack(ModBlocks.adamantium_ore));
+			OreDictionary.registerOre("oreAdamantite", new ItemStack(ModBlocks.adamantium_ore));
+			OreDictionary.registerOre("oreAdamantine", new ItemStack(ModBlocks.adamantium_ore));
+		}
+		if (Settings.onyxOre.isEnabled())
+			OreDictionary.registerOre("oreOnyx", new ItemStack(ModBlocks.onyx_ore));
+		if (Settings.copperBlock.isEnabled())
+			OreDictionary.registerOre("blockCopper", new ItemStack(ModBlocks.copper_block));
+		if (Settings.tinBlock.isEnabled())
+			OreDictionary.registerOre("blockTin", new ItemStack(ModBlocks.tin_block));
+		if (Settings.mythrilBlock.isEnabled()) {
+			OreDictionary.registerOre("blockMythril", new ItemStack(ModBlocks.mythril_block));
+			OreDictionary.registerOre("blockMithril", new ItemStack(ModBlocks.mythril_block));
+		}
+		if (Settings.adamantiumBlock.isEnabled()) {
+			OreDictionary.registerOre("blockAdamantium", new ItemStack(ModBlocks.adamantium_block));
+			OreDictionary.registerOre("blockAdamantite", new ItemStack(ModBlocks.adamantium_block));
+			OreDictionary.registerOre("blockAdamantine", new ItemStack(ModBlocks.adamantium_block));
+		}
+		if (Settings.onyxBlock.isEnabled())
+			OreDictionary.registerOre("blockOnyx", new ItemStack(ModBlocks.onyx_block));
+	} // end registerOreDictionary()
 	
 	/**
 	 * completed config revision
