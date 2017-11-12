@@ -1,16 +1,24 @@
 package alexndr.plugins.SimpleOres;
 
+import alexndr.api.content.items.SimpleBow;
+import alexndr.api.content.items.SimpleBowEffects;
+import alexndr.api.content.items.SimpleBucket;
 import alexndr.api.content.items.SimpleItem;
+import alexndr.api.content.items.SimplePickaxe;
+import alexndr.api.content.items.SimpleSword;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems 
 {
+	// SIMPLE ITEMS
 	// ingots
 	public static SimpleItem copper_ingot = new SimpleItem("copper_ingot", SimpleOres.plugin);
 	public static SimpleItem tin_ingot = new SimpleItem("tin_ingot", SimpleOres.plugin);
@@ -19,19 +27,58 @@ public class ModItems
 	public static SimpleItem onyx_gem = new SimpleItem("onyx_gem", SimpleOres.plugin);
 
 	// parts
-	
-	public static Item mythril_rod, onyx_rod, copper_bucket,
-	copper_bucket_water;
+	public static SimpleItem mythril_rod = new SimpleItem("mythril_rod", SimpleOres.plugin);
+	public static SimpleItem onyx_rod = new SimpleItem("onyx_rod", SimpleOres.plugin);
 
-public static Item copper_pickaxe, tin_pickaxe, mythril_pickaxe,
-	adamantium_pickaxe, onyx_pickaxe, copper_axe, tin_axe, mythril_axe,
+	// buckets
+	public static SimpleBucket copper_bucket
+		= new SimpleBucket("copper_bucket", SimpleOres.plugin, null, Content.copperBucketType);
+	public static SimpleBucket copper_bucket_water
+		= new SimpleBucket("copper_bucket_water", SimpleOres.plugin, 
+							new ItemStack(copper_bucket), Content.copperBucketType);
+	
+	// TOOLS & WEAPONS
+	// bows
+	public static SimpleBow mythril_bow = new SimpleBow("mythril_bow", SimpleOres.plugin, 750);
+	public static SimpleBow onyx_bow = new SimpleBow("onyx_bow", SimpleOres.plugin, 1000);
+	
+	// swords
+	public static SimpleSword copper_sword = 
+			new SimpleSword("copper_sword", SimpleOres.plugin, Content.toolCopper);
+	public static SimpleSword tin_sword = 
+			new SimpleSword("tin_sword", SimpleOres.plugin, Content.toolTin);
+	public static SimpleSword mythril_sword = 
+			new SimpleSword("mythril_sword", SimpleOres.plugin, Content.toolMythril);
+	public static SimpleSword adamantium_sword = 
+			new SimpleSword("adamantium_sword", SimpleOres.plugin, Content.toolAdamantium);
+	public static SimpleSword onyx_sword = 
+			new SimpleSword("onyx_sword", SimpleOres.plugin, Content.toolOnyx);
+			
+	// pickaxes
+	public static SimplePickaxe copper_pickaxe = 
+			new SimplePickaxe("copper_pickaxe", SimpleOres.plugin, Content.toolCopper);
+	public static SimplePickaxe tin_pickaxe = 
+			new SimplePickaxe("tin_pickaxe", SimpleOres.plugin, Content.toolTin);
+	public static SimplePickaxe mythril_pickaxe = 
+		new SimplePickaxe("mythril_pickaxe", SimpleOres.plugin, Content.toolMythril);
+	public static SimplePickaxe adamantium_pickaxe = 
+			new SimplePickaxe("adamantium_pickaxe", SimpleOres.plugin, Content.toolAdamantium);
+	public static SimplePickaxe onyx_pickaxe =  
+			new SimplePickaxe("onyx_pickaxe", SimpleOres.plugin, Content.toolOnyx);
+	
+	// axes
+	// shovels
+	// hoes
+	// shears
+	
+public static Item copper_axe, tin_axe, mythril_axe,
 	adamantium_axe, onyx_axe, copper_shovel, tin_shovel,
 	mythril_shovel, adamantium_shovel, onyx_shovel, copper_hoe,
-	tin_hoe, mythril_hoe, adamantium_hoe, onyx_hoe, copper_sword,
-	tin_sword, mythril_sword, adamantium_sword, onyx_sword,
+	tin_hoe, mythril_hoe, adamantium_hoe, onyx_hoe, 
 	copper_shears, tin_shears, mythril_shears, adamantium_shears,
-	onyx_shears, mythril_bow, onyx_bow;
+	onyx_shears;
 
+	// ARMOR
 public static Item copper_helmet, copper_chestplate, copper_leggings,
 	copper_boots, tin_helmet, tin_chestplate, tin_leggings, tin_boots,
 	mythril_helmet, mythril_chestplate, mythril_leggings,
@@ -46,6 +93,10 @@ public static void register(IForgeRegistry<Item> registry)
 	if (Settings.mythrilIngot.isEnabled()) registry.register(mythril_ingot);
 	if (Settings.adamantiumIngot.isEnabled()) registry.register(adamantium_ingot);
 	if (Settings.onyxGem.isEnabled()) registry.register(onyx_gem);
+	if (Settings.mythrilRod.isEnabled()) registry.register(mythril_rod);
+	if (Settings.onyxRod.isEnabled()) registry.register(onyx_rod);
+	if (Settings.mythrilBow.isEnabled()) registry.register(mythril_bow);
+	if (Settings.onyxBow.isEnabled()) registry.register(onyx_bow);
 } // end register()
 
 
@@ -56,7 +107,10 @@ public static void registerModels()
 	if (Settings.mythrilIngot.isEnabled())	mythril_ingot.registerItemModel();
 	if (Settings.adamantiumIngot.isEnabled()) adamantium_ingot.registerItemModel();
 	if (Settings.onyxGem.isEnabled())	onyx_gem.registerItemModel();
-	
+	if (Settings.mythrilRod.isEnabled()) mythril_rod.registerItemModel();
+	if (Settings.onyxRod.isEnabled()) onyx_rod.registerItemModel();
+	if (Settings.mythrilBow.isEnabled()) mythril_bow.registerItemModel();
+	if (Settings.onyxBow.isEnabled()) onyx_bow.registerItemModel();
 } // end registerModels()
 
 public static void registerOreDictionary()
@@ -106,219 +160,195 @@ public static void configureSimpleItems()
 		onyx_gem.setConfigEntry(Settings.onyxGem)
 			.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
 	}
-		
-//	mythril_rod = Settings.mythrilRod.isEnabled()
-//			? new SimpleItem(SimpleOres.plugin, ContentCategories.Item.MATERIAL).setConfigEntry(Settings.mythrilRod)
-//					.setUnlocalizedName("mythril_rod").setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//			: null;
-//	onyx_rod = Settings.onyxRod.isEnabled() 
-//			? new SimpleItem(SimpleOres.plugin,
-//			ContentCategories.Item.MATERIAL).setConfigEntry(
-//			Settings.onyxRod).setUnlocalizedName("onyx_rod")
-//	                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin))
-//	        : null;
-//
-//	// bucket re-write.
-//	// empty copper bucket
-//	if (Settings.copperBucket.isEnabled())
-//	{
-//		copper_bucket = new SimpleBucket(SimpleOres.plugin, null, Content.copperBucketType)
-//				.setUnlocalizedName("copper_bucket")
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
-//		// copper bucket filled with water
-//		copper_bucket_water = new SimpleBucket(SimpleOres.plugin, new ItemStack(copper_bucket), 
-//				Content.copperBucketType)
-//				.setUnlocalizedName("copper_bucket_water")
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
-//		Content.copperBucketType.addVariant("water", copper_bucket_water, FluidRegistry.WATER);
-//	}
+	if (Settings.mythrilRod.isEnabled()) {
+		mythril_rod.setConfigEntry(Settings.mythrilRod)
+					.setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+	if (Settings.onyxRod.isEnabled()) {
+		onyx_rod.setConfigEntry(Settings.onyxRod)
+	                .setCreativeTab(TabHelper.materialsTab(SimpleCoreAPI.plugin));
+	}
+	// bucket re-write.
+	if (Settings.copperBucket.isEnabled())
+	{
+		// empty copper bucket
+		copper_bucket.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+		// copper bucket filled with water
+		copper_bucket_water.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+		Content.copperBucketType.addVariant("water", copper_bucket_water, FluidRegistry.WATER);
+	}
 } // end configureSimpleItems()
 
 
+public static void configureBows()
+{
+	LogHelper.verbose(ModInfo.ID, "Creating bows");
+	if (Settings.mythrilBow.isEnabled()) 
+	{
+		mythril_bow.setEffect(SimpleBowEffects.damageEffect,
+						Settings.mythrilBow.getDamageModifier())
+				.setEffect(SimpleBowEffects.efficiencyEffect,
+						Settings.mythrilBow.getEfficiencyChance())
+				.addToolTip("tips.damageTooltip", TextFormatting.GREEN)
+				.addToolTip("tips.efficiencyTooltip", TextFormatting.GREEN)
+				.setRepairMaterial(new ItemStack(mythril_rod))
+				.setZoomAmount(Settings.mythrilBow.getZoomAmount())
+				.setConfigEntry(Settings.mythrilBow)
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+	}
+	if (Settings.onyxBow.isEnabled())
+	{
+		onyx_bow.setEffect(SimpleBowEffects.damageEffect,
+						Settings.onyxBow.getDamageModifier())
+				.setEffect(SimpleBowEffects.critFlameEffect)
+				.addToolTip("tips.damageTooltip", TextFormatting.GREEN)
+				.addToolTip("tips.flameTooltip", TextFormatting.GREEN)
+				.setRepairMaterial(new ItemStack(onyx_rod))
+				.setZoomAmount(Settings.onyxBow.getZoomAmount())
+				.setConfigEntry(Settings.onyxBow)
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+	}
+} // end configureBows()
 
-//public static void doBows()
-//{
-//	LogHelper.verbose(ModInfo.ID, "Creating bows");
-//	if (Settings.mythrilBow.isEnabled()) 
-//	{
-//		mythril_bow = new SimpleBow(SimpleOres.plugin, 750)
-//				.setEffect(SimpleBowEffects.damageEffect,
-//						Settings.mythrilBow.getDamageModifier())
-//				.setEffect(SimpleBowEffects.efficiencyEffect,
-//						Settings.mythrilBow.getEfficiencyChance())
-//				.addToolTip("tips.damageTooltip", TextFormatting.GREEN)
-//				.addToolTip("tips.efficiencyTooltip", TextFormatting.GREEN)
-//				.setRepairMaterial(new ItemStack(mythril_rod))
-//				.setZoomAmount(Settings.mythrilBow.getZoomAmount())
-//				.setConfigEntry(Settings.mythrilBow)
-//				.setUnlocalizedName("mythril_bow")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
-//	}
-//	if (Settings.onyxBow.isEnabled())
-//	{
-//		onyx_bow = new SimpleBow(SimpleOres.plugin, 1000)
-//				.setEffect(SimpleBowEffects.damageEffect,
-//						Settings.onyxBow.getDamageModifier())
-//				.setEffect(SimpleBowEffects.critFlameEffect)
-//				.addToolTip("tips.damageTooltip", TextFormatting.GREEN)
-//				.addToolTip("tips.flameTooltip", TextFormatting.GREEN)
-//				.setRepairMaterial(new ItemStack(onyx_rod))
-//				.setZoomAmount(Settings.onyxBow.getZoomAmount())
-//				.setConfigEntry(Settings.onyxBow)
-//				.setUnlocalizedName("onyx_bow")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
-//	}
-//} // end doBows()
-//
-//public static void doTools() 
-//{
-//	LogHelper.verbose(ModInfo.ID, "Creating tools");
-//	if (Settings.copperTools.isEnabled())
-//	{
-//		copper_pickaxe = new SimplePickaxe(SimpleOres.plugin,
-//				Content.toolCopper).setConfigEntry(Settings.copperTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_pickaxe");
-//		copper_axe = new SimpleAxe(SimpleOres.plugin, Content.toolCopper, 7.0F, -3.1F)
-//				.setConfigEntry(Settings.copperTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_axe");
-//		copper_shovel = new SimpleShovel(SimpleOres.plugin,
-//				Content.toolCopper).setConfigEntry(Settings.copperTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_shovel");
-//		copper_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolCopper)
-//				.setConfigEntry(Settings.copperTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_hoe");
-//		copper_sword = new SimpleSword(SimpleOres.plugin, Content.toolCopper)
-//				.setConfigEntry(Settings.copperTools)
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_sword");
-//		copper_shears = new SimpleShears(SimpleOres.plugin,
-//				Content.toolCopper).setConfigEntry(Settings.copperTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_shears");
-//	} // end-if copper tools enabled
-//	
-//	if (Settings.tinTools.isEnabled())
-//	{
-//		tin_pickaxe = new SimplePickaxe(SimpleOres.plugin, Content.toolTin)
-//				.setConfigEntry(Settings.tinTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_pickaxe");
-//		tin_axe = new SimpleAxe(SimpleOres.plugin, Content.toolTin, 6.0F, -3.0F)
-//				.setConfigEntry(Settings.tinTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_axe");
-//		tin_shovel = new SimpleShovel(SimpleOres.plugin, Content.toolTin)
-//				.setConfigEntry(Settings.tinTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_shovel");
-//		tin_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolTin)
-//				.setConfigEntry(Settings.tinTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_hoe");
-//		tin_sword = new SimpleSword(SimpleOres.plugin, Content.toolTin)
-//				.setConfigEntry(Settings.tinTools)
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_sword");
-//		tin_shears = new SimpleShears(SimpleOres.plugin, Content.toolTin)
-//				.setConfigEntry(Settings.tinTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_shears");
-//	} // end-if tin tools enabled
-//	
-//	if (Settings.mythrilTools.isEnabled())
-//	{
-//		mythril_pickaxe = new SimplePickaxe(SimpleOres.plugin,
-//				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_pickaxe");
-//		mythril_axe = new SimpleAxe(SimpleOres.plugin, Content.toolMythril, 8.0F, -3.2F)
-//				.setConfigEntry(Settings.mythrilTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_axe");
-//		mythril_shovel = new SimpleShovel(SimpleOres.plugin,
-//				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_shovel");
-//		mythril_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolMythril)
-//				.setConfigEntry(Settings.mythrilTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_hoe");
-//		mythril_sword = new SimpleSword(SimpleOres.plugin,
-//				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_sword");
-//		mythril_shears = new SimpleShears(SimpleOres.plugin,
-//				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_shears");
-//	} // end-if mythril tools enabled.
-//	
-//	if (Settings.adamantiumTools.isEnabled())
-//	{
-//		adamantium_pickaxe = new SimplePickaxe(SimpleOres.plugin,
-//				Content.toolAdamantium)
-//				.setConfigEntry(Settings.adamantiumTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_pickaxe");
-//		adamantium_axe = new SimpleAxe(SimpleOres.plugin,
-//				Content.toolAdamantium, 8.0F, -3.0F)
-//				.setConfigEntry(Settings.adamantiumTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_axe");
-//		adamantium_shovel = new SimpleShovel(SimpleOres.plugin,
-//				Content.toolAdamantium)
-//				.setConfigEntry(Settings.adamantiumTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_shovel");
-//		adamantium_hoe = new SimpleHoe(SimpleOres.plugin,
-//				Content.toolAdamantium)
-//				.setConfigEntry(Settings.adamantiumTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_hoe");
-//		adamantium_sword = new SimpleSword(SimpleOres.plugin,
-//				Content.toolAdamantium)
-//				.setConfigEntry(Settings.adamantiumTools)
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_sword");
-//		adamantium_shears = new SimpleShears(SimpleOres.plugin,
-//				Content.toolAdamantium)
-//				.setConfigEntry(Settings.adamantiumTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_shears");
-//	} // end-if adamantium tools enabled.
-//	
-//	if (Settings.onyxTools.isEnabled()) {
-//		onyx_pickaxe = new SimplePickaxe(SimpleOres.plugin, Content.toolOnyx)
-//				.setConfigEntry(Settings.onyxTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_pickaxe");
-//		onyx_axe = new SimpleAxe(SimpleOres.plugin, Content.toolOnyx, 9.0F, -3.0F)
-//				.setConfigEntry(Settings.onyxTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_axe");
-//		onyx_shovel = new SimpleShovel(SimpleOres.plugin, Content.toolOnyx)
-//				.setConfigEntry(Settings.onyxTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_shovel");
-//		onyx_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolOnyx)
-//				.setConfigEntry(Settings.onyxTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_hoe");
-//		onyx_sword = new SimpleSword(SimpleOres.plugin, Content.toolOnyx)
-//				.setConfigEntry(Settings.onyxTools)
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_sword");
-//		onyx_shears = new SimpleShears(SimpleOres.plugin, Content.toolOnyx)
-//				.setConfigEntry(Settings.onyxTools)
-//				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_shears");
-//	} // end-if onyx tools enabled
-//} // end doTools()
-//
+public static void configureTools() 
+{
+	LogHelper.verbose(ModInfo.ID, "Configuring tools");
+	if (Settings.copperTools.isEnabled())
+	{
+		copper_sword.setConfigEntry(Settings.copperTools)
+			.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		
+		copper_pickaxe.setConfigEntry(Settings.copperTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+		
+		copper_axe = new SimpleAxe(SimpleOres.plugin, Content.toolCopper, 7.0F, -3.1F)
+				.setConfigEntry(Settings.copperTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("copper_axe");
+		copper_shovel = new SimpleShovel(SimpleOres.plugin,
+				Content.toolCopper).setConfigEntry(Settings.copperTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("copper_shovel");
+		copper_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolCopper)
+				.setConfigEntry(Settings.copperTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("copper_hoe");
+
+		copper_shears = new SimpleShears(SimpleOres.plugin,
+				Content.toolCopper).setConfigEntry(Settings.copperTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("copper_shears");
+	} // end-if copper tools enabled
+	
+	if (Settings.tinTools.isEnabled())
+	{
+		tin_sword.setConfigEntry(Settings.tinTools)
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		
+		tin_pickaxe.setConfigEntry(Settings.tinTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+		
+		tin_axe = new SimpleAxe(SimpleOres.plugin, Content.toolTin, 6.0F, -3.0F)
+				.setConfigEntry(Settings.tinTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_axe");
+		tin_shovel = new SimpleShovel(SimpleOres.plugin, Content.toolTin)
+				.setConfigEntry(Settings.tinTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_shovel");
+		tin_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolTin)
+				.setConfigEntry(Settings.tinTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_hoe");
+		tin_shears = new SimpleShears(SimpleOres.plugin, Content.toolTin)
+				.setConfigEntry(Settings.tinTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_shears");
+	} // end-if tin tools enabled
+	
+	if (Settings.mythrilTools.isEnabled())
+	{
+		mythril_sword.setConfigEntry(Settings.mythrilTools)
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		
+		mythril_pickaxe.setConfigEntry(Settings.mythrilTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+		
+		mythril_axe = new SimpleAxe(SimpleOres.plugin, Content.toolMythril, 8.0F, -3.2F)
+				.setConfigEntry(Settings.mythrilTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_axe");
+		mythril_shovel = new SimpleShovel(SimpleOres.plugin,
+				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_shovel");
+		mythril_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolMythril)
+				.setConfigEntry(Settings.mythrilTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_hoe");
+		mythril_shears = new SimpleShears(SimpleOres.plugin,
+				Content.toolMythril).setConfigEntry(Settings.mythrilTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_shears");
+	} // end-if mythril tools enabled.
+	
+	if (Settings.adamantiumTools.isEnabled())
+	{
+		adamantium_sword.setConfigEntry(Settings.adamantiumTools)
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+
+		adamantium_pickaxe.setConfigEntry(Settings.adamantiumTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+
+		adamantium_axe = new SimpleAxe(SimpleOres.plugin,
+				Content.toolAdamantium, 8.0F, -3.0F)
+				.setConfigEntry(Settings.adamantiumTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_axe");
+		adamantium_shovel = new SimpleShovel(SimpleOres.plugin,
+				Content.toolAdamantium)
+				.setConfigEntry(Settings.adamantiumTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_shovel");
+		adamantium_hoe = new SimpleHoe(SimpleOres.plugin,
+				Content.toolAdamantium)
+				.setConfigEntry(Settings.adamantiumTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_hoe");
+		adamantium_shears = new SimpleShears(SimpleOres.plugin,
+				Content.toolAdamantium)
+				.setConfigEntry(Settings.adamantiumTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_shears");
+	} // end-if adamantium tools enabled.
+	
+	if (Settings.onyxTools.isEnabled()) 
+	{
+		onyx_sword.setConfigEntry(Settings.onyxTools)
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		
+		onyx_pickaxe.setConfigEntry(Settings.onyxTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
+
+		onyx_axe = new SimpleAxe(SimpleOres.plugin, Content.toolOnyx, 9.0F, -3.0F)
+				.setConfigEntry(Settings.onyxTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_axe");
+		onyx_shovel = new SimpleShovel(SimpleOres.plugin, Content.toolOnyx)
+				.setConfigEntry(Settings.onyxTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_shovel");
+		onyx_hoe = new SimpleHoe(SimpleOres.plugin, Content.toolOnyx)
+				.setConfigEntry(Settings.onyxTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_hoe");
+		onyx_shears = new SimpleShears(SimpleOres.plugin, Content.toolOnyx)
+				.setConfigEntry(Settings.onyxTools)
+				.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_shears");
+	} // end-if onyx tools enabled
+} // end configureTools()
+
 ///**
 // * updated config revision complete.
 // */
