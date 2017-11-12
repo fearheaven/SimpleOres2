@@ -33,7 +33,7 @@ public class Content
 		setBucketVariants();
 		ModItems.configureSimpleItems();
 		ModBlocks.configureBlocks(); // don't move this, as needs some items defined in doItems() first.
-//		doTools();
+		ModItems.configureTools();
 		ModItems.configureBows();
 //		doArmor();
 //		doAchievements();
