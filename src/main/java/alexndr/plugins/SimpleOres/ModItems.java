@@ -1,5 +1,6 @@
 package alexndr.plugins.SimpleOres;
 
+import alexndr.api.content.items.SimpleArmor;
 import alexndr.api.content.items.SimpleAxe;
 import alexndr.api.content.items.SimpleBow;
 import alexndr.api.content.items.SimpleBowEffects;
@@ -13,6 +14,7 @@ import alexndr.api.content.items.SimpleSword;
 import alexndr.api.core.SimpleCoreAPI;
 import alexndr.api.helpers.game.TabHelper;
 import alexndr.api.logger.LogHelper;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -118,12 +120,40 @@ public class ModItems
 		new SimpleShears("onyx_shears", SimpleOres.plugin, Content.toolOnyx);
 	
 	// ARMOR
-public static Item copper_helmet, copper_chestplate, copper_leggings,
-	copper_boots, tin_helmet, tin_chestplate, tin_leggings, tin_boots,
-	mythril_helmet, mythril_chestplate, mythril_leggings,
-	mythril_boots, adamantium_helmet, adamantium_chestplate,
-	adamantium_leggings, adamantium_boots, onyx_helmet,
-	onyx_chestplate, onyx_leggings, onyx_boots;
+	// copper
+	public static SimpleArmor copper_helmet = 
+			new SimpleArmor("copper_helmet", SimpleOres.plugin, Content.armorCopper, 
+							EntityEquipmentSlot.HEAD);
+	public static SimpleArmor copper_leggings = 
+			new SimpleArmor("copper_leggings", SimpleOres.plugin, Content.armorCopper, 
+					EntityEquipmentSlot.LEGS); 
+	public static SimpleArmor copper_chestplate = 
+			new SimpleArmor("copper_chestplate", SimpleOres.plugin, Content.armorCopper, 
+					EntityEquipmentSlot.CHEST); 
+	public static SimpleArmor copper_boots = 
+			new SimpleArmor("copper_boots", SimpleOres.plugin,Content.armorCopper, 
+					EntityEquipmentSlot.FEET); 
+
+	public static SimpleArmor tin_helmet;
+	public static SimpleArmor tin_leggings; 
+	public static SimpleArmor tin_chestplate; 
+	public static SimpleArmor tin_boots; 
+
+	public static SimpleArmor mythril_helmet;
+	public static SimpleArmor mythril_leggings; 
+	public static SimpleArmor mythril_chestplate; 
+	public static SimpleArmor mythril_boots; 
+
+	public static SimpleArmor adamantium_helmet;
+	public static SimpleArmor adamantium_leggings; 
+	public static SimpleArmor adamantium_chestplate; 
+	public static SimpleArmor adamantium_boots; 
+
+	public static SimpleArmor onyx_helmet;
+	public static SimpleArmor onyx_leggings; 
+	public static SimpleArmor onyx_chestplate; 
+	public static SimpleArmor onyx_boots; 
+
 
 public static void register(IForgeRegistry<Item> registry) 
 {
@@ -162,6 +192,27 @@ public static void register(IForgeRegistry<Item> registry)
 		registry.registerAll(onyx_sword, onyx_pickaxe, onyx_axe, onyx_shovel, 
 				 onyx_hoe, onyx_shears);
 	} // end-if onyx tools enabled
+	
+	if (Settings.copperArmor.isEnabled()) 
+	{
+		registry.registerAll(copper_helmet, copper_leggings, copper_chestplate, copper_boots);
+	} 
+	if (Settings.tinArmor.isEnabled()) 
+	{
+		registry.registerAll(tin_helmet, tin_leggings, tin_chestplate, tin_boots);
+	}
+	if (Settings.mythrilArmor.isEnabled()) 
+	{
+		registry.registerAll(mythril_helmet, mythril_leggings, mythril_chestplate, mythril_boots);
+	}
+	if (Settings.adamantiumArmor.isEnabled())
+	{
+		registry.registerAll(adamantium_helmet, adamantium_leggings, adamantium_chestplate, adamantium_boots);
+	}
+	if (Settings.onyxArmor.isEnabled())
+	{
+		registry.registerAll(onyx_helmet, onyx_leggings, onyx_chestplate, onyx_boots);
+	}
 } // end register()
 
 
@@ -222,6 +273,41 @@ public static void registerModels()
 		onyx_hoe.registerItemModel(); 
 		onyx_shears.registerItemModel();
 	} // end-if onyx tools enabled
+	if (Settings.copperArmor.isEnabled()) 
+	{
+		copper_helmet.registerItemModel();
+		copper_leggings.registerItemModel();
+		copper_chestplate.registerItemModel();
+		copper_boots.registerItemModel();
+	} 
+	if (Settings.tinArmor.isEnabled()) 
+	{
+		tin_helmet.registerItemModel();
+		tin_leggings.registerItemModel();
+		tin_chestplate.registerItemModel();
+		tin_boots.registerItemModel();
+	}
+	if (Settings.mythrilArmor.isEnabled()) 
+	{
+		mythril_helmet.registerItemModel();
+		mythril_leggings.registerItemModel();
+		mythril_chestplate.registerItemModel();
+		mythril_boots.registerItemModel();
+	}
+	if (Settings.adamantiumArmor.isEnabled())
+	{
+		adamantium_helmet.registerItemModel();
+		adamantium_leggings.registerItemModel();
+		adamantium_chestplate.registerItemModel();
+		adamantium_boots.registerItemModel();
+	}
+	if (Settings.onyxArmor.isEnabled())
+	{
+		onyx_helmet.registerItemModel();
+		onyx_leggings.registerItemModel();
+		onyx_chestplate.registerItemModel();
+		onyx_boots.registerItemModel();
+	}
 } // end registerModels()
 
 public static void registerOreDictionary()
@@ -408,122 +494,110 @@ public static void configureTools()
 	} // end-if onyx tools enabled
 } // end configureTools()
 
-///**
-// * updated config revision complete.
-// */
-//public static void doArmor() 
-//{
-//	LogHelper.verbose(ModInfo.ID, "Creating armors");
-//	if (Settings.copperArmor.isEnabled()) 
-//	{
-//		copper_helmet = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorCopper, EntityEquipmentSlot.HEAD)
-//				.setConfigEntry(Settings.copperArmor).setType("copper")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_helmet");
-//		copper_chestplate = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorCopper, EntityEquipmentSlot.CHEST)
-//				.setConfigEntry(Settings.copperArmor).setType("copper")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_chestplate");
-//		copper_leggings = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorCopper, EntityEquipmentSlot.LEGS)
-//				.setConfigEntry(Settings.copperArmor).setType("copper")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_leggings");
-//		copper_boots = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorCopper, EntityEquipmentSlot.FEET)
-//				.setConfigEntry(Settings.copperArmor).setType("copper")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("copper_boots");
-//	} 
-//	if (Settings.tinArmor.isEnabled()) 
-//	{
-//		tin_helmet = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
-//				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.tinArmor)
-//				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_helmet");
-//		tin_chestplate = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorTin, EntityEquipmentSlot.CHEST)
-//				.setConfigEntry(Settings.tinArmor).setType("tin")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_chestplate");
-//		tin_leggings = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
-//				EntityEquipmentSlot.LEGS).setConfigEntry(Settings.tinArmor)
-//				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_leggings");
-//		tin_boots = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
-//				EntityEquipmentSlot.FEET).setConfigEntry(Settings.tinArmor)
-//				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("tin_boots");
-//	}
-//	if (Settings.mythrilArmor.isEnabled()) 
-//	{
-//		mythril_helmet = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorMythril, EntityEquipmentSlot.HEAD)
-//				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_helmet");
-//		mythril_chestplate = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorMythril, EntityEquipmentSlot.CHEST)
-//				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_chestplate");
-//		mythril_leggings = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorMythril, EntityEquipmentSlot.LEGS)
-//				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_leggings");
-//		mythril_boots = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorMythril, EntityEquipmentSlot.FEET)
-//				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("mythril_boots");
-//	}
-//	if (Settings.adamantiumArmor.isEnabled())
-//	{
-//		adamantium_helmet = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorAdamantium, EntityEquipmentSlot.HEAD)
-//				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_helmet");
-//		adamantium_chestplate = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorAdamantium, EntityEquipmentSlot.CHEST)
-//				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_chestplate");
-//		adamantium_leggings = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorAdamantium, EntityEquipmentSlot.LEGS)
-//				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_leggings");
-//		adamantium_boots = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorAdamantium, EntityEquipmentSlot.FEET)
-//				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("adamantium_boots");
-//	}
-//	if (Settings.onyxArmor.isEnabled())
-//	{
-//		onyx_helmet = new SimpleArmor(SimpleOres.plugin, Content.armorOnyx,
-//				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.onyxArmor)
-//				.setType("onyx").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_helmet");
-//		onyx_chestplate = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorOnyx, EntityEquipmentSlot.CHEST)
-//				.setConfigEntry(Settings.onyxArmor).setType("onyx")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_chestplate");
-//		onyx_leggings = new SimpleArmor(SimpleOres.plugin,
-//				Content.armorOnyx, EntityEquipmentSlot.LEGS)
-//				.setConfigEntry(Settings.onyxArmor).setType("onyx")
-//				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_leggings");
-//		onyx_boots = new SimpleArmor(SimpleOres.plugin, Content.armorOnyx,
-//				EntityEquipmentSlot.FEET).setConfigEntry(Settings.onyxArmor)
-//				.setType("onyx").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
-//				.setUnlocalizedName("onyx_boots");
-//	}
-//} // end doArmor()
+/**
+ * updated config revision complete.
+ */
+public static void configureArmor() 
+{
+	LogHelper.verbose(ModInfo.ID, "Configuring armors");
+	if (Settings.copperArmor.isEnabled()) 
+	{
+		copper_helmet.setConfigEntry(Settings.copperArmor).setType("copper")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		copper_chestplate.setConfigEntry(Settings.copperArmor).setType("copper")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		copper_leggings.setConfigEntry(Settings.copperArmor).setType("copper")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+		copper_boots.setConfigEntry(Settings.copperArmor).setType("copper")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin));
+	} 
+	if (Settings.tinArmor.isEnabled()) 
+	{
+		tin_helmet = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
+				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.tinArmor)
+				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_helmet");
+		tin_chestplate = new SimpleArmor(SimpleOres.plugin,
+				Content.armorTin, EntityEquipmentSlot.CHEST)
+				.setConfigEntry(Settings.tinArmor).setType("tin")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_chestplate");
+		tin_leggings = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
+				EntityEquipmentSlot.LEGS).setConfigEntry(Settings.tinArmor)
+				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_leggings");
+		tin_boots = new SimpleArmor(SimpleOres.plugin, Content.armorTin,
+				EntityEquipmentSlot.FEET).setConfigEntry(Settings.tinArmor)
+				.setType("tin").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("tin_boots");
+	}
+	if (Settings.mythrilArmor.isEnabled()) 
+	{
+		mythril_helmet = new SimpleArmor(SimpleOres.plugin,
+				Content.armorMythril, EntityEquipmentSlot.HEAD)
+				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_helmet");
+		mythril_chestplate = new SimpleArmor(SimpleOres.plugin,
+				Content.armorMythril, EntityEquipmentSlot.CHEST)
+				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_chestplate");
+		mythril_leggings = new SimpleArmor(SimpleOres.plugin,
+				Content.armorMythril, EntityEquipmentSlot.LEGS)
+				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_leggings");
+		mythril_boots = new SimpleArmor(SimpleOres.plugin,
+				Content.armorMythril, EntityEquipmentSlot.FEET)
+				.setConfigEntry(Settings.mythrilArmor).setType("mythril")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("mythril_boots");
+	}
+	if (Settings.adamantiumArmor.isEnabled())
+	{
+		adamantium_helmet = new SimpleArmor(SimpleOres.plugin,
+				Content.armorAdamantium, EntityEquipmentSlot.HEAD)
+				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_helmet");
+		adamantium_chestplate = new SimpleArmor(SimpleOres.plugin,
+				Content.armorAdamantium, EntityEquipmentSlot.CHEST)
+				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_chestplate");
+		adamantium_leggings = new SimpleArmor(SimpleOres.plugin,
+				Content.armorAdamantium, EntityEquipmentSlot.LEGS)
+				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_leggings");
+		adamantium_boots = new SimpleArmor(SimpleOres.plugin,
+				Content.armorAdamantium, EntityEquipmentSlot.FEET)
+				.setConfigEntry(Settings.mythrilArmor).setType("adamantium")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("adamantium_boots");
+	}
+	if (Settings.onyxArmor.isEnabled())
+	{
+		onyx_helmet = new SimpleArmor(SimpleOres.plugin, Content.armorOnyx,
+				EntityEquipmentSlot.HEAD).setConfigEntry(Settings.onyxArmor)
+				.setType("onyx").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_helmet");
+		onyx_chestplate = new SimpleArmor(SimpleOres.plugin,
+				Content.armorOnyx, EntityEquipmentSlot.CHEST)
+				.setConfigEntry(Settings.onyxArmor).setType("onyx")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_chestplate");
+		onyx_leggings = new SimpleArmor(SimpleOres.plugin,
+				Content.armorOnyx, EntityEquipmentSlot.LEGS)
+				.setConfigEntry(Settings.onyxArmor).setType("onyx")
+				.setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_leggings");
+		onyx_boots = new SimpleArmor(SimpleOres.plugin, Content.armorOnyx,
+				EntityEquipmentSlot.FEET).setConfigEntry(Settings.onyxArmor)
+				.setType("onyx").setCreativeTab(TabHelper.combatTab(SimpleCoreAPI.plugin))
+				.setUnlocalizedName("onyx_boots");
+	}
+} // end configureArmor()
 
 } // end class
