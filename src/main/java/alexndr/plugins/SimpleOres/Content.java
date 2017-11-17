@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fluids.FluidRegistry;
 
 /**
  * @author AleXndrTheGr8st
@@ -172,6 +173,8 @@ public class Content
 			copperBucketType = new SimpleBucketType("copper");
 			copperBucketType.setDestroyOnLava(true);
 		}
+		Content.copperBucketType.addVariant("water", ModItems.copper_bucket_water, 
+											FluidRegistry.WATER);
 	}
 
 //	public static void doAchievements() 

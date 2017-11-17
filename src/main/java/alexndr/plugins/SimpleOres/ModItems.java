@@ -18,7 +18,6 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -198,7 +197,9 @@ public static void register(IForgeRegistry<Item> registry)
 	if (Settings.onyxRod.isEnabled()) registry.register(onyx_rod);
 	if (Settings.mythrilBow.isEnabled()) registry.register(mythril_bow);
 	if (Settings.onyxBow.isEnabled()) registry.register(onyx_bow);
-	
+	if (Settings.copperBucket.isEnabled()){
+		registry.registerAll(copper_bucket, copper_bucket_water);
+	}
 	if (Settings.copperTools.isEnabled())
 	{
 		registry.registerAll(copper_sword, copper_pickaxe, copper_axe, copper_shovel, 
@@ -260,6 +261,11 @@ public static void registerModels()
 	if (Settings.mythrilBow.isEnabled()) mythril_bow.registerItemModel();
 	if (Settings.onyxBow.isEnabled()) onyx_bow.registerItemModel();
 	
+	if (Settings.copperBucket.isEnabled())
+	{
+		copper_bucket.registerItemModel();
+		copper_bucket_water.registerItemModel();
+	}
 	if (Settings.copperTools.isEnabled())
 	{
 		copper_sword.registerItemModel(); 
@@ -406,7 +412,6 @@ public static void configureSimpleItems()
 		copper_bucket.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 		// copper bucket filled with water
 		copper_bucket_water.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
-		Content.copperBucketType.addVariant("water", copper_bucket_water, FluidRegistry.WATER);
 	}
 	LogHelper.verbose(ModInfo.ID, "Configured ingots and misc items");
 } // end configureSimpleItems()
