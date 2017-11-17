@@ -154,7 +154,7 @@ public class ModItems
 			new SimpleArmor("mythril_leggings", SimpleOres.plugin, Content.armorMythril, 
 					EntityEquipmentSlot.LEGS); 
 	public static SimpleArmor mythril_chestplate = 
-			new SimpleArmor("mythril_leggings", SimpleOres.plugin, Content.armorMythril, 
+			new SimpleArmor("mythril_chestplate", SimpleOres.plugin, Content.armorMythril, 
 					EntityEquipmentSlot.CHEST); 
 	public static SimpleArmor mythril_boots = 
 			new SimpleArmor("mythril_boots", SimpleOres.plugin,Content.armorMythril, 

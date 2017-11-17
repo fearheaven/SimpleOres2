@@ -35,7 +35,7 @@ public class Content
 		ModBlocks.configureBlocks(); // don't move this, as needs some items defined in doItems() first.
 		ModItems.configureTools();
 		ModItems.configureBows();
-//		doArmor();
+		ModItems.configureArmor();
 //		doAchievements();
 	} // end preInitialize()
 

@@ -1,0 +1,37 @@
+[
+{
+    "ingredient" : {
+       "type" : "oredict",
+       "ore" : "ingotCopper"
+   	},
+	"name" : "INGOTCOPPER"
+},
+{
+    "ingredient" : {
+       "type" : "oredict",
+       "ore" : "ingotTin"
+   	},
+	"name" : "INGOTTIN"
+},
+{
+    "ingredient" : {
+       "type" : "oredict",
+       "ore" : "ingotMythril"
+   	},
+	"name" : "INGOTMYTHRIL"
+},
+{
+    "ingredient" : {
+       "type" : "oredict",
+       "ore" : "ingotAdamantium"
+   	},
+	"name" : "INGOTADAMANTIUM"
+},
+{
+    "ingredient" : {
+       "type" : "oredict",
+       "ore" : "gemOnyx"
+   	},
+	"name" : "GEMONYX"
+}
+]

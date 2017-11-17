@@ -1,0 +1,5 @@
+{
+  "conditions": {
+    "copper_tools_enabled": "alexndr.plugins.SimpleOres.CopperToolsConditionFactory"
+}
+}

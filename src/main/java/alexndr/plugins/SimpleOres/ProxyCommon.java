@@ -2,6 +2,13 @@ package alexndr.plugins.SimpleOres;
 
 import java.util.List;
 
+import com.google.common.collect.Lists;
+
+import alexndr.api.core.SimpleCoreAPI;
+import alexndr.api.helpers.game.OreGenerator;
+import alexndr.api.logger.LogHelper;
+import alexndr.api.registry.ContentRegistry;
+import alexndr.api.registry.Plugin;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -11,13 +18,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import alexndr.api.core.SimpleCoreAPI;
-import alexndr.api.helpers.game.OreGenerator;
-import alexndr.api.logger.LogHelper;
-import alexndr.api.registry.ContentRegistry;
-import alexndr.api.registry.Plugin;
-
-import com.google.common.collect.Lists;
 
 @Mod.EventBusSubscriber
 public class ProxyCommon 
@@ -31,13 +31,11 @@ public class ProxyCommon
 		
 		//Content
 		Content.preInitialize();
-		Recipes.preInitialize();
 	} // end preInit
 	
     public void load(FMLInitializationEvent event)
     {
 		//Content
-		Recipes.initialize();
 		setTabIcons();
 		Content.setRepairMaterials();
 //		Content.setAchievementTriggers();

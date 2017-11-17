@@ -1,30 +1,20 @@
 package alexndr.plugins.SimpleOres;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 /**
  * @author AleXndrTheGr8st
  */
 public class Recipes 
 {
-	public static void preInitialize() 
-	{
-	}
-	
-	public static void initialize() {
-		addRecipes();
-	}
 	
 	public static void addRecipes() 
 	{
-		addBlockRecipes();
-		addItemRecipes();
-		addToolRecipes();
-		addArmorRecipes();
+//		addBlockRecipes();
+//		addItemRecipes();
+//		addToolRecipes();
+//		addArmorRecipes();
 		addSmeltingRecipes();
 	}
 	
@@ -62,7 +52,8 @@ public class Recipes
 	public static void addItemRecipes() 
 	{
 //		//Ingot Recipes
-//		if (Settings.copperIngot.isEnabled() && Settings.copperBlock.isEnabled()) {
+//		if (Settings.copperIngot.isEnabled() && Settings.copperBlock.isEnabled()) 
+//		{
 //			GameRegistry.addShapelessRecipe(new ItemStack(Content.copper_ingot, 9), new Object[] { 
 //					Content.copper_block });
 //		}
@@ -105,7 +96,7 @@ public class Recipes
 	 */
 	public static void addToolRecipes() 
 	{
-//		//Copper Tool Recipes
+		//Copper Tool Recipes
 //		if (Settings.copperTools.isEnabled()) 
 //		{
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_pickaxe, true, new Object[] { "XXX", " Y ", " Y ",
@@ -122,7 +113,7 @@ public class Recipes
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shears, true, new Object[]{
 //					"X ", " X", Character.valueOf('X'), "ingotCopper"}));
 //		}
-//		
+		
 //		//Tin Tool Recipes
 //		if (Settings.tinTools.isEnabled())
 //		{
