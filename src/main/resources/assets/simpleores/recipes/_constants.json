@@ -1,35 +1,35 @@
 [
 {
     "ingredient" : {
-       "type" : "oredict",
+       "type" : "forge:ore_dict",
        "ore" : "ingotCopper"
    	},
 	"name" : "INGOTCOPPER"
 },
 {
     "ingredient" : {
-       "type" : "oredict",
+       "type" : "forge:ore_dict",
        "ore" : "ingotTin"
    	},
 	"name" : "INGOTTIN"
 },
 {
     "ingredient" : {
-       "type" : "oredict",
+       "type" : "forge:ore_dict",
        "ore" : "ingotMythril"
    	},
 	"name" : "INGOTMYTHRIL"
 },
 {
     "ingredient" : {
-       "type" : "oredict",
+       "type" : "forge:ore_dict",
        "ore" : "ingotAdamantium"
    	},
 	"name" : "INGOTADAMANTIUM"
 },
 {
     "ingredient" : {
-       "type" : "oredict",
+       "type" : "forge:ore_dict",
        "ore" : "gemOnyx"
    	},
 	"name" : "GEMONYX"
