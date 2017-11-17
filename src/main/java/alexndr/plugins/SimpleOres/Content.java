@@ -48,52 +48,41 @@ public class Content
 		LogHelper.verbose(ModInfo.ID, "Setting Tool and Armor stats");
 		
 		// Tools
-		if (Settings.copperTools.isEnabled()) {
-			toolCopper = EnumHelper.addToolMaterial("COPPER",
-					Settings.copperTools.getHarvestLevel(),
-					Settings.copperTools.getUses(),
-					Settings.copperTools.getHarvestSpeed(),
-					Settings.copperTools.getDamageVsEntity(),
-					Settings.copperTools.getEnchantability());
-		}
-		if (Settings.tinTools.isEnabled()) {
-			toolTin = EnumHelper.addToolMaterial("TIN",
-					Settings.tinTools.getHarvestLevel(),
-					Settings.tinTools.getUses(),
-					Settings.tinTools.getHarvestSpeed(),
-					Settings.tinTools.getDamageVsEntity(),
-					Settings.tinTools.getEnchantability());
-		}
-		if (Settings.mythrilTools.isEnabled()) {
-			toolMythril = EnumHelper.addToolMaterial("MYTHRIL",
-					Settings.mythrilTools.getHarvestLevel(),
-					Settings.mythrilTools.getUses(),
-					Settings.mythrilTools.getHarvestSpeed(),
-					Settings.mythrilTools.getDamageVsEntity(),
-					Settings.mythrilTools.getEnchantability());
-		}
-		if (Settings.adamantiumTools.isEnabled()) {
-			toolAdamantium = EnumHelper.addToolMaterial("ADAMANTIUM",
-					Settings.adamantiumTools.getHarvestLevel(),
-					Settings.adamantiumTools.getUses(),
-					Settings.adamantiumTools.getHarvestSpeed(),
-					Settings.adamantiumTools.getDamageVsEntity(),
-					Settings.adamantiumTools.getEnchantability());
-		}
-		if (Settings.onyxTools.isEnabled()) {
-			toolOnyx = EnumHelper.addToolMaterial("ONYX",
-					Settings.onyxTools.getHarvestLevel(),
-					Settings.onyxTools.getUses(),
-					Settings.onyxTools.getHarvestSpeed(),
-					Settings.onyxTools.getDamageVsEntity(),
-					Settings.onyxTools.getEnchantability());
-		}
+		toolCopper = EnumHelper.addToolMaterial("COPPER",
+				Settings.copperTools.getHarvestLevel(),
+				Settings.copperTools.getUses(),
+				Settings.copperTools.getHarvestSpeed(),
+				Settings.copperTools.getDamageVsEntity(),
+				Settings.copperTools.getEnchantability());
+		toolTin = EnumHelper.addToolMaterial("TIN",
+				Settings.tinTools.getHarvestLevel(),
+				Settings.tinTools.getUses(),
+				Settings.tinTools.getHarvestSpeed(),
+				Settings.tinTools.getDamageVsEntity(),
+				Settings.tinTools.getEnchantability());
+		toolMythril = EnumHelper.addToolMaterial("MYTHRIL",
+				Settings.mythrilTools.getHarvestLevel(),
+				Settings.mythrilTools.getUses(),
+				Settings.mythrilTools.getHarvestSpeed(),
+				Settings.mythrilTools.getDamageVsEntity(),
+				Settings.mythrilTools.getEnchantability());
+		toolAdamantium = EnumHelper.addToolMaterial("ADAMANTIUM",
+				Settings.adamantiumTools.getHarvestLevel(),
+				Settings.adamantiumTools.getUses(),
+				Settings.adamantiumTools.getHarvestSpeed(),
+				Settings.adamantiumTools.getDamageVsEntity(),
+				Settings.adamantiumTools.getEnchantability());
+		toolOnyx = EnumHelper.addToolMaterial("ONYX",
+				Settings.onyxTools.getHarvestLevel(),
+				Settings.onyxTools.getUses(),
+				Settings.onyxTools.getHarvestSpeed(),
+				Settings.onyxTools.getDamageVsEntity(),
+				Settings.onyxTools.getEnchantability());
 		// Armor
 		ResourceLocation soundName = new ResourceLocation("item.armor.equip_generic");
 		SoundEvent armorNoise = SoundEvent.REGISTRY.getObject(soundName);
 		
-		if (Settings.copperArmor.isEnabled()) {
-			armorCopper = 
+		armorCopper = 
 				EnumHelper.addArmorMaterial("COPPER", 
 						"copper", Settings.copperArmor.getDurability(), 
 						new int[] {
@@ -102,45 +91,37 @@ public class Content
 								Settings.copperArmor.getChestReduction(),
 								Settings.copperArmor.getHelmReduction() },
 						Settings.copperArmor.getEnchantability(), armorNoise, 0.0F );
-		}
-		if (Settings.tinArmor.isEnabled()) {
-			armorTin = EnumHelper.addArmorMaterial("TIN", "tin",
+		armorTin = EnumHelper.addArmorMaterial("TIN", "tin",
 				Settings.tinArmor.getDurability(),
 				new int[] { 
-                                Settings.tinArmor.getBootsReduction(),
-                                Settings.tinArmor.getLegsReduction(),
-                                Settings.tinArmor.getChestReduction(),
-                                Settings.tinArmor.getHelmReduction() },
+						Settings.tinArmor.getBootsReduction(),
+						Settings.tinArmor.getLegsReduction(),
+						Settings.tinArmor.getChestReduction(),
+						Settings.tinArmor.getHelmReduction() },
 				Settings.tinArmor.getEnchantability(), armorNoise, 0.0F);
-		}
-		if (Settings.mythrilArmor.isEnabled()) {
-			armorMythril = EnumHelper.addArmorMaterial("MYTHRIL","mythril",
+		armorMythril = EnumHelper.addArmorMaterial("MYTHRIL","mythril",
 				Settings.mythrilArmor.getDurability(), new int[] {
-                                Settings.mythrilArmor.getBootsReduction(),
-                                Settings.mythrilArmor.getLegsReduction(),
-                                Settings.mythrilArmor.getChestReduction(),
-                                Settings.mythrilArmor.getHelmReduction() },
+						Settings.mythrilArmor.getBootsReduction(),
+						Settings.mythrilArmor.getLegsReduction(),
+						Settings.mythrilArmor.getChestReduction(),
+						Settings.mythrilArmor.getHelmReduction() },
 				Settings.mythrilArmor.getEnchantability(), armorNoise, 0.0F );
-		}
-		if (Settings.adamantiumArmor.isEnabled()) {
-			armorAdamantium = EnumHelper.addArmorMaterial("ADAMANTIUM", "adamantium", 
+		armorAdamantium = EnumHelper.addArmorMaterial("ADAMANTIUM", "adamantium", 
 				Settings.adamantiumArmor.getDurability(),
 				new int[] { 
-                                Settings.adamantiumArmor.getBootsReduction(),
-                                Settings.adamantiumArmor.getLegsReduction(),
-                                Settings.adamantiumArmor.getChestReduction(),
-                                Settings.adamantiumArmor.getHelmReduction() },
+						Settings.adamantiumArmor.getBootsReduction(),
+						Settings.adamantiumArmor.getLegsReduction(),
+						Settings.adamantiumArmor.getChestReduction(),
+						Settings.adamantiumArmor.getHelmReduction() },
 				Settings.adamantiumArmor.getEnchantability(), armorNoise, 1.0F);
-		}
-		if (Settings.onyxArmor.isEnabled()) {
-			armorOnyx = EnumHelper.addArmorMaterial("ONYX", "onyx",
+		armorOnyx = EnumHelper.addArmorMaterial("ONYX", "onyx",
 				Settings.onyxArmor.getDurability(), new int[] {
-                                Settings.onyxArmor.getBootsReduction(),
-                                Settings.onyxArmor.getLegsReduction(),
-                                Settings.onyxArmor.getChestReduction(),
-                                Settings.onyxArmor.getHelmReduction() },
+						Settings.onyxArmor.getBootsReduction(),
+						Settings.onyxArmor.getLegsReduction(),
+						Settings.onyxArmor.getChestReduction(),
+						Settings.onyxArmor.getHelmReduction() },
 				Settings.onyxArmor.getEnchantability(), armorNoise, 2.0F);
-		}
+
 	} // end setToolAndArmorStats()
 
 	/**
