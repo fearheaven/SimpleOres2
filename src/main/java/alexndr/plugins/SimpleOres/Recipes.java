@@ -96,21 +96,6 @@ public class Recipes
 	 */
 	public static void addToolRecipes() 
 	{
-		//Copper Tool Recipes
-//		if (Settings.copperTools.isEnabled()) 
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_axe, true, new Object[] { "XX ", "XY ", " Y ",
-//					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shovel, true, new Object[] { "X", "Y", "Y",
-//					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_sword, true, new Object[] { "X", "X", "Y",
-//					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_hoe, true, new Object[] { "XX ", " Y ", " Y ",
-//					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
-//
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shears, true, new Object[]{
-//					"X ", " X", Character.valueOf('X'), "ingotCopper"}));
-//		}
 		
 //		//Tin Tool Recipes
 //		if (Settings.tinTools.isEnabled())
