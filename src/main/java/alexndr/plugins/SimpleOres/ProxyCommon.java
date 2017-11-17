@@ -40,6 +40,7 @@ public class ProxyCommon
 		Content.setRepairMaterials();
 //		Content.setAchievementTriggers();
 		setOreGenSettings();
+		Recipes.addSmeltingRecipes();
     } // end load
     
     public void postInit(FMLPostInitializationEvent event) 
