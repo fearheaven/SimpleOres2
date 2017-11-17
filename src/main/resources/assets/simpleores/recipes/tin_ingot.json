@@ -1,0 +1,15 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:tin_block_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shapeless",
+	"ingredients" : [
+		{ "item" : "simpleores:tin_block" }
+	],
+	"result" : {
+		"item" : "simpleores:tin_ingot",
+		"count" : 9
+	}
+}

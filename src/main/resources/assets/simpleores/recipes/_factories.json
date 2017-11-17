@@ -4,6 +4,10 @@
     	"copper_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory",
     	"copper_block_enabled" : "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory",
     	"copper_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory",
-    	"copper_bucket_enabled" : "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory"
+    	"copper_bucket_enabled" : "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory",
+    	"tin_tools_enabled": "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
+    	"tin_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
+    	"tin_block_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
+    	"tin_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory"
 	}
 }

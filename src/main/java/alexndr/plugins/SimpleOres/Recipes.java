@@ -24,10 +24,6 @@ public class Recipes
 	public static void addBlockRecipes() 
 	{
 //		//Storage Content
-//		if (Settings.tinBlock.isEnabled()) {
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_block, true, new Object[]{
-//					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
-//		}
 //		if (Settings.mythrilBlock.isEnabled()) {
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_block, true, new Object[]{
 //					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
@@ -48,10 +44,6 @@ public class Recipes
 	public static void addItemRecipes() 
 	{
 //		//Ingot Recipes
-//		if (Settings.tinIngot.isEnabled() && Settings.tinBlock.isEnabled()) {
-//			GameRegistry.addShapelessRecipe(new ItemStack(Content.tin_ingot, 9), new Object[] { 
-//					Content.tin_block });
-//		}
 //		if (Settings.mythrilIngot.isEnabled() && Settings.mythrilBlock.isEnabled()) {
 //			GameRegistry.addShapelessRecipe(new ItemStack(Content.mythril_ingot, 9), new Object[] { 
 //					Content.mythril_block });
@@ -82,23 +74,6 @@ public class Recipes
 	public static void addToolRecipes() 
 	{
 		
-//		//Tin Tool Recipes
-//		if (Settings.tinTools.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_pickaxe, true, new Object[] { "XXX", " Y ", " Y ",
-//					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_axe, true, new Object[] { "XX ", "XY ", " Y ",
-//					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_shovel, true, new Object[] { "X", "Y", "Y",
-//					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_sword, true, new Object[] { "X", "X", "Y",
-//					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_hoe, true, new Object[] { "XX ", " Y ", " Y ",
-//					Character.valueOf('X'), "ingotTin", Character.valueOf('Y'), "stickWood" }));
-//
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_shears, true, new Object[]{
-//					"X ", " X", Character.valueOf('X'), "ingotTin"}));
-//		}
 //		//Mythril Tool Recipes
 //		if (Settings.mythrilTools.isEnabled())
 //		{
@@ -173,20 +148,6 @@ public class Recipes
 	 */
 	public static void addArmorRecipes() 
 	{
-//		
-//		//Tin Armor Recipes
-//		if (Settings.tinArmor.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_helmet, true, new Object[]{
-//					"XXX", "X X", Character.valueOf('X'), "ingotTin"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_chestplate, true, new Object[]{
-//					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_leggings, true, new Object[]{
-//					"XXX", "X X", "X X", Character.valueOf('X'), "ingotTin"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_boots, true, new Object[]{
-//					"X X", "X X", Character.valueOf('X'), "ingotTin"}));
-//		}
-//		
 //		//Mythril Armor Recipes
 //		if (Settings.mythrilArmor.isEnabled())
 //		{
