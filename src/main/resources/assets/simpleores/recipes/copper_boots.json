@@ -1,0 +1,18 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:copper_armor_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "simpleores:copper_boots"
+	},
+	"pattern" : [
+		"S S",
+		"S S"
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTCOPPER"}
+	}
+}

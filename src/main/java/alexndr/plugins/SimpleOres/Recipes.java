@@ -24,10 +24,6 @@ public class Recipes
 	public static void addBlockRecipes() 
 	{
 //		//Storage Content
-//		if (Settings.copperBlock.isEnabled()) {
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_block, true, new Object[]{
-//					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotCopper"}));
-//		}
 //		if (Settings.tinBlock.isEnabled()) {
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.tin_block, true, new Object[]{
 //					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotTin"}));
@@ -52,11 +48,6 @@ public class Recipes
 	public static void addItemRecipes() 
 	{
 //		//Ingot Recipes
-//		if (Settings.copperIngot.isEnabled() && Settings.copperBlock.isEnabled()) 
-//		{
-//			GameRegistry.addShapelessRecipe(new ItemStack(Content.copper_ingot, 9), new Object[] { 
-//					Content.copper_block });
-//		}
 //		if (Settings.tinIngot.isEnabled() && Settings.tinBlock.isEnabled()) {
 //			GameRegistry.addShapelessRecipe(new ItemStack(Content.tin_ingot, 9), new Object[] { 
 //					Content.tin_block });
@@ -74,12 +65,6 @@ public class Recipes
 //					Content.onyx_block });
 //		}
 //		
-//		//Bucket
-//		if (Settings.copperBucket.isEnabled()) {
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_bucket, true, new Object[]{
-//					"X X", " X ", Character.valueOf('X'), "ingotCopper"}));
-//		}
-//
 //		//Rods
 //		if (Settings.mythrilRod.isEnabled()) {
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_rod, true, new Object[]{
@@ -188,18 +173,6 @@ public class Recipes
 	 */
 	public static void addArmorRecipes() 
 	{
-//		//Copper Armor Recipes
-//		if (Settings.copperArmor.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_helmet, true, new Object[]{
-//					"XXX", "X X", Character.valueOf('X'), "ingotCopper"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_chestplate, true, new Object[]{
-//					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotCopper"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_leggings, true, new Object[]{
-//					"XXX", "X X", "X X", Character.valueOf('X'), "ingotCopper"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_boots, true, new Object[]{
-//					"X X", "X X", Character.valueOf('X'), "ingotCopper"}));
-//		}
 //		
 //		//Tin Armor Recipes
 //		if (Settings.tinArmor.isEnabled())

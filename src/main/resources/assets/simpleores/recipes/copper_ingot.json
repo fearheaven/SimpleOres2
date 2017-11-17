@@ -1,0 +1,15 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:copper_block_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shapeless",
+	"ingredients" : [
+		{ "item" : "simpleores:copper_block" }
+	],
+	"result" : {
+		"item" : "simpleores:copper_ingot",
+		"count" : 9
+	}
+}
