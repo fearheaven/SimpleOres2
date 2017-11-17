@@ -1,5 +1,6 @@
 {
   	"conditions": {
-    	"copper_tools_enabled": "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory"
+    	"copper_tools_enabled": "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory",
+    	"copper_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.CopperConditionFactory"
 	}
 }

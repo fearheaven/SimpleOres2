@@ -21,6 +21,9 @@ public class CopperConditionFactory implements IConditionFactory
 		if (key.equals(ModInfo.ID + ":copper_tools_enabled")) {
 			return () -> Settings.copperTools.isEnabled() == value;
 		}
+		else if (key.equals(ModInfo.ID + ":copper_armor_enabled")) {
+			return () -> Settings.copperArmor.isEnabled() == value;
+		}
 		return null;
 	}
 

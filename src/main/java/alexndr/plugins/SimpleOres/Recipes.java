@@ -99,8 +99,6 @@ public class Recipes
 		//Copper Tool Recipes
 //		if (Settings.copperTools.isEnabled()) 
 //		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_pickaxe, true, new Object[] { "XXX", " Y ", " Y ",
-//					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_axe, true, new Object[] { "XX ", "XY ", " Y ",
 //					Character.valueOf('X'), "ingotCopper", Character.valueOf('Y'), "stickWood" }));
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.copper_shovel, true, new Object[] { "X", "Y", "Y",
