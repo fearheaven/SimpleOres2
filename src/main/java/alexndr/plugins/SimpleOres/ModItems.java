@@ -344,6 +344,8 @@ public static void registerModels()
 
 public static void registerOreDictionary()
 {
+	LogHelper.verbose(ModInfo.ID, "Registering ore dictionary entries.");
+	
 	// ore dictionary registrations
 	if (Settings.copperIngot.isEnabled())
 		OreDictionary.registerOre("ingotCopper", new ItemStack(ModItems.copper_ingot));
@@ -406,12 +408,13 @@ public static void configureSimpleItems()
 		copper_bucket_water.setCreativeTab(TabHelper.toolsTab(SimpleCoreAPI.plugin));
 		Content.copperBucketType.addVariant("water", copper_bucket_water, FluidRegistry.WATER);
 	}
+	LogHelper.verbose(ModInfo.ID, "Configured ingots and misc items");
 } // end configureSimpleItems()
 
 
 public static void configureBows()
 {
-	LogHelper.verbose(ModInfo.ID, "Creating bows");
+	LogHelper.verbose(ModInfo.ID, "Configuring bows");
 	if (Settings.mythrilBow.isEnabled()) 
 	{
 		mythril_bow.setEffect(SimpleBowEffects.damageEffect,
