@@ -15,15 +15,15 @@
     	"mythril_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
     	"mythril_bow_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
     	"mythril_rod_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
-    	"adamantium_tools_enabled": "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
-    	"adamantium_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
-    	"adamantium_block_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
-    	"adamantium_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
-    	"onyx_tools_enabled": "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
-    	"onyx_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
-    	"onyx_block_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
-    	"onyx_gem_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
-    	"onyx_bow_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
-    	"onyx_rod_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory"
+    	"adamantium_tools_enabled": "alexndr.plugins.SimpleOres.conditions.AdamantiumConditionFactory",
+    	"adamantium_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.AdamantiumConditionFactory",
+    	"adamantium_block_enabled" : "alexndr.plugins.SimpleOres.conditions.AdamantiumConditionFactory",
+    	"adamantium_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.AdamantiumConditionFactory",
+    	"onyx_tools_enabled": "alexndr.plugins.SimpleOres.conditions.OnyxConditionFactory",
+    	"onyx_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.OnyxConditionFactory",
+    	"onyx_block_enabled" : "alexndr.plugins.SimpleOres.conditions.OnyxConditionFactory",
+    	"onyx_gem_enabled" : "alexndr.plugins.SimpleOres.conditions.OnyxConditionFactory",
+    	"onyx_bow_enabled" : "alexndr.plugins.SimpleOres.conditions.OnyxConditionFactory",
+    	"onyx_rod_enabled" : "alexndr.plugins.SimpleOres.conditions.OnyxConditionFactory"
  	}
 }

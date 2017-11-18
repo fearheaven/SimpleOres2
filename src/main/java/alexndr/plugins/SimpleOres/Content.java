@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * @author AleXndrTheGr8st
@@ -176,6 +177,26 @@ public class Content
 		Content.copperBucketType.addVariant("water", ModItems.copper_bucket_water, 
 											FluidRegistry.WATER);
 	}
+
+	public static void addSmeltingRecipes() 
+	{
+		if (Settings.copperBucket.isEnabled() && Settings.copperIngot.isEnabled()) {
+			GameRegistry.addSmelting(ModItems.copper_bucket, 
+									new ItemStack(ModItems.copper_ingot, 3, 0), 0.0F);
+		}
+		if (Settings.copperIngot.isEnabled() && Settings.copperOre.isEnabled()) {
+			GameRegistry.addSmelting(ModBlocks.copper_ore, new ItemStack(ModItems.copper_ingot, 1, 0),
+					Settings.copperIngot.getSmeltingXP());
+		}
+		if (Settings.tinIngot.isEnabled() && Settings.tinOre.isEnabled())
+			GameRegistry.addSmelting(ModBlocks.tin_ore, new ItemStack(ModItems.tin_ingot, 1, 0), Settings.tinIngot.getSmeltingXP());
+		if (Settings.mythrilIngot.isEnabled() && Settings.mythrilOre.isEnabled())
+			GameRegistry.addSmelting(ModBlocks.mythril_ore, new ItemStack(ModItems.mythril_ingot, 1, 0), Settings.mythrilIngot.getSmeltingXP());
+		if (Settings.adamantiumIngot.isEnabled())
+			GameRegistry.addSmelting(ModBlocks.adamantium_ore, new ItemStack(ModItems.adamantium_ingot, 1, 0), Settings.adamantiumIngot.getSmeltingXP());
+		if (Settings.onyxGem.isEnabled() && Settings.onyxOre.isEnabled())
+			GameRegistry.addSmelting(ModBlocks.onyx_ore, new ItemStack(ModItems.onyx_gem, 1, 0), Settings.onyxGem.getSmeltingXP());
+	} // end addSmeltingRecipes()
 
 //	public static void doAchievements() 
 //	{

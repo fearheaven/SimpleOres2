@@ -1,0 +1,21 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:onyx_bow_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shaped",
+	"result" : {
+		"item" : "simpleores:onyx_bow"
+	},
+	"pattern" : [
+		" XY", 
+		"Z Y", 
+		" XY"
+	],
+	"key" : {
+		"X" : { "item" : "simpleores:onyx_rod"},
+		"Y" : { "item" : "minecraft:string"},
+		"Z" : { "item" : "minecraft:iron_ingot"}
+	}
+}
