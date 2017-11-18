@@ -16,6 +16,6 @@
 	"key" : {
 		"X" : { "item" : "simpleores:mythril_rod"},
 		"Y" : { "item" : "minecraft:string"},
-		"Z" : { "item" : "minecraft:ingot_iron"}
+		"Z" : { "item" : "minecraft:iron_ingot"}
 	}
 }

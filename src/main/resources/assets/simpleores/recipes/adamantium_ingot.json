@@ -1,0 +1,15 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:adamantium_block_enabled",
+			"value" : true
+		} ],
+	"type" : "minecraft:crafting_shapeless",
+	"ingredients" : [
+		{ "item" : "simpleores:adamantium_block" }
+	],
+	"result" : {
+		"item" : "simpleores:adamantium_ingot",
+		"count" : 9
+	}
+}

@@ -24,10 +24,6 @@ public class Recipes
 	public static void addBlockRecipes() 
 	{
 //		//Storage Content
-//		if (Settings.adamantiumBlock.isEnabled()) {
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_block, true, new Object[]{
-//					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
-//		}
 //		if (Settings.onyxBlock.isEnabled()) {
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_block, true, new Object[]{
 //					"XXX", "XXX", "XXX", Character.valueOf('X'), "gemOnyx"}));
@@ -40,10 +36,6 @@ public class Recipes
 	public static void addItemRecipes() 
 	{
 //		//Ingot Recipes
-//		if (Settings.adamantiumIngot.isEnabled() && Settings.adamantiumBlock.isEnabled()) {
-//			GameRegistry.addShapelessRecipe(new ItemStack(Content.adamantium_ingot, 9), new Object[] { 
-//					Content.adamantium_block });
-//		}
 //		if (Settings.onyxGem.isEnabled() && Settings.onyxBlock.isEnabled()) {
 //			GameRegistry.addShapelessRecipe(new ItemStack(Content.onyx_gem, 9), new Object[] { 
 //					Content.onyx_block });
@@ -62,25 +54,6 @@ public class Recipes
 	public static void addToolRecipes() 
 	{
 		
-//		//Mythril Tool Recipes
-//		//Adamantium Tool Recipes
-//		if (Settings.adamantiumTools.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_pickaxe, true, new Object[]{
-//					"XXX", " Y ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_axe, true, new Object[]{
-//					"XX ", "XY ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_shovel, true, new Object[]{
-//					"X", "Y", "Y", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_sword, true, new Object[]{
-//					"X", "X", "Y", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_hoe, true, new Object[]{
-//					"XX ", " Y ", " Y ", Character.valueOf('X'), "ingotAdamantium", Character.valueOf('Y'), "stickWood"}));
-//
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_shears, true, new Object[]{
-//					"X ", " X", Character.valueOf('X'), "ingotAdamantium"}));
-//		}
-//		
 //		//Onyx Tool Recipes
 //		if (Settings.onyxTools.isEnabled())
 //		{
@@ -114,18 +87,6 @@ public class Recipes
 	 */
 	public static void addArmorRecipes() 
 	{
-//		//Adamantium Armor Recipes
-//		if (Settings.adamantiumArmor.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_helmet, true, new Object[]{
-//					"XXX", "X X", Character.valueOf('X'), "ingotAdamantium"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_chestplate, true, new Object[]{
-//					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_leggings, true, new Object[]{
-//					"XXX", "X X", "X X", Character.valueOf('X'), "ingotAdamantium"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_boots, true, new Object[]{
-//					"X X", "X X", Character.valueOf('X'), "ingotAdamantium"}));
-//		}
 //		//Onyx Armor Recipes
 //		if (Settings.onyxArmor.isEnabled())
 //		{
