@@ -8,6 +8,12 @@
     	"tin_tools_enabled": "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
     	"tin_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
     	"tin_block_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
-    	"tin_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory"
-	}
+    	"tin_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.TinConditionFactory",
+    	"mythril_tools_enabled": "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
+    	"mythril_armor_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
+    	"mythril_block_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
+    	"mythril_ingot_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
+    	"mythril_bow_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory",
+    	"mythril_rod_enabled" : "alexndr.plugins.SimpleOres.conditions.MythrilConditionFactory"
+ 	}
 }

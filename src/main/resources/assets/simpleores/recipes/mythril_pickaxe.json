@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:mythril_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "simpleores:mythril_pickaxe"
+	},
+	"pattern" : [
+		"SSS",
+		" T ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTMYTHRIL"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}

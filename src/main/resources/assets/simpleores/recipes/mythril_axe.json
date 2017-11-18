@@ -1,0 +1,20 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:mythril_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "simpleores:mythril_axe"
+	},
+	"pattern" : [
+		"SS ",
+		"ST ",
+		" T "
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTMYTHRIL"},
+		"T" : { "item" : "#STICKWOOD"}
+	}
+}

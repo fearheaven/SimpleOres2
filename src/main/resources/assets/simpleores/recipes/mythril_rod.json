@@ -1,0 +1,18 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:mythril_rod_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "simpleores:mythril_rod"
+	},
+	"pattern" : [
+		"S",
+		"S"
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTMYTHRIL"}
+	}
+}

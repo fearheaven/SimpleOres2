@@ -1,0 +1,18 @@
+{
+	"conditions" : [
+		{
+			"type" : "simpleores:mythril_tools_enabled",
+			"value" : true
+		} ],
+	"result" : {
+		"item" : "simpleores:mythril_shears"
+	},
+	"pattern" : [
+		"S ",
+		" S"
+	],
+	"type" : "forge:ore_shaped",
+	"key" : {
+		"S" : { "item" : "#INGOTMYTHRIL"}
+	}
+}

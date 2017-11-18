@@ -24,10 +24,6 @@ public class Recipes
 	public static void addBlockRecipes() 
 	{
 //		//Storage Content
-//		if (Settings.mythrilBlock.isEnabled()) {
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_block, true, new Object[]{
-//					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
-//		}
 //		if (Settings.adamantiumBlock.isEnabled()) {
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.adamantium_block, true, new Object[]{
 //					"XXX", "XXX", "XXX", Character.valueOf('X'), "ingotAdamantium"}));
@@ -44,10 +40,6 @@ public class Recipes
 	public static void addItemRecipes() 
 	{
 //		//Ingot Recipes
-//		if (Settings.mythrilIngot.isEnabled() && Settings.mythrilBlock.isEnabled()) {
-//			GameRegistry.addShapelessRecipe(new ItemStack(Content.mythril_ingot, 9), new Object[] { 
-//					Content.mythril_block });
-//		}
 //		if (Settings.adamantiumIngot.isEnabled() && Settings.adamantiumBlock.isEnabled()) {
 //			GameRegistry.addShapelessRecipe(new ItemStack(Content.adamantium_ingot, 9), new Object[] { 
 //					Content.adamantium_block });
@@ -58,10 +50,6 @@ public class Recipes
 //		}
 //		
 //		//Rods
-//		if (Settings.mythrilRod.isEnabled()) {
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_rod, true, new Object[]{
-//					"X", "X", Character.valueOf('X'), "ingotMythril"}));
-//		}
 //		if (Settings.onyxRod.isEnabled()) {
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_rod, true, new Object[]{
 //					"X", "X", Character.valueOf('X'), "gemOnyx"}));
@@ -75,22 +63,6 @@ public class Recipes
 	{
 		
 //		//Mythril Tool Recipes
-//		if (Settings.mythrilTools.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_pickaxe, true, new Object[] { "XXX", " Y ",
-//					" Y ", Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_axe, true, new Object[] { "XX ", "XY ", " Y ",
-//					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_shovel, true, new Object[] { "X", "Y", "Y",
-//					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_sword, true, new Object[] { "X", "X", "Y",
-//					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_hoe, true, new Object[] { "XX ", " Y ", " Y ",
-//					Character.valueOf('X'), "ingotMythril", Character.valueOf('Y'), "stickWood" }));
-//
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_shears, true, new Object[]{
-//					"X ", " X", Character.valueOf('X'), "ingotMythril"}));
-//		}
 //		//Adamantium Tool Recipes
 //		if (Settings.adamantiumTools.isEnabled())
 //		{
@@ -128,12 +100,6 @@ public class Recipes
 //		}
 //		
 //		//Bow Recipes
-//		if (Settings.mythrilBow.isEnabled() && Settings.mythrilRod.isEnabled()) 
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_bow, true,
-//					new Object[] { " XY", "Z Y", " XY", Character.valueOf('X'), Content.mythril_rod,
-//							Character.valueOf('Y'), Items.STRING, Character.valueOf('Z'), Items.IRON_INGOT }));
-//		}
 //		if (Settings.onyxBow.isEnabled() && Settings.onyxRod.isEnabled()) 
 //		{
 //			GameRegistry.addRecipe(new ShapedOreRecipe(Content.onyx_bow, true,
@@ -148,19 +114,6 @@ public class Recipes
 	 */
 	public static void addArmorRecipes() 
 	{
-//		//Mythril Armor Recipes
-//		if (Settings.mythrilArmor.isEnabled())
-//		{
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_helmet, true, new Object[]{
-//					"XXX", "X X", Character.valueOf('X'), "ingotMythril"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_chestplate, true, new Object[]{
-//					"X X", "XXX", "XXX", Character.valueOf('X'), "ingotMythril"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_leggings, true, new Object[]{
-//					"XXX", "X X", "X X", Character.valueOf('X'), "ingotMythril"}));
-//			GameRegistry.addRecipe(new ShapedOreRecipe(Content.mythril_boots, true, new Object[]{
-//					"X X", "X X", Character.valueOf('X'), "ingotMythril"}));
-//		}
-//		
 //		//Adamantium Armor Recipes
 //		if (Settings.adamantiumArmor.isEnabled())
 //		{
