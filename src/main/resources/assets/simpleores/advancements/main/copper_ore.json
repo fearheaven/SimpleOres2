@@ -1,0 +1,26 @@
+{
+    "display":  {
+        "icon": {
+            "item": "simpleores:copper_ore"
+        },
+        "title": {
+            "translate": "advancements.copperAch"
+        },
+        "description": {
+            "translate": "advancements.copperAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "simpleores:main/root",
+    "criteria" : {
+    	"got_copper_ore" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "simpleores:copper_ore"}
+      			]
+      		}
+    	}
+    }
+}
