@@ -27,7 +27,7 @@ public class OnyxConditionFactory implements IConditionFactory
 		else if (key.equals(ModInfo.ID + ":onyx_block_enabled")) {
 			return () -> Settings.onyxBlock.isEnabled() == value;
 		}
-		else if (key.equals(ModInfo.ID + ":onyx_ingot_enabled")) {
+		else if (key.equals(ModInfo.ID + ":onyx_gem_enabled")) {
 			return () -> Settings.onyxGem.isEnabled() == value;
 		}
 		else if (key.equals(ModInfo.ID + ":onyx_rod_enabled")) {

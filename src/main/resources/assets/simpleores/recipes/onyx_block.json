@@ -1,7 +1,7 @@
 {
 	"conditions" : [
 		{
-			"type" : "simpleores:onyx_ingot_enabled",
+			"type" : "simpleores:onyx_gem_enabled",
 			"value" : true
 		} ],
 	"type" : "minecraft:crafting_shaped",

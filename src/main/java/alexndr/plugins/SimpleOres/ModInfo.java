@@ -22,6 +22,6 @@ public class ModInfo
 	public static final String LOGO = "assets/simplecore/logos/simple_ores.png";
 	public static final String PARENT = "";
 	public static final boolean USEDEPENDENCYINFO = true;
-	public static final String VERSIONURL = "https://raw.githubusercontent.com/Sinhika/SimpleOres2/1.11/update.json";
+	public static final String VERSIONURL = "https://raw.githubusercontent.com/Sinhika/SimpleOres2/1.12/update.json";
 
 } // end class
