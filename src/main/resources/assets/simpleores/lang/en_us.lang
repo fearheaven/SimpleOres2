@@ -80,15 +80,15 @@ item.onyx_boots.name=Onyx Boots
 //Achievements
 advancements.welcome=Welcome to SimpleOres!
 advancements.copperAch=Neither Gold nor Iron
-advancements.copperAch.desc=Begin your SimpleOres adventure by collecting some Copper
+advancements.copperAch.desc=Begin your SimpleOres adventure by mining copper ore.
 advancements.tinAch=Not Silver
-advancements.tinAch.desc=Shouldn't be too hard finding some of this
+advancements.tinAch.desc=Mine some tin ore.
 advancements.mythrilAch=Ooh, Pretty!
-advancements.mythrilAch.desc=Dig deep to find some Mythril Ore
+advancements.mythrilAch.desc=Dig deep to mine some mythril Ore
 advancements.adamantiumAch=Green is Good
-advancements.adamantiumAch.desc=It's lightning fast!
+advancements.adamantiumAch.desc=Dig just as deep to mine adamantium ore
 advancements.onyxAch=Ninja Ore
-advancements.onyxAch.desc=Good luck finding some
+advancements.onyxAch.desc=Finding some onyx ore. Good luck!
 
 advancements.copperPickAch=Upgrade II?
 advancements.copperPickAch.desc=I guess it's better than Stone...
@@ -99,17 +99,17 @@ advancements.tinChestplateAch.desc=Seems impractical, but give it a try
 advancements.tinShearsAch=Who Would Ever Use These?
 advancements.tinShearsAch.desc=Because normal shears obviously last too long
 advancements.mythrilAxeAch=Now We're Talking
-advancements.mythrilAxeAch.desc=Craft a Mythril Axe for a significant improvement over Iron.
+advancements.mythrilAxeAch.desc=Craft a mythril axe for a significant improvement over iron.
 advancements.mythrilBowAch=Mystical Bow
 advancements.mythrilBowAch.desc=Forge a new bow with magical properties
 advancements.adamantiumLegsAch=Suit Up
-advancements.adamantiumLegsAch.desc=Stand out from the crowd with a stylish pair of Adamantium Leggings!
+advancements.adamantiumLegsAch.desc=Stand out from the crowd with a stylish pair of adamantium leggings!
 advancements.adamantiumShearsAch=Endless Sheep Shearing
 advancements.adamantiumShearsAch.desc=Finally, shears that don't break instantly!
 advancements.onyxSwordAch=Sheer, Absolute Ownage
-advancements.onyxSwordAch.desc=Craft an Onyx Sword. Your enemies will tremble in fear
+advancements.onyxSwordAch.desc=Craft an onyx sword. Your enemies will tremble in fear
 advancements.onyxBowAch=Firebug
-advancements.onyxBowAch.desc=Scorch your enemies with this bow straight from the Hells
+advancements.onyxBowAch.desc=Scorch your enemies with this onyx bow straight from the Hells
 
 //Bow Tooltips
 tips.damageTooltip=+Damage
