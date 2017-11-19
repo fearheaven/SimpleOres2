@@ -12,7 +12,7 @@
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "simpleores:main/root",
+    "parent" : "simpleores:main/adamantium_ore",
    	"rewards": {
     	"recipes": [
       		"simpleores:onyx_block", "simpleores:onyx_gem"

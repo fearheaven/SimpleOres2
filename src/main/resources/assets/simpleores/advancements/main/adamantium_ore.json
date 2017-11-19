@@ -12,7 +12,7 @@
         "show_toast": true,
         "announce_to_chat": true
     },
-    "parent" : "simpleores:main/root",
+    "parent" : "simpleores:main/mythril_ore",
    	"rewards": {
     	"recipes": [
       		"simpleores:adamantium_block", "simpleores:adamantium_ingot"
