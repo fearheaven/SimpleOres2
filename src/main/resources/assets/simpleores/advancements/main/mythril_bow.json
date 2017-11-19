@@ -1,0 +1,26 @@
+{
+    "display":  {
+        "icon": {
+            "item": "simpleores:mythril_bow"
+        },
+        "title": {
+            "translate": "advancements.mythrilBowAch"
+        },
+        "description": {
+            "translate": "advancements.mythrilBowAch.desc"
+        },
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent" : "simpleores:main/mythril_ore",
+    "criteria" : {
+    	"got_copper_ore" : {
+      		"trigger": "minecraft:inventory_changed",
+      		"conditions" : {
+      			"items" : [
+      			{"item" : "simpleores:mythril_bow"}
+      			]
+      		}
+    	}
+    }
+}
