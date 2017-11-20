@@ -38,7 +38,6 @@ public class Content
 		ModItems.configureTools();
 		ModItems.configureBows();
 		ModItems.configureArmor();
-//		doAchievements();
 	} // end preInitialize()
 
 
@@ -178,6 +177,9 @@ public class Content
 											FluidRegistry.WATER);
 	}
 
+	/**
+	 * Add smelting recipes to GameRegistry.
+	 */
 	public static void addSmeltingRecipes() 
 	{
 		if (Settings.copperBucket.isEnabled() && Settings.copperIngot.isEnabled()) {

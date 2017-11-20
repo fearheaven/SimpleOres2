@@ -185,7 +185,11 @@ public class ModItems
 			new SimpleArmor("onyx_boots", SimpleOres.plugin,Content.armorOnyx, 
 					EntityEquipmentSlot.FEET); 
 
-
+/**
+ * register Items with Forge.
+ * 
+ * @param registry Forge item registry interface.
+ */
 public static void register(IForgeRegistry<Item> registry) 
 {
 	if (Settings.copperIngot.isEnabled()) registry.register(copper_ingot);
@@ -249,6 +253,9 @@ public static void register(IForgeRegistry<Item> registry)
 } // end register()
 
 
+/**
+ * register Item models with Forge.
+ */
 public static void registerModels() 
 {
 	if (Settings.copperIngot.isEnabled()) copper_ingot.registerItemModel();
@@ -348,6 +355,9 @@ public static void registerModels()
 	}
 } // end registerModels()
 
+/**
+ * register ingots and suchlike with the ore dictionary.
+ */
 public static void registerOreDictionary()
 {
 	LogHelper.verbose(ModInfo.ID, "Registering ore dictionary entries.");

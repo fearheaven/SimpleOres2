@@ -49,6 +49,11 @@ public class ModBlocks
 			new SimpleBlock("onyx_block", SimpleOres.plugin, Material.ROCK,
 			ContentCategories.Block.GENERAL).setStepSound(SoundType.STONE);
 
+	/**
+	 * Register blocks with Forge.
+	 * 
+	 * @param registry Forge block registry interface.
+	 */
 	public static void register(IForgeRegistry<Block> registry) 
 	{
 		if (Settings.copperOre.isEnabled()) registry.register(copper_ore);
@@ -64,6 +69,11 @@ public class ModBlocks
 		if (Settings.onyxBlock.isEnabled()) registry.register(onyx_block);
 	} // end register()
 
+	/**
+	 * register ItemBlocks with Forge.
+	 * 
+	 * @param registry Forge item registry interface.
+	 */
 	public static void registerItemBlocks(IForgeRegistry<Item> registry) 
 	{
 		if (Settings.copperOre.isEnabled()) registry.register(copper_ore.createItemBlock());
@@ -79,6 +89,10 @@ public class ModBlocks
 		if (Settings.onyxBlock.isEnabled()) registry.register(onyx_block.createItemBlock());
 	} // end registerItemBlocks()
 
+	
+	/**
+	 * register models of ItemBlocks with Forge.
+	 */
 	public static void registerModels() 
 	{
 		if (Settings.copperOre.isEnabled()) 
