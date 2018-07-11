@@ -12,7 +12,7 @@
       		"conditions" : {
       			"items" : [
       				{
-      				"item" : "simpleores:onyx_ingot"
+      				"item" : "simpleores:onyx_gem"
       				}
       			]
       		}
