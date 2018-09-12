@@ -49,7 +49,9 @@ item.onyx_sword.name=Épée en Onyx
 item.onyx_hoe.name=Houe en Onyx
 item.mythril_bow.name=Arc en Mythril
 item.onyx_bow.name=Arc en Onyx
+item.copper_shears.name=Cisailles en Cuivre
 item.tin_shears.name=Cisailles en Étain
+item.mythril_shears.name=Cisailles en Mythril
 item.adamantium_shears.name=Cisailles en Adamantium
 item.onyx_shears.name=Cisailles en Onyx
 
@@ -76,7 +78,8 @@ item.onyx_leggings.name=Jambière en Onyx
 item.onyx_boots.name=Bottes en Onyx
 
 //Achievements
-achievement.copperAch=Bienvenu dans SimpleOres!
+advancements.welcome=Bienvenu dans SimpleOres!
+achievement.copperAch=Ni de l'Or ni du Fer
 achievement.copperAch.desc=Commence ton aventure SimpleOres en ramassant du Cuivre
 achievement.tinAch=Pas de l'Argent
 achievement.tinAch.desc=Ça ne devrai pas être trop dur d'en trouver
@@ -93,7 +96,7 @@ achievement.copperBucketAch=Attention: Ne pas utiliser avec de la Lave
 achievement.copperBucketAch.desc=Économise ton Fer, fais un seau en Cuivre!
 achievement.tinChestplateAch.desc=Ça n'a pas l'air pratique, mais essaie quand même
 achievement.tinShearsAch=Qui peut bien utiliser ça?
-achievement.tinShearsAch.desc=Parcque des cisailles normal tient trop longtemps
+achievement.tinShearsAch.desc=Parcque les cisailles normales tiennent trop longtemps
 achievement.mythrilAxeAch=Ça en jette!
 achievement.mythrilAxeAch.desc=Fabrique une Hache en Mythril pour une amélioration significative au Fer
 achievement.mythrilBowAch=Un Arc mythic
@@ -109,8 +112,8 @@ achievement.onyxBowAch.desc=Brûle tes ennemis avec cet Arc tout droit sorti des
 
 
 //Bow Tooltips
-tips.damageTooltip=+Damage
-tips.flameTooltip=+Flame
-tips.knockbackTooltip=+Knockback
+tips.damageTooltip=+Dégats
+tips.flameTooltip=+Flamme
+tips.knockbackTooltip=+Recul
 tips.zoomTooltip=+Zoom
-tips.efficiencyTooltip=+Efficiency
+tips.efficiencyTooltip=+Efficacité
