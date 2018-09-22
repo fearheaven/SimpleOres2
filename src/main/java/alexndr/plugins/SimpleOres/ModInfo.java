@@ -13,7 +13,7 @@ public class ModInfo
 	public static final String NAME = "SimpleOres 2";
 	public static final String VERSION = "@MODVERSION@";
 	public static final String DEPENDENCIES 
-		= "required-after:simplecore@[1.7.0.0,)";
+		= "required-after:simplecore@[1.7.2.0,)";
 	public static final String ACCEPTED_VERSIONS = "[1.12,)";
 	public static final String DESCRIPTION = "A simple ore plugin for SimpleCore API, featuring 5 unique, balanced ores.";
 	public static final String URL = "http://minecraft.curseforge.com/projects/simpleores";
