@@ -14,7 +14,7 @@
     },
     "parent" : "simpleores:main/mythril_ore",
     "criteria" : {
-    	"got_copper_ore" : {
+    	"got_mythril_bow" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [

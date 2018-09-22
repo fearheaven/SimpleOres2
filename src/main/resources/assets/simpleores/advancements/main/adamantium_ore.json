@@ -19,7 +19,7 @@
     	]
   	},
     "criteria" : {
-    	"got_copper_ore" : {
+    	"got_adamantium_ore" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [

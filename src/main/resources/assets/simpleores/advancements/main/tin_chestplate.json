@@ -14,7 +14,7 @@
     },
     "parent" : "simpleores:main/tin_ore",
     "criteria" : {
-    	"got_copper_ore" : {
+    	"got_tin_chest" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [

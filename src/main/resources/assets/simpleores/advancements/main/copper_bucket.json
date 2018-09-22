@@ -14,7 +14,7 @@
     },
     "parent" : "simpleores:main/copper_ore",
     "criteria" : {
-    	"got_copper_ore" : {
+    	"got_copper_bucket" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [

@@ -19,7 +19,7 @@
     	]
   	},
     "criteria" : {
-    	"got_copper_ore" : {
+    	"got_tin_ore" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [

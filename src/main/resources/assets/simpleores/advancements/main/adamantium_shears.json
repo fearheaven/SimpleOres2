@@ -14,7 +14,7 @@
     },
     "parent" : "simpleores:main/adamantium_ore",
     "criteria" : {
-    	"got_copper_ore" : {
+    	"got_adamantium_shears" : {
       		"trigger": "minecraft:inventory_changed",
       		"conditions" : {
       			"items" : [
