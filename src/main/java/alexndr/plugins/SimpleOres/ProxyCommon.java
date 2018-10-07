@@ -38,7 +38,6 @@ public class ProxyCommon
 		//Content
 		setTabIcons();
 		Content.setRepairMaterials();
-//		Content.setAchievementTriggers();
 		setOreGenSettings();
 		Content.addSmeltingRecipes();
     } // end load

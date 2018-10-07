@@ -76,36 +76,36 @@ item.onyx_leggings.name=Jambière en Onyx
 item.onyx_boots.name=Bottes en Onyx
 
 //Achievements
-achievement.copperAch=Bienvenu dans SimpleOres!
-achievement.copperAch.desc=Commence ton aventure SimpleOres en ramassant du Cuivre
-achievement.tinAch=Pas de l'Argent
-achievement.tinAch.desc=Ça ne devrai pas être trop dur d'en trouver
-achievement.mythrilAch=Ooh, c'est joli!
-achievement.mythrilAch.desc=Creuse profondément pour trouver du Mythril
-achievement.adamantiumAch=Le vert c'est bien
-achievement.adamantiumAch.desc=C'est rapide comme l'éclair!
-achievement.onyxAch=Minerai ninja
-achievement.onyxAch.desc=Bonne chance pour en trouver
+advancements.copperAch=Bienvenu dans SimpleOres!
+advancements.copperAch.desc=Commence ton aventure SimpleOres en ramassant du Cuivre
+advancements.tinAch=Pas de l'Argent
+advancements.tinAch.desc=Ça ne devrai pas être trop dur d'en trouver
+advancements.mythrilAch=Ooh, c'est joli!
+advancements.mythrilAch.desc=Creuse profondément pour trouver du Mythril
+advancements.adamantiumAch=Le vert c'est bien
+advancements.adamantiumAch.desc=C'est rapide comme l'éclair!
+advancements.onyxAch=Minerai ninja
+advancements.onyxAch.desc=Bonne chance pour en trouver
 
-achievement.copperPickAch=Amélioration II?
-achievement.copperPickAch.desc=Je suppose que c'est mieux que de la Pierre...
-achievement.copperBucketAch=Attention: Ne pas utiliser avec de la Lave
-achievement.copperBucketAch.desc=Économise ton Fer, fais un seau en Cuivre!
-achievement.tinChestplateAch.desc=Ça n'a pas l'air pratique, mais essaie quand même
-achievement.tinShearsAch=Qui peut bien utiliser ça?
-achievement.tinShearsAch.desc=Parcque des cisailles normal tient trop longtemps
-achievement.mythrilAxeAch=Ça en jette!
-achievement.mythrilAxeAch.desc=Fabrique une Hache en Mythril pour une amélioration significative au Fer
-achievement.mythrilBowAch=Un Arc mythic
-achievement.mythrilBowAch.desc=Forge un nouvel Arc avec des propriétées magique
-achievement.adamantium_legs_ach=Enfile
-achievement.adamantium_legs_ach.desc=Démarque-toi de la foule avec une paire de jambières stylées en Adamantium!
-achievement.adamantiumShearsAch=Tonte de Moutons sans fin
-achievement.adamantiumShearsAch.desc=Enfin, des cisailles qui ne se cassent pas instantannément!
-achievement.onyxSwordAch=Poutrage absolu
-achievement.onyxSwordAch.desc=Fabrique une Épée en Onyx. Tes ennemis trembleront de peur
-achievement.onyxBowAch=Pyromane
-achievement.onyxBowAch.desc=Brûle tes ennemis avec cet Arc tout droit sorti des enfers
+advancements.copperPickAch=Amélioration II?
+advancements.copperPickAch.desc=Je suppose que c'est mieux que de la Pierre...
+advancements.copperBucketAch=Attention: Ne pas utiliser avec de la Lave
+advancements.copperBucketAch.desc=Économise ton Fer, fais un seau en Cuivre!
+advancements.tinChestplateAch.desc=Ça n'a pas l'air pratique, mais essaie quand même
+advancements.tinShearsAch=Qui peut bien utiliser ça?
+advancements.tinShearsAch.desc=Parcque des cisailles normal tient trop longtemps
+advancements.mythrilAxeAch=Ça en jette!
+advancements.mythrilAxeAch.desc=Fabrique une Hache en Mythril pour une amélioration significative au Fer
+advancements.mythrilBowAch=Un Arc mythic
+advancements.mythrilBowAch.desc=Forge un nouvel Arc avec des propriétées magique
+advancements.adamantium_legs_ach=Enfile
+advancements.adamantium_legs_ach.desc=Démarque-toi de la foule avec une paire de jambières stylées en Adamantium!
+advancements.adamantiumShearsAch=Tonte de Moutons sans fin
+advancements.adamantiumShearsAch.desc=Enfin, des cisailles qui ne se cassent pas instantannément!
+advancements.onyxSwordAch=Poutrage absolu
+advancements.onyxSwordAch.desc=Fabrique une Épée en Onyx. Tes ennemis trembleront de peur
+advancements.onyxBowAch=Pyromane
+advancements.onyxBowAch.desc=Brûle tes ennemis avec cet Arc tout droit sorti des enfers
 
 
 //Bow Tooltips

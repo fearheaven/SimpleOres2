@@ -89,22 +89,22 @@ item.onyx_leggings.name=縞瑪瑙護腿
 item.onyx_boots.name=縞瑪瑙靴子
 
 //Achievements
-achievement.simpleOresAch=歡迎來到簡單礦物的世界！
-achievement.simpleOresAch.desc=採集銅以開始簡單礦物的歷險旅程
-achievement.adamantiumAch=就是那綠色的
-achievement.adamantiumAch.desc=往地底的深處發掘精金
-achievement.onyxAch=迷彩礦物
-achievement.onyxAch.desc=能找得到吗？
-achievement.ironPickAch=升級MK-II
-achievement.ironPickAch.desc=合成一把鐵鎬
-achievement.adamantiumPickAch=快如閃電
-achievement.adamantiumPickAch.desc=製造精金鎬以體驗無如倫比的挖掘速度
-achievement.onyxPickAch=不朽
-achievement.onyxPickAch.desc=或許它比你活得更久
-achievement.mythrilBowAch=神秘的弓
-achievement.mythrilBowAch.desc=鍛造出一把全新而富有魔力的弓
-achievement.onyxBowAch=縱火狂
-achievement.onyxBowAch.desc=用這把地獄的弓把你的敵人燒焦
+advancements.simpleOresAch=歡迎來到簡單礦物的世界！
+advancements.simpleOresAch.desc=採集銅以開始簡單礦物的歷險旅程
+advancements.adamantiumAch=就是那綠色的
+advancements.adamantiumAch.desc=往地底的深處發掘精金
+advancements.onyxAch=迷彩礦物
+advancements.onyxAch.desc=能找得到吗？
+advancements.ironPickAch=升級MK-II
+advancements.ironPickAch.desc=合成一把鐵鎬
+advancements.adamantiumPickAch=快如閃電
+advancements.adamantiumPickAch.desc=製造精金鎬以體驗無如倫比的挖掘速度
+advancements.onyxPickAch=不朽
+advancements.onyxPickAch.desc=或許它比你活得更久
+advancements.mythrilBowAch=神秘的弓
+advancements.mythrilBowAch.desc=鍛造出一把全新而富有魔力的弓
+advancements.onyxBowAch=縱火狂
+advancements.onyxBowAch.desc=用這把地獄的弓把你的敵人燒焦
 
 //Bow Tooltips
 tips.damageTooltip=+傷害
